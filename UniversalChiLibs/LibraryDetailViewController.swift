@@ -6,24 +6,39 @@
 //
 
 import UIKit
+import Foundation
+import MapKit
 
 class LibraryDetailViewController: UIViewController {
-
+    
+    @IBOutlet weak var libraryPhoneTextView: UITextView!
+    @IBOutlet weak var libraryAddressLabel: UILabel!
+    @IBOutlet weak var libraryHoursLabel: UILabel!
+    @IBOutlet weak var libraryMapView: MKMapView!
+    
+    var detailLibrary : Library?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = detailLibrary?.name ?? "Library name not available"
+        let phone = detailLibrary?.phone ?? "Library phone unavailable"
+        libraryPhoneTextView.text = "Phone: \(phone)"
+        libraryAddressLabel.text = detailLibrary?.address ?? "Library address unavailable"
+        libraryHoursLabel.text = detailLibrary?.hoursOfOperation?.formattedHours ?? "Library hours unavailable"
+        annotateMap()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func annotateMap() {
+        let latitudeString = detailLibrary?.location?.latitude ?? ""
+        let longitudeString = detailLibrary?.location?.longitude ?? ""
+        let zoomLocation = CLLocationCoordinate2D.init(latitude: Double(latitudeString) ?? 0.0, longitude: Double(longitudeString) ?? 0.0)
+        let span = MKCoordinateSpan.init(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        let viewRegion = MKCoordinateRegion.init(center: zoomLocation, span: span)
+        let point = MKPointAnnotation.init()
+        point.coordinate = zoomLocation
+        point.title = detailLibrary?.name
+        libraryMapView.addAnnotation(point)
+        libraryMapView.setRegion(libraryMapView.regionThatFits(viewRegion), animated: true)
     }
-    */
-
 }

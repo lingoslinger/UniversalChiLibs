@@ -6,84 +6,91 @@
 //
 
 import UIKit
+import Foundation
 
 class LibraryTableViewController: UITableViewController {
-
+    
+    var libraryArray = [Library]()
+    var sectionDictionary = Dictionary<String, [Library]>()
+    var sectionTitles = [String]()
+    
+    // MARK: - view lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let completionHander : SessionCompletionHandler = {(data : Data?, response : URLResponse?, error : Error?) -> Void in
+            if (error == nil) {
+                let decoder = JSONDecoder()
+                guard let libraryArray = try? decoder.decode([Library].self, from: data!) else {
+                    fatalError("Unable to decode JSON library data")
+                }
+                self.libraryArray = libraryArray
+                DispatchQueue.main.async(execute: {
+                    self.setupSectionsWithLibraryArray()
+                    self.tableView.reloadData()
+                })
+            } else {
+                DispatchQueue.main.async {
+                    self.showErrorDialogWithMessage(message: error?.localizedDescription ?? "Unknown network error")
+                }
+            }
+        }
+        LibraryURLSession().sendRequest(completionHander)
     }
 
-    // MARK: - Table view data source
-
+    // MARK: - UITableViewDataSource and UITableViewDelegate methods
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return sectionTitles.count
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        let sectionTitle = self.sectionTitles[section]
+        let sectionArray = self.sectionDictionary[sectionTitle]
+        return sectionArray?.count ?? 0
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LibraryTableViewCell")
+        let sectionTitle = self.sectionTitles[indexPath.section]
+        let sectionArray = self.sectionDictionary[sectionTitle]
+        let library = sectionArray?[indexPath.row]
+        cell?.textLabel?.text = library?.name
+        return cell!
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return index
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.sectionTitles[section]
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return self.sectionTitles
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    // MARK: - navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "LibraryDetailViewController" {
+            guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
+            let detailViewController = segue.destination as! LibraryDetailViewController
+            let sectionTitle = self.sectionTitles[indexPath.section]
+            let sectionArray = self.sectionDictionary[sectionTitle]
+            detailViewController.detailLibrary = sectionArray?[indexPath.row]
+        }
     }
-    */
-
+    
+    // MARK: - private methods
+    func setupSectionsWithLibraryArray() {
+        for library in libraryArray {
+            let firstLetterOfName = String.init(library.name?.first ?? Character.init(""))
+            if (sectionDictionary[firstLetterOfName] == nil) {
+                let sectionArray = [Library]()
+                sectionDictionary[firstLetterOfName] = sectionArray
+            }
+            sectionDictionary[firstLetterOfName]?.append(library)
+        }
+        let unsortedLetters = self.sectionDictionary.keys
+        sectionTitles = unsortedLetters.sorted()
+    }
 }

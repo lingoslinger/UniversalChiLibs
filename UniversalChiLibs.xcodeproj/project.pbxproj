@@ -21,6 +21,8 @@
 		9D3C8E5F2AF3E8400064DDEB /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E5E2AF3E8400064DDEB /* Library.swift */; };
 		9D3C8E612AF3E8760064DDEB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E602AF3E8760064DDEB /* Location.swift */; };
 		9D3C8E632AF3E8A00064DDEB /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E622AF3E8A00064DDEB /* Website.swift */; };
+		9D3C8E672AF3EB8C0064DDEB /* ViewController+ErrorDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E662AF3EB8C0064DDEB /* ViewController+ErrorDialog.swift */; };
+		9D3C8E692AF3EBF10064DDEB /* String+LibraryHourFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E682AF3EBF10064DDEB /* String+LibraryHourFormatting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		9D3C8E5E2AF3E8400064DDEB /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		9D3C8E602AF3E8760064DDEB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		9D3C8E622AF3E8A00064DDEB /* Website.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Website.swift; sourceTree = "<group>"; };
+		9D3C8E662AF3EB8C0064DDEB /* ViewController+ErrorDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ErrorDialog.swift"; sourceTree = "<group>"; };
+		9D3C8E682AF3EBF10064DDEB /* String+LibraryHourFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LibraryHourFormatting.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,9 +93,6 @@
 		9D3C8E1C2AF3E0CB0064DDEB = {
 			isa = PBXGroup;
 			children = (
-				9D3C8E622AF3E8A00064DDEB /* Website.swift */,
-				9D3C8E602AF3E8760064DDEB /* Location.swift */,
-				9D3C8E5E2AF3E8400064DDEB /* Library.swift */,
 				9D3C8E272AF3E0CC0064DDEB /* UniversalChiLibs */,
 				9D3C8E3E2AF3E0CD0064DDEB /* UniversalChiLibsTests */,
 				9D3C8E482AF3E0CD0064DDEB /* UniversalChiLibsUITests */,
@@ -112,7 +113,8 @@
 		9D3C8E272AF3E0CC0064DDEB /* UniversalChiLibs */ = {
 			isa = PBXGroup;
 			children = (
-				9D3C8E5C2AF3E7B00064DDEB /* LibraryURLSession.swift */,
+				9D3C8E652AF3EB580064DDEB /* Extensions */,
+				9D3C8E642AF3EB260064DDEB /* Data Models */,
 				9D3C8E5A2AF3E3C60064DDEB /* LibraryDetailViewController.swift */,
 				9D3C8E582AF3E16C0064DDEB /* LibraryTableViewController.swift */,
 				9D3C8E282AF3E0CC0064DDEB /* AppDelegate.swift */,
@@ -140,6 +142,26 @@
 				9D3C8E4B2AF3E0CD0064DDEB /* UniversalChiLibsUITestsLaunchTests.swift */,
 			);
 			path = UniversalChiLibsUITests;
+			sourceTree = "<group>";
+		};
+		9D3C8E642AF3EB260064DDEB /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				9D3C8E5C2AF3E7B00064DDEB /* LibraryURLSession.swift */,
+				9D3C8E622AF3E8A00064DDEB /* Website.swift */,
+				9D3C8E602AF3E8760064DDEB /* Location.swift */,
+				9D3C8E5E2AF3E8400064DDEB /* Library.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		9D3C8E652AF3EB580064DDEB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9D3C8E662AF3EB8C0064DDEB /* ViewController+ErrorDialog.swift */,
+				9D3C8E682AF3EBF10064DDEB /* String+LibraryHourFormatting.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,12 +296,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D3C8E672AF3EB8C0064DDEB /* ViewController+ErrorDialog.swift in Sources */,
 				9D3C8E592AF3E16C0064DDEB /* LibraryTableViewController.swift in Sources */,
 				9D3C8E5B2AF3E3C60064DDEB /* LibraryDetailViewController.swift in Sources */,
 				9D3C8E292AF3E0CC0064DDEB /* AppDelegate.swift in Sources */,
 				9D3C8E632AF3E8A00064DDEB /* Website.swift in Sources */,
 				9D3C8E5D2AF3E7B00064DDEB /* LibraryURLSession.swift in Sources */,
 				9D3C8E2B2AF3E0CC0064DDEB /* SceneDelegate.swift in Sources */,
+				9D3C8E692AF3EBF10064DDEB /* String+LibraryHourFormatting.swift in Sources */,
 				9D3C8E5F2AF3E8400064DDEB /* Library.swift in Sources */,
 				9D3C8E612AF3E8760064DDEB /* Location.swift in Sources */,
 			);
