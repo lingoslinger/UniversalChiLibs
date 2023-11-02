@@ -103,7 +103,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Phone Number" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MmV-3T-rlG">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Phone Number" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MmV-3T-rlG">
                                 <rect key="frame" x="11" y="365" width="361" height="36"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -112,6 +112,7 @@
                                 <color key="textColor" systemColor="linkColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ps7-fn-d9C"/>
