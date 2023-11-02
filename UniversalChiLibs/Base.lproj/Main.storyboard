@@ -51,6 +51,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="LLF-cg-56K" kind="show" id="7zB-Yr-TCY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -74,6 +77,7 @@
                         <viewLayoutGuide key="safeArea" id="ps7-fn-d9C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ZfU-Xm-VqJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2C-cl-dOS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

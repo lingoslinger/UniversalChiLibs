@@ -17,6 +17,10 @@
 		9D3C8E4C2AF3E0CD0064DDEB /* UniversalChiLibsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E4B2AF3E0CD0064DDEB /* UniversalChiLibsUITestsLaunchTests.swift */; };
 		9D3C8E592AF3E16C0064DDEB /* LibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E582AF3E16C0064DDEB /* LibraryTableViewController.swift */; };
 		9D3C8E5B2AF3E3C60064DDEB /* LibraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E5A2AF3E3C60064DDEB /* LibraryDetailViewController.swift */; };
+		9D3C8E5D2AF3E7B00064DDEB /* LibraryURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E5C2AF3E7B00064DDEB /* LibraryURLSession.swift */; };
+		9D3C8E5F2AF3E8400064DDEB /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E5E2AF3E8400064DDEB /* Library.swift */; };
+		9D3C8E612AF3E8760064DDEB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E602AF3E8760064DDEB /* Location.swift */; };
+		9D3C8E632AF3E8A00064DDEB /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E622AF3E8A00064DDEB /* Website.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		9D3C8E4B2AF3E0CD0064DDEB /* UniversalChiLibsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalChiLibsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9D3C8E582AF3E16C0064DDEB /* LibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableViewController.swift; sourceTree = "<group>"; };
 		9D3C8E5A2AF3E3C60064DDEB /* LibraryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDetailViewController.swift; sourceTree = "<group>"; };
+		9D3C8E5C2AF3E7B00064DDEB /* LibraryURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryURLSession.swift; sourceTree = "<group>"; };
+		9D3C8E5E2AF3E8400064DDEB /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
+		9D3C8E602AF3E8760064DDEB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		9D3C8E622AF3E8A00064DDEB /* Website.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Website.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,9 @@
 		9D3C8E1C2AF3E0CB0064DDEB = {
 			isa = PBXGroup;
 			children = (
+				9D3C8E622AF3E8A00064DDEB /* Website.swift */,
+				9D3C8E602AF3E8760064DDEB /* Location.swift */,
+				9D3C8E5E2AF3E8400064DDEB /* Library.swift */,
 				9D3C8E272AF3E0CC0064DDEB /* UniversalChiLibs */,
 				9D3C8E3E2AF3E0CD0064DDEB /* UniversalChiLibsTests */,
 				9D3C8E482AF3E0CD0064DDEB /* UniversalChiLibsUITests */,
@@ -101,6 +112,7 @@
 		9D3C8E272AF3E0CC0064DDEB /* UniversalChiLibs */ = {
 			isa = PBXGroup;
 			children = (
+				9D3C8E5C2AF3E7B00064DDEB /* LibraryURLSession.swift */,
 				9D3C8E5A2AF3E3C60064DDEB /* LibraryDetailViewController.swift */,
 				9D3C8E582AF3E16C0064DDEB /* LibraryTableViewController.swift */,
 				9D3C8E282AF3E0CC0064DDEB /* AppDelegate.swift */,
@@ -195,6 +207,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
+				ORGANIZATIONNAME = "AGE Software Consulting, LLC";
 				TargetAttributes = {
 					9D3C8E242AF3E0CC0064DDEB = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -264,7 +277,11 @@
 				9D3C8E592AF3E16C0064DDEB /* LibraryTableViewController.swift in Sources */,
 				9D3C8E5B2AF3E3C60064DDEB /* LibraryDetailViewController.swift in Sources */,
 				9D3C8E292AF3E0CC0064DDEB /* AppDelegate.swift in Sources */,
+				9D3C8E632AF3E8A00064DDEB /* Website.swift in Sources */,
+				9D3C8E5D2AF3E7B00064DDEB /* LibraryURLSession.swift in Sources */,
 				9D3C8E2B2AF3E0CC0064DDEB /* SceneDelegate.swift in Sources */,
+				9D3C8E5F2AF3E8400064DDEB /* Library.swift in Sources */,
+				9D3C8E612AF3E8760064DDEB /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
