@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		9D3C8E292AF3E0CC0064DDEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E282AF3E0CC0064DDEB /* AppDelegate.swift */; };
 		9D3C8E2B2AF3E0CC0064DDEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E2A2AF3E0CC0064DDEB /* SceneDelegate.swift */; };
-		9D3C8E2D2AF3E0CC0064DDEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E2C2AF3E0CC0064DDEB /* ViewController.swift */; };
 		9D3C8E302AF3E0CC0064DDEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C8E2E2AF3E0CC0064DDEB /* Main.storyboard */; };
 		9D3C8E322AF3E0CD0064DDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C8E312AF3E0CD0064DDEB /* Assets.xcassets */; };
 		9D3C8E352AF3E0CD0064DDEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C8E332AF3E0CD0064DDEB /* LaunchScreen.storyboard */; };
 		9D3C8E402AF3E0CD0064DDEB /* UniversalChiLibsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E3F2AF3E0CD0064DDEB /* UniversalChiLibsTests.swift */; };
 		9D3C8E4A2AF3E0CD0064DDEB /* UniversalChiLibsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E492AF3E0CD0064DDEB /* UniversalChiLibsUITests.swift */; };
 		9D3C8E4C2AF3E0CD0064DDEB /* UniversalChiLibsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E4B2AF3E0CD0064DDEB /* UniversalChiLibsUITestsLaunchTests.swift */; };
+		9D3C8E592AF3E16C0064DDEB /* LibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E582AF3E16C0064DDEB /* LibraryTableViewController.swift */; };
+		9D3C8E5B2AF3E3C60064DDEB /* LibraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E5A2AF3E3C60064DDEB /* LibraryDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,6 @@
 		9D3C8E252AF3E0CC0064DDEB /* UniversalChiLibs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversalChiLibs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3C8E282AF3E0CC0064DDEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D3C8E2A2AF3E0CC0064DDEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9D3C8E2C2AF3E0CC0064DDEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9D3C8E2F2AF3E0CC0064DDEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D3C8E312AF3E0CD0064DDEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D3C8E342AF3E0CD0064DDEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		9D3C8E452AF3E0CD0064DDEB /* UniversalChiLibsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversalChiLibsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3C8E492AF3E0CD0064DDEB /* UniversalChiLibsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalChiLibsUITests.swift; sourceTree = "<group>"; };
 		9D3C8E4B2AF3E0CD0064DDEB /* UniversalChiLibsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalChiLibsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9D3C8E582AF3E16C0064DDEB /* LibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableViewController.swift; sourceTree = "<group>"; };
+		9D3C8E5A2AF3E3C60064DDEB /* LibraryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +101,10 @@
 		9D3C8E272AF3E0CC0064DDEB /* UniversalChiLibs */ = {
 			isa = PBXGroup;
 			children = (
+				9D3C8E5A2AF3E3C60064DDEB /* LibraryDetailViewController.swift */,
+				9D3C8E582AF3E16C0064DDEB /* LibraryTableViewController.swift */,
 				9D3C8E282AF3E0CC0064DDEB /* AppDelegate.swift */,
 				9D3C8E2A2AF3E0CC0064DDEB /* SceneDelegate.swift */,
-				9D3C8E2C2AF3E0CC0064DDEB /* ViewController.swift */,
 				9D3C8E2E2AF3E0CC0064DDEB /* Main.storyboard */,
 				9D3C8E312AF3E0CD0064DDEB /* Assets.xcassets */,
 				9D3C8E332AF3E0CD0064DDEB /* LaunchScreen.storyboard */,
@@ -258,7 +261,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D3C8E2D2AF3E0CC0064DDEB /* ViewController.swift in Sources */,
+				9D3C8E592AF3E16C0064DDEB /* LibraryTableViewController.swift in Sources */,
+				9D3C8E5B2AF3E3C60064DDEB /* LibraryDetailViewController.swift in Sources */,
 				9D3C8E292AF3E0CC0064DDEB /* AppDelegate.swift in Sources */,
 				9D3C8E2B2AF3E0CC0064DDEB /* SceneDelegate.swift in Sources */,
 			);
