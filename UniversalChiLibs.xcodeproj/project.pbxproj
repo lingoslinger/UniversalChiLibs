@@ -20,6 +20,22 @@
 		9D3C8E672AF3EB8C0064DDEB /* ViewController+ErrorDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E662AF3EB8C0064DDEB /* ViewController+ErrorDialog.swift */; };
 		9D3C8E692AF3EBF10064DDEB /* String+LibraryHourFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E682AF3EBF10064DDEB /* String+LibraryHourFormatting.swift */; };
 		9D3C8EB22AF4B65E0064DDEB /* LibraryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8EB12AF4B65E0064DDEB /* LibraryDataSource.swift */; };
+		9D3C8EB82AF54CB50064DDEB /* ViewController+ErrorDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E662AF3EB8C0064DDEB /* ViewController+ErrorDialog.swift */; };
+		9D3C8EBB2AF54CB50064DDEB /* LibraryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8EB12AF4B65E0064DDEB /* LibraryDataSource.swift */; };
+		9D3C8EBD2AF54CB50064DDEB /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E622AF3E8A00064DDEB /* Website.swift */; };
+		9D3C8EBF2AF54CB50064DDEB /* String+LibraryHourFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E682AF3EBF10064DDEB /* String+LibraryHourFormatting.swift */; };
+		9D3C8EC02AF54CB50064DDEB /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E5E2AF3E8400064DDEB /* Library.swift */; };
+		9D3C8EC12AF54CB50064DDEB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E602AF3E8760064DDEB /* Location.swift */; };
+		9D3C8EC42AF54CB50064DDEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C8E332AF3E0CD0064DDEB /* LaunchScreen.storyboard */; };
+		9D3C8EC52AF54CB50064DDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C8E312AF3E0CD0064DDEB /* Assets.xcassets */; };
+		9D3C8EC62AF54CB50064DDEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C8E2E2AF3E0CC0064DDEB /* Main.storyboard */; };
+		9D3C8EDA2AF54E280064DDEB /* LibraryMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8ED72AF54E280064DDEB /* LibraryMapView.swift */; };
+		9D3C8EDB2AF54E280064DDEB /* LibraryPhoneTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8ED82AF54E280064DDEB /* LibraryPhoneTextView.swift */; };
+		9D3C8EDC2AF54E280064DDEB /* LibraryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8ED92AF54E280064DDEB /* LibraryLabel.swift */; };
+		9D3C8EE02AF54E5B0064DDEB /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8EDE2AF54E5B0064DDEB /* LibraryViewController.swift */; };
+		9D3C8EE12AF54E5B0064DDEB /* LibraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8EDF2AF54E5B0064DDEB /* LibraryDetailViewController.swift */; };
+		9D3C8EEC2AF54EED0064DDEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8EEB2AF54EE80064DDEB /* AppDelegate.swift */; };
+		9D3C8EED2AF54EF10064DDEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8EEA2AF54EE80064DDEB /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,10 +54,26 @@
 		9D3C8E662AF3EB8C0064DDEB /* ViewController+ErrorDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ErrorDialog.swift"; sourceTree = "<group>"; };
 		9D3C8E682AF3EBF10064DDEB /* String+LibraryHourFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LibraryHourFormatting.swift"; sourceTree = "<group>"; };
 		9D3C8EB12AF4B65E0064DDEB /* LibraryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDataSource.swift; sourceTree = "<group>"; };
+		9D3C8ECA2AF54CB50064DDEB /* SwiftLibsNoSB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLibsNoSB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D3C8ECB2AF54CB50064DDEB /* SwiftLibraries copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftLibraries copy-Info.plist"; path = "/Users/allan/repos/UniversalChiLibs/SwiftLibraries copy-Info.plist"; sourceTree = "<absolute>"; };
+		9D3C8ED72AF54E280064DDEB /* LibraryMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryMapView.swift; sourceTree = "<group>"; };
+		9D3C8ED82AF54E280064DDEB /* LibraryPhoneTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryPhoneTextView.swift; sourceTree = "<group>"; };
+		9D3C8ED92AF54E280064DDEB /* LibraryLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryLabel.swift; sourceTree = "<group>"; };
+		9D3C8EDE2AF54E5B0064DDEB /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		9D3C8EDF2AF54E5B0064DDEB /* LibraryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryDetailViewController.swift; sourceTree = "<group>"; };
+		9D3C8EEA2AF54EE80064DDEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9D3C8EEB2AF54EE80064DDEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9D3C8E222AF3E0CC0064DDEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D3C8EC22AF54CB50064DDEB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -63,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				9D3C8E252AF3E0CC0064DDEB /* SwiftLibraries.app */,
+				9D3C8ECA2AF54CB50064DDEB /* SwiftLibsNoSB.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,6 +105,7 @@
 			children = (
 				9D3C8EB42AF4C16A0064DDEB /* Common */,
 				9D3C8E9A2AF495C80064DDEB /* SwiftLibraries */,
+				9D3C8EB52AF54BF10064DDEB /* SwiftLIbsNoSB */,
 			);
 			path = UniversalChiLibs;
 			sourceTree = "<group>";
@@ -120,6 +154,37 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		9D3C8EB52AF54BF10064DDEB /* SwiftLIbsNoSB */ = {
+			isa = PBXGroup;
+			children = (
+				9D3C8EEB2AF54EE80064DDEB /* AppDelegate.swift */,
+				9D3C8EEA2AF54EE80064DDEB /* SceneDelegate.swift */,
+				9D3C8ED62AF54E280064DDEB /* UI Elements */,
+				9D3C8ECB2AF54CB50064DDEB /* SwiftLibraries copy-Info.plist */,
+				9D3C8EDD2AF54E5B0064DDEB /* Library Views */,
+			);
+			path = SwiftLIbsNoSB;
+			sourceTree = "<group>";
+		};
+		9D3C8ED62AF54E280064DDEB /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				9D3C8ED72AF54E280064DDEB /* LibraryMapView.swift */,
+				9D3C8ED82AF54E280064DDEB /* LibraryPhoneTextView.swift */,
+				9D3C8ED92AF54E280064DDEB /* LibraryLabel.swift */,
+			);
+			path = "UI Elements";
+			sourceTree = "<group>";
+		};
+		9D3C8EDD2AF54E5B0064DDEB /* Library Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D3C8EDE2AF54E5B0064DDEB /* LibraryViewController.swift */,
+				9D3C8EDF2AF54E5B0064DDEB /* LibraryDetailViewController.swift */,
+			);
+			path = "Library Views";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +203,23 @@
 			name = SwiftLibraries;
 			productName = UniversalChiLibs;
 			productReference = 9D3C8E252AF3E0CC0064DDEB /* SwiftLibraries.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9D3C8EB62AF54CB50064DDEB /* SwiftLibsNoSB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D3C8EC72AF54CB50064DDEB /* Build configuration list for PBXNativeTarget "SwiftLibsNoSB" */;
+			buildPhases = (
+				9D3C8EB72AF54CB50064DDEB /* Sources */,
+				9D3C8EC22AF54CB50064DDEB /* Frameworks */,
+				9D3C8EC32AF54CB50064DDEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftLibsNoSB;
+			productName = UniversalChiLibs;
+			productReference = 9D3C8ECA2AF54CB50064DDEB /* SwiftLibsNoSB.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -170,6 +252,7 @@
 			projectRoot = "";
 			targets = (
 				9D3C8E242AF3E0CC0064DDEB /* SwiftLibraries */,
+				9D3C8EB62AF54CB50064DDEB /* SwiftLibsNoSB */,
 			);
 		};
 /* End PBXProject section */
@@ -182,6 +265,16 @@
 				9D3C8E352AF3E0CD0064DDEB /* LaunchScreen.storyboard in Resources */,
 				9D3C8E322AF3E0CD0064DDEB /* Assets.xcassets in Resources */,
 				9D3C8E302AF3E0CC0064DDEB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D3C8EC32AF54CB50064DDEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D3C8EC42AF54CB50064DDEB /* LaunchScreen.storyboard in Resources */,
+				9D3C8EC52AF54CB50064DDEB /* Assets.xcassets in Resources */,
+				9D3C8EC62AF54CB50064DDEB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +295,26 @@
 				9D3C8E692AF3EBF10064DDEB /* String+LibraryHourFormatting.swift in Sources */,
 				9D3C8E5F2AF3E8400064DDEB /* Library.swift in Sources */,
 				9D3C8E612AF3E8760064DDEB /* Location.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D3C8EB72AF54CB50064DDEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D3C8EEC2AF54EED0064DDEB /* AppDelegate.swift in Sources */,
+				9D3C8EB82AF54CB50064DDEB /* ViewController+ErrorDialog.swift in Sources */,
+				9D3C8EDC2AF54E280064DDEB /* LibraryLabel.swift in Sources */,
+				9D3C8EBB2AF54CB50064DDEB /* LibraryDataSource.swift in Sources */,
+				9D3C8EE12AF54E5B0064DDEB /* LibraryDetailViewController.swift in Sources */,
+				9D3C8EDA2AF54E280064DDEB /* LibraryMapView.swift in Sources */,
+				9D3C8EBD2AF54CB50064DDEB /* Website.swift in Sources */,
+				9D3C8EDB2AF54E280064DDEB /* LibraryPhoneTextView.swift in Sources */,
+				9D3C8EED2AF54EF10064DDEB /* SceneDelegate.swift in Sources */,
+				9D3C8EE02AF54E5B0064DDEB /* LibraryViewController.swift in Sources */,
+				9D3C8EBF2AF54CB50064DDEB /* String+LibraryHourFormatting.swift in Sources */,
+				9D3C8EC02AF54CB50064DDEB /* Library.swift in Sources */,
+				9D3C8EC12AF54CB50064DDEB /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +392,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -336,7 +449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -404,6 +517,64 @@
 			};
 			name = Release;
 		};
+		9D3C8EC82AF54CB50064DDEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W9SQ355FV2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftLibraries copy-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agesoftwareconslutingllc.SwiftLibsNoSB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9D3C8EC92AF54CB50064DDEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W9SQ355FV2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftLibraries copy-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agesoftwareconslutingllc.SwiftLibsNoSB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -421,6 +592,15 @@
 			buildConfigurations = (
 				9D3C8E502AF3E0CD0064DDEB /* Debug */,
 				9D3C8E512AF3E0CD0064DDEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D3C8EC72AF54CB50064DDEB /* Build configuration list for PBXNativeTarget "SwiftLibsNoSB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D3C8EC82AF54CB50064DDEB /* Debug */,
+				9D3C8EC92AF54CB50064DDEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
