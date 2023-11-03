@@ -13,7 +13,7 @@ struct Library: Decodable, Identifiable, Hashable {
     let city : String?
     let hoursOfOperation : String?
     let location : Location?
-    let name : String?
+    let name : String
     let phone : String?
     let state : String?
     let website : Website?
@@ -38,7 +38,7 @@ struct Library: Decodable, Identifiable, Hashable {
         city = try values.decodeIfPresent(String.self, forKey: .city)
         hoursOfOperation = try values.decodeIfPresent(String.self, forKey: .hoursOfOperation)
         location = try values.decodeIfPresent(Location.self, forKey: .location)
-        name = try values.decodeIfPresent(String.self, forKey: .name)
+        name = try values.decodeIfPresent(String.self, forKey: .name) ?? ""
         phone = try values.decodeIfPresent(String.self, forKey: .phone)
         state = try values.decodeIfPresent(String.self, forKey: .state)
         website = try values.decodeIfPresent(Website.self, forKey: .website)
