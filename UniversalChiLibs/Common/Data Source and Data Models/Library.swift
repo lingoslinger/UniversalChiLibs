@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Library: Decodable {
+struct Library: Decodable, Identifiable, Hashable {
     let address : String?
     let city : String?
     let hoursOfOperation : String?
@@ -18,6 +18,7 @@ struct Library: Decodable {
     let state : String?
     let website : Website?
     let zip : String?
+    let id: Int
     
     enum CodingKeys: String, CodingKey {
         case address = "address"
@@ -42,5 +43,16 @@ struct Library: Decodable {
         state = try values.decodeIfPresent(String.self, forKey: .state)
         website = try values.decodeIfPresent(Website.self, forKey: .website)
         zip = try values.decodeIfPresent(String.self, forKey: .zip)
+        id = Date().hashValue
+    }
+}
+
+extension Library {
+    static func == (lhs: Library, rhs: Library) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
