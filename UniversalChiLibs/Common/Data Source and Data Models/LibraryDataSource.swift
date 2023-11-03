@@ -38,7 +38,7 @@ class LibraryDataSource: NSObject {
     
     private func setupSectionsWithLibraryArray(_ libraryArray: [Library]) {
         for library in libraryArray {
-            let firstLetterOfName = String.init(library.name?.first ?? Character.init(""))
+            let firstLetterOfName = String.init(library.name.first ?? Character.init(""))
             if (libraryDictionary[firstLetterOfName] == nil) {
                 let sectionArray = [Library]()
                 libraryDictionary[firstLetterOfName] = sectionArray
@@ -80,7 +80,7 @@ extension LibraryDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LibraryTableViewCell", for: indexPath)
         guard let library = currentLibrary(indexPath) else { return cell }
-        guard let libraryName = library.name else { return cell }
+        let libraryName = library.name
         guard let libraryHours = library.hoursOfOperation else { return cell }
         let hoursString = libraryHours.formattedHours
         if hoursString.contains("improvements") {
