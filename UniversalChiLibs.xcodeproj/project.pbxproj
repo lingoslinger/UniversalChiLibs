@@ -23,13 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9D3C8E252AF3E0CC0064DDEB /* UniversalChiLibs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversalChiLibs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D3C8E252AF3E0CC0064DDEB /* SwiftLibraries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLibraries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3C8E282AF3E0CC0064DDEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D3C8E2A2AF3E0CC0064DDEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9D3C8E2F2AF3E0CC0064DDEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D3C8E312AF3E0CD0064DDEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D3C8E342AF3E0CD0064DDEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9D3C8E362AF3E0CD0064DDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D3C8E362AF3E0CD0064DDEB /* SwiftLibraries.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SwiftLibraries.plist; sourceTree = "<group>"; };
 		9D3C8E582AF3E16C0064DDEB /* LibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableViewController.swift; sourceTree = "<group>"; };
 		9D3C8E5A2AF3E3C60064DDEB /* LibraryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDetailViewController.swift; sourceTree = "<group>"; };
 		9D3C8E5C2AF3E7B00064DDEB /* LibraryURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryURLSession.swift; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 		9D3C8E262AF3E0CC0064DDEB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9D3C8E252AF3E0CC0064DDEB /* UniversalChiLibs.app */,
+				9D3C8E252AF3E0CC0064DDEB /* SwiftLibraries.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,16 +70,14 @@
 		9D3C8E272AF3E0CC0064DDEB /* UniversalChiLibs */ = {
 			isa = PBXGroup;
 			children = (
+				9D3C8E9A2AF495C80064DDEB /* SwiftLibraries */,
 				9D3C8E652AF3EB580064DDEB /* Extensions */,
 				9D3C8E642AF3EB260064DDEB /* Data Models */,
-				9D3C8E5A2AF3E3C60064DDEB /* LibraryDetailViewController.swift */,
-				9D3C8E582AF3E16C0064DDEB /* LibraryTableViewController.swift */,
 				9D3C8E282AF3E0CC0064DDEB /* AppDelegate.swift */,
 				9D3C8E2A2AF3E0CC0064DDEB /* SceneDelegate.swift */,
 				9D3C8E2E2AF3E0CC0064DDEB /* Main.storyboard */,
 				9D3C8E312AF3E0CD0064DDEB /* Assets.xcassets */,
 				9D3C8E332AF3E0CD0064DDEB /* LaunchScreen.storyboard */,
-				9D3C8E362AF3E0CD0064DDEB /* Info.plist */,
 			);
 			path = UniversalChiLibs;
 			sourceTree = "<group>";
@@ -104,12 +102,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		9D3C8E9A2AF495C80064DDEB /* SwiftLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				9D3C8E5A2AF3E3C60064DDEB /* LibraryDetailViewController.swift */,
+				9D3C8E582AF3E16C0064DDEB /* LibraryTableViewController.swift */,
+				9D3C8E362AF3E0CD0064DDEB /* SwiftLibraries.plist */,
+			);
+			path = SwiftLibraries;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9D3C8E242AF3E0CC0064DDEB /* UniversalChiLibs */ = {
+		9D3C8E242AF3E0CC0064DDEB /* SwiftLibraries */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9D3C8E4F2AF3E0CD0064DDEB /* Build configuration list for PBXNativeTarget "UniversalChiLibs" */;
+			buildConfigurationList = 9D3C8E4F2AF3E0CD0064DDEB /* Build configuration list for PBXNativeTarget "SwiftLibraries" */;
 			buildPhases = (
 				9D3C8E212AF3E0CC0064DDEB /* Sources */,
 				9D3C8E222AF3E0CC0064DDEB /* Frameworks */,
@@ -119,9 +127,9 @@
 			);
 			dependencies = (
 			);
-			name = UniversalChiLibs;
+			name = SwiftLibraries;
 			productName = UniversalChiLibs;
-			productReference = 9D3C8E252AF3E0CC0064DDEB /* UniversalChiLibs.app */;
+			productReference = 9D3C8E252AF3E0CC0064DDEB /* SwiftLibraries.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -153,7 +161,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9D3C8E242AF3E0CC0064DDEB /* UniversalChiLibs */,
+				9D3C8E242AF3E0CC0064DDEB /* SwiftLibraries */,
 			);
 		};
 /* End PBXProject section */
@@ -339,12 +347,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W9SQ355FV2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = UniversalChiLibs/Info.plist;
+				INFOPLIST_FILE = UniversalChiLibs/SwiftLibraries.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -367,12 +376,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W9SQ355FV2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = UniversalChiLibs/Info.plist;
+				INFOPLIST_FILE = UniversalChiLibs/SwiftLibraries.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -398,7 +408,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9D3C8E4F2AF3E0CD0064DDEB /* Build configuration list for PBXNativeTarget "UniversalChiLibs" */ = {
+		9D3C8E4F2AF3E0CD0064DDEB /* Build configuration list for PBXNativeTarget "SwiftLibraries" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9D3C8E502AF3E0CD0064DDEB /* Debug */,
