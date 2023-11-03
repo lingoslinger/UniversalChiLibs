@@ -45,7 +45,7 @@
 		9D3C8E2F2AF3E0CC0064DDEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D3C8E312AF3E0CD0064DDEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D3C8E342AF3E0CD0064DDEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9D3C8E362AF3E0CD0064DDEB /* SwiftLibraries.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SwiftLibraries.plist; sourceTree = "<group>"; };
+		9D3C8E362AF3E0CD0064DDEB /* SwiftLibraries.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = SwiftLibraries.plist; path = /Users/allan/repos/UniversalChiLibs/UniversalChiLibs/SwiftLibraries/SwiftLibraries.plist; sourceTree = "<absolute>"; };
 		9D3C8E582AF3E16C0064DDEB /* LibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableViewController.swift; sourceTree = "<group>"; };
 		9D3C8E5A2AF3E3C60064DDEB /* LibraryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDetailViewController.swift; sourceTree = "<group>"; };
 		9D3C8E5E2AF3E8400064DDEB /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		9D3C8E682AF3EBF10064DDEB /* String+LibraryHourFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LibraryHourFormatting.swift"; sourceTree = "<group>"; };
 		9D3C8EB12AF4B65E0064DDEB /* LibraryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDataSource.swift; sourceTree = "<group>"; };
 		9D3C8ECA2AF54CB50064DDEB /* SwiftLibsNoSB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLibsNoSB.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D3C8ECB2AF54CB50064DDEB /* SwiftLibraries copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwiftLibraries copy-Info.plist"; path = "/Users/allan/repos/UniversalChiLibs/SwiftLibraries copy-Info.plist"; sourceTree = "<absolute>"; };
+		9D3C8ECB2AF54CB50064DDEB /* SwiftLibsNoSB.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = SwiftLibsNoSB.plist; path = /Users/allan/repos/UniversalChiLibs/UniversalChiLibs/SwiftLIbsNoSB/SwiftLibsNoSB.plist; sourceTree = "<absolute>"; };
 		9D3C8ED72AF54E280064DDEB /* LibraryMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryMapView.swift; sourceTree = "<group>"; };
 		9D3C8ED82AF54E280064DDEB /* LibraryPhoneTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryPhoneTextView.swift; sourceTree = "<group>"; };
 		9D3C8ED92AF54E280064DDEB /* LibraryLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryLabel.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 				9D3C8EEB2AF54EE80064DDEB /* AppDelegate.swift */,
 				9D3C8EEA2AF54EE80064DDEB /* SceneDelegate.swift */,
 				9D3C8ED62AF54E280064DDEB /* UI Elements */,
-				9D3C8ECB2AF54CB50064DDEB /* SwiftLibraries copy-Info.plist */,
+				9D3C8ECB2AF54CB50064DDEB /* SwiftLibsNoSB.plist */,
 				9D3C8EDD2AF54E5B0064DDEB /* Library Views */,
 			);
 			path = SwiftLIbsNoSB;
@@ -526,7 +526,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W9SQ355FV2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "SwiftLibraries copy-Info.plist";
+				INFOPLIST_FILE = UniversalChiLibs/SwiftLibsNoSB/SwiftLibsNoSB.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -554,7 +554,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W9SQ355FV2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "SwiftLibraries copy-Info.plist";
+				INFOPLIST_FILE = UniversalChiLibs/SwiftLibsNoSB/SwiftLibsNoSB.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
