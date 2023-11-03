@@ -7,6 +7,11 @@
 		<key>SwiftLibraries.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>SwiftLibsNoSB.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
 		<key>SwiftLibraries.xcscheme_^#shared#^_</key>
