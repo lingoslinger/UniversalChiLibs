@@ -23,7 +23,9 @@ class LibraryDataSource: NSObject {
     }
     
     private func newDataRequest(_ completion: @escaping (Error?) -> Void) {
-        guard let URL = URL(string: "https://data.cityofchicago.org/resource/x8fc-8rcq.json") else { return }
+        guard let webservicePlist = plistToDictionary(fromFile: "Webservice", ofType: "plist"),
+              let prod_url = webservicePlist["prod_url"] as? String,
+              let URL = URL(string: prod_url) else { return }
         URLSession.shared.dataTask(with: URL) { data, response, error in
             if (error == nil) {
                 let decoder = JSONDecoder()

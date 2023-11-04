@@ -49,6 +49,12 @@
 		9D3C8F112AF5914B0064DDEB /* LibraryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8F0E2AF5914B0064DDEB /* LibraryDetailView.swift */; };
 		9D3C8F122AF5914B0064DDEB /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8F0F2AF5914B0064DDEB /* LibraryView.swift */; };
 		9D3C8F132AF5914B0064DDEB /* SwiftUILibrariesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8F102AF5914B0064DDEB /* SwiftUILibrariesApp.swift */; };
+		9D3C8F152AF6A85B0064DDEB /* Webservice.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C8F142AF6A85B0064DDEB /* Webservice.plist */; };
+		9D3C8F162AF6A85B0064DDEB /* Webservice.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C8F142AF6A85B0064DDEB /* Webservice.plist */; };
+		9D3C8F172AF6B06A0064DDEB /* Webservice.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C8F142AF6A85B0064DDEB /* Webservice.plist */; };
+		9D3C8F192AF6B2120064DDEB /* PlistParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8F182AF6B2120064DDEB /* PlistParser.swift */; };
+		9D3C8F1A2AF6B33B0064DDEB /* PlistParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8F182AF6B2120064DDEB /* PlistParser.swift */; };
+		9D3C8F1B2AF6B33C0064DDEB /* PlistParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8F182AF6B2120064DDEB /* PlistParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +92,8 @@
 		9D3C8F0E2AF5914B0064DDEB /* LibraryDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryDetailView.swift; sourceTree = "<group>"; };
 		9D3C8F0F2AF5914B0064DDEB /* LibraryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		9D3C8F102AF5914B0064DDEB /* SwiftUILibrariesApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUILibrariesApp.swift; sourceTree = "<group>"; };
+		9D3C8F142AF6A85B0064DDEB /* Webservice.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Webservice.plist; sourceTree = "<group>"; };
+		9D3C8F182AF6B2120064DDEB /* PlistParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +166,7 @@
 			children = (
 				9D3C8E662AF3EB8C0064DDEB /* ViewController+ErrorDialog.swift */,
 				9D3C8E682AF3EBF10064DDEB /* String+LibraryHourFormatting.swift */,
+				9D3C8F182AF6B2120064DDEB /* PlistParser.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -182,6 +191,7 @@
 				9D3C8E642AF3EB260064DDEB /* Data Source and Data Models */,
 				9D3C8E332AF3E0CD0064DDEB /* LaunchScreen.storyboard */,
 				9D3C8E312AF3E0CD0064DDEB /* Assets.xcassets */,
+				9D3C8F142AF6A85B0064DDEB /* Webservice.plist */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -356,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D3C8E352AF3E0CD0064DDEB /* LaunchScreen.storyboard in Resources */,
+				9D3C8F152AF6A85B0064DDEB /* Webservice.plist in Resources */,
 				9D3C8E322AF3E0CD0064DDEB /* Assets.xcassets in Resources */,
 				9D3C8E302AF3E0CC0064DDEB /* Main.storyboard in Resources */,
 			);
@@ -366,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D3C8EC42AF54CB50064DDEB /* LaunchScreen.storyboard in Resources */,
+				9D3C8F162AF6A85B0064DDEB /* Webservice.plist in Resources */,
 				9D3C8EC52AF54CB50064DDEB /* Assets.xcassets in Resources */,
 				9D3C8EC62AF54CB50064DDEB /* Main.storyboard in Resources */,
 			);
@@ -376,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D3C8EFC2AF58E010064DDEB /* Preview Assets.xcassets in Resources */,
+				9D3C8F172AF6B06A0064DDEB /* Webservice.plist in Resources */,
 				9D3C8EF92AF58E010064DDEB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D3C8F192AF6B2120064DDEB /* PlistParser.swift in Sources */,
 				9D3C8E672AF3EB8C0064DDEB /* ViewController+ErrorDialog.swift in Sources */,
 				9D3C8E592AF3E16C0064DDEB /* LibraryTableViewController.swift in Sources */,
 				9D3C8E5B2AF3E3C60064DDEB /* LibraryDetailViewController.swift in Sources */,
@@ -417,6 +431,7 @@
 				9D3C8EBF2AF54CB50064DDEB /* String+LibraryHourFormatting.swift in Sources */,
 				9D3C8EC02AF54CB50064DDEB /* Library.swift in Sources */,
 				9D3C8EC12AF54CB50064DDEB /* Location.swift in Sources */,
+				9D3C8F1A2AF6B33B0064DDEB /* PlistParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +444,7 @@
 				9D3C8F022AF58FE00064DDEB /* Website.swift in Sources */,
 				9D3C8F082AF590460064DDEB /* LibraryPhoneNumberView.swift in Sources */,
 				9D3C8F0B2AF590630064DDEB /* LibraryDataSource.swift in Sources */,
+				9D3C8F1B2AF6B33C0064DDEB /* PlistParser.swift in Sources */,
 				9D3C8F062AF5903F0064DDEB /* LibraryMapView.swift in Sources */,
 				9D3C8F012AF58FDD0064DDEB /* Location.swift in Sources */,
 				9D3C8F002AF58FD90064DDEB /* Library.swift in Sources */,
