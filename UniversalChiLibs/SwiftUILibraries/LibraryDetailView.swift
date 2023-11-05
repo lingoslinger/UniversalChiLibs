@@ -25,7 +25,7 @@ struct LibraryDetailView: View {
             }
             .padding(.bottom, 10)
         }
-        .navigationTitle(library.name ?? "")
+        .navigationTitle(library.name)
     }
 }
 
