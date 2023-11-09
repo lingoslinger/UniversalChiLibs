@@ -10,16 +10,10 @@ import UIKit
 import Foundation
 
 class LibraryTableViewController: UITableViewController, Storyboarded {
-    
-    var libraryArray = [Library]()
-    var sectionDictionary = Dictionary<String, [Library]>()
-    var sectionTitles = [String]()
-    
     weak var delegate: LibraryTableViewControllerDelegate?
     
     let libraryDataSource = LibraryDataSource()
     
-    // MARK: - view lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = libraryDataSource
@@ -41,18 +35,5 @@ extension LibraryTableViewController {
               let library = libraryDataSource.currentLibrary(indexPath) else { return }
         delegate?.libraryTableViewControllerDidSelectLibrary(library)
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-
-
-
-extension LibraryTableViewController {
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "LibraryDetailViewController" {
-            guard let indexPath = self.tableView.indexPathForSelectedRow,
-                  let library = libraryDataSource.currentLibrary(indexPath) else { return }
-            let detailViewController = segue.destination as! LibraryDetailViewController
-            detailViewController.detailLibrary = library
-        }
     }
 }
