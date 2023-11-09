@@ -4,6 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,8 +47,87 @@
             </objects>
             <point key="canvasLocation" x="969" y="-8"/>
         </scene>
+        <!--Library Detail View Controller-->
+        <scene sceneID="sy8-YM-hw3">
+            <objects>
+                <viewController storyboardIdentifier="LibraryDetailViewController" id="vhK-SY-et2" customClass="LibraryDetailViewController" customModule="SwiftLibraries" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tNR-kb-4iN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQM-Vi-Gwg">
+                                <rect key="frame" x="16" y="59" width="361" height="211"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aQM-Vi-Gwg" secondAttribute="height" multiplier="361:211" id="POa-PY-uO1"/>
+                                </constraints>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvl-Tu-O5E">
+                                <rect key="frame" x="16" y="292" width="361" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8GC-pc-hMS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFF-Ss-xrr">
+                                <rect key="frame" x="16" y="365" width="356" height="198"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="198" id="Srv-Bg-Y02"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Phone Number" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5db-uX-Hs2">
+                                <rect key="frame" x="11" y="321" width="361" height="36"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="8rd-aW-Lst"/>
+                                </constraints>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="udL-uL-H6c"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BFF-Ss-xrr" firstAttribute="top" secondItem="5db-uX-Hs2" secondAttribute="bottom" constant="8" symbolic="YES" id="9Ai-fV-IXB"/>
+                            <constraint firstItem="5db-uX-Hs2" firstAttribute="top" secondItem="lvl-Tu-O5E" secondAttribute="bottom" constant="8" symbolic="YES" id="Dcj-ni-Dqt"/>
+                            <constraint firstItem="5db-uX-Hs2" firstAttribute="leading" secondItem="udL-uL-H6c" secondAttribute="leading" constant="11" id="HOI-qg-rv6"/>
+                            <constraint firstItem="aQM-Vi-Gwg" firstAttribute="leading" secondItem="udL-uL-H6c" secondAttribute="leading" constant="16" id="MQB-nG-7kz"/>
+                            <constraint firstItem="lvl-Tu-O5E" firstAttribute="top" secondItem="aQM-Vi-Gwg" secondAttribute="bottom" constant="22" id="PDQ-Ps-sj2"/>
+                            <constraint firstItem="aQM-Vi-Gwg" firstAttribute="top" secondItem="udL-uL-H6c" secondAttribute="top" id="TbK-q3-Fvy"/>
+                            <constraint firstItem="udL-uL-H6c" firstAttribute="trailing" secondItem="lvl-Tu-O5E" secondAttribute="trailing" constant="16" id="Tv9-nW-ehS"/>
+                            <constraint firstItem="udL-uL-H6c" firstAttribute="trailing" secondItem="5db-uX-Hs2" secondAttribute="trailing" constant="21" id="VlB-nT-0B7"/>
+                            <constraint firstItem="lvl-Tu-O5E" firstAttribute="leading" secondItem="udL-uL-H6c" secondAttribute="leading" constant="16" id="cz3-Rk-TBz"/>
+                            <constraint firstItem="udL-uL-H6c" firstAttribute="trailing" secondItem="aQM-Vi-Gwg" secondAttribute="trailing" constant="16" id="dzL-il-BCj"/>
+                            <constraint firstItem="5db-uX-Hs2" firstAttribute="leading" secondItem="udL-uL-H6c" secondAttribute="leading" constant="11" id="fgv-9j-UXQ"/>
+                            <constraint firstItem="udL-uL-H6c" firstAttribute="trailing" secondItem="5db-uX-Hs2" secondAttribute="trailing" constant="21" id="gS1-HR-jXi"/>
+                            <constraint firstItem="BFF-Ss-xrr" firstAttribute="leading" secondItem="udL-uL-H6c" secondAttribute="leading" constant="16" id="jFu-Ga-6BX"/>
+                            <constraint firstItem="udL-uL-H6c" firstAttribute="trailing" secondItem="BFF-Ss-xrr" secondAttribute="trailing" constant="21" id="ycX-Wb-pnp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0YW-4x-FYi"/>
+                    <connections>
+                        <outlet property="libraryAddressLabel" destination="lvl-Tu-O5E" id="SJp-Pj-dw1"/>
+                        <outlet property="libraryHoursLabel" destination="BFF-Ss-xrr" id="MkY-gh-dIi"/>
+                        <outlet property="libraryMapView" destination="aQM-Vi-Gwg" id="wj1-Cu-2Xr"/>
+                        <outlet property="libraryPhoneTextView" destination="5db-uX-Hs2" id="YrE-yc-yqL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hs9-X8-obB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1824" y="6"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

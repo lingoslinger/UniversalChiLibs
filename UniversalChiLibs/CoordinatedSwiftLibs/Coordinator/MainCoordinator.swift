@@ -8,8 +8,10 @@
 import UIKit
 
 class MainCoordinator : NSObject, Coordinator {
+    
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
+    
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -17,6 +19,7 @@ class MainCoordinator : NSObject, Coordinator {
     
     func start() {
         let vc = LibraryTableViewController.instantiate()
+        vc.delegate = self
         navigationController.pushViewController(vc, animated: false)
     }
     
@@ -27,5 +30,13 @@ class MainCoordinator : NSObject, Coordinator {
                     break
                 }
             }
+    }
+}
+
+extension MainCoordinator: LibraryTableViewControllerDelegate {
+    func libraryTableViewControllerDidSelectLibrary(_ selectedLibrary: Library) {
+        let vc = LibraryDetailViewController.instantiate()
+        vc.detailLibrary = selectedLibrary
+        navigationController.pushViewController(vc, animated: true)
     }
 }

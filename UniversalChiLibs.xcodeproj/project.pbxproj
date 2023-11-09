@@ -527,7 +527,6 @@
 		9D3C8FE82AFC67930064DDEB /* CoordinatedSwiftLibs */ = {
 			isa = PBXGroup;
 			children = (
-				9D3C90402AFCF43C0064DDEB /* New Group */,
 				9D3C903F2AFCF4030064DDEB /* Coordinator */,
 				9D3C8FFF2AFC67940064DDEB /* CoordinatedSwiftLibsTests */,
 				9D3C90092AFC67950064DDEB /* CoordinatedSwiftLibsUITests */,
@@ -569,13 +568,6 @@
 				9D3C90332AFCF1FB0064DDEB /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		9D3C90402AFCF43C0064DDEB /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import MapKit
 
-class LibraryDetailViewController: UIViewController {
+class LibraryDetailViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var libraryPhoneTextView: UITextView!
     @IBOutlet weak var libraryAddressLabel: UILabel!
