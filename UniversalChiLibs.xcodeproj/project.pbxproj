@@ -89,6 +89,7 @@
 		9D3C90502AFD0D1D0064DDEB /* LibraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C904F2AFD0D1D0064DDEB /* LibraryDetailViewController.swift */; };
 		9D3C90512AFD0D1D0064DDEB /* LibraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C904F2AFD0D1D0064DDEB /* LibraryDetailViewController.swift */; };
 		9D3C90522AFD0D1D0064DDEB /* LibraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C904F2AFD0D1D0064DDEB /* LibraryDetailViewController.swift */; };
+		9D3C90582AFD64020064DDEB /* LibraryTableViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C90572AFD63AB0064DDEB /* LibraryTableViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +220,7 @@
 		9D3C90372AFCF2310064DDEB /* Storyboarded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		9D3C904B2AFD0CEF0064DDEB /* LibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableViewController.swift; sourceTree = "<group>"; };
 		9D3C904F2AFD0D1D0064DDEB /* LibraryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDetailViewController.swift; sourceTree = "<group>"; };
+		9D3C90572AFD63AB0064DDEB /* LibraryTableViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableViewControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -534,6 +536,7 @@
 				9D3C8FEB2AFC67930064DDEB /* SceneDelegate.swift */,
 				9D3C8FEF2AFC67930064DDEB /* Main.storyboard */,
 				9D3C904B2AFD0CEF0064DDEB /* LibraryTableViewController.swift */,
+				9D3C90572AFD63AB0064DDEB /* LibraryTableViewControllerDelegate.swift */,
 				9D3C904F2AFD0D1D0064DDEB /* LibraryDetailViewController.swift */,
 				9D3C8FF22AFC67940064DDEB /* Assets.xcassets */,
 				9D3C8FF42AFC67940064DDEB /* LaunchScreen.storyboard */,
@@ -1090,6 +1093,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D3C90412AFCF54E0064DDEB /* ViewController+ErrorDialog.swift in Sources */,
+				9D3C90582AFD64020064DDEB /* LibraryTableViewControllerDelegate.swift in Sources */,
 				9D3C90472AFCF56E0064DDEB /* Library.swift in Sources */,
 				9D3C90502AFD0D1D0064DDEB /* LibraryDetailViewController.swift in Sources */,
 				9D3C90422AFCF5540064DDEB /* String+LibraryHourFormatting.swift in Sources */,

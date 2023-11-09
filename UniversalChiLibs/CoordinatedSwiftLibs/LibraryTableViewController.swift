@@ -15,6 +15,8 @@ class LibraryTableViewController: UITableViewController, Storyboarded {
     var sectionDictionary = Dictionary<String, [Library]>()
     var sectionTitles = [String]()
     
+    weak var delegate: LibraryTableViewControllerDelegate?
+    
     let libraryDataSource = LibraryDataSource()
     
     // MARK: - view lifecycle
@@ -32,6 +34,17 @@ class LibraryTableViewController: UITableViewController, Storyboarded {
         }
     }
 }
+
+extension LibraryTableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let indexPath = self.tableView.indexPathForSelectedRow,
+              let library = libraryDataSource.currentLibrary(indexPath) else { return }
+        delegate?.libraryTableViewControllerDidSelectLibrary(library)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+
 
 extension LibraryTableViewController {
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
