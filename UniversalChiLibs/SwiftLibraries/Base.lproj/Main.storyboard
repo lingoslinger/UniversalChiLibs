@@ -31,7 +31,7 @@
         <!--Chicago Libraries-->
         <scene sceneID="hDq-7h-9MA">
             <objects>
-                <tableViewController id="hSU-UE-5Cj" customClass="LibraryTableViewController" customModule="SwiftLibraries" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LibraryTableViewController" id="hSU-UE-5Cj" customClass="LibraryTableViewController" customModule="SwiftLibraries" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Cl7-ZF-1D6">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,12 +65,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t7M-8c-S8F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984" y="5"/>
+            <point key="canvasLocation" x="914" y="5"/>
         </scene>
         <!--Library Detail View Controller-->
         <scene sceneID="VbR-HE-ppd">
             <objects>
-                <viewController id="LLF-cg-56K" customClass="LibraryDetailViewController" customModule="SwiftLibraries" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LibraryDetailViewController" id="LLF-cg-56K" customClass="LibraryDetailViewController" customModule="SwiftLibraries" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7hW-64-Zg3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

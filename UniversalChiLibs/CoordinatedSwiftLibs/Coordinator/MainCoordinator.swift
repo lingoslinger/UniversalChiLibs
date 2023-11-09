@@ -16,7 +16,7 @@ class MainCoordinator : NSObject, Coordinator {
     }
     
     func start() {
-        let vc = ViewController.instantiate()
+        let vc = LibraryTableViewController.instantiate()
         navigationController.pushViewController(vc, animated: false)
     }
     
