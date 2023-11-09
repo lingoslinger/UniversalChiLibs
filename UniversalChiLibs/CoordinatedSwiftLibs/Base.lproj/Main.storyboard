@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Library Table View Controller-->
+        <!--Chicago LIbraries-->
         <scene sceneID="5Zb-rP-r6x">
             <objects>
                 <tableViewController storyboardIdentifier="LibraryTableViewController" id="1ud-Fx-HUZ" customClass="LibraryTableViewController" customModule="CoordinatedSwiftLibs" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,6 +42,9 @@
                             <outlet property="delegate" destination="1ud-Fx-HUZ" id="s6q-Qg-okz"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Chicago LIbraries" id="wp7-R3-wJj">
+                        <barButtonItem key="backBarButtonItem" title="Libraries" id="DO1-al-2u4"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xGe-9V-noP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,7 +53,7 @@
         <!--Library Detail View Controller-->
         <scene sceneID="sy8-YM-hw3">
             <objects>
-                <viewController storyboardIdentifier="LibraryDetailViewController" id="vhK-SY-et2" customClass="LibraryDetailViewController" customModule="SwiftLibraries" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LibraryDetailViewController" id="vhK-SY-et2" customClass="LibraryDetailViewController" customModule="CoordinatedSwiftLibs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tNR-kb-4iN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
