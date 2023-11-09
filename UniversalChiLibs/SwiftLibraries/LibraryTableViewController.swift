@@ -10,13 +10,8 @@ import Foundation
 
 class LibraryTableViewController: UITableViewController {
     
-    var libraryArray = [Library]()
-    var sectionDictionary = Dictionary<String, [Library]>()
-    var sectionTitles = [String]()
-    
     let libraryDataSource = LibraryDataSource()
-    
-    // MARK: - view lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = libraryDataSource
