@@ -73,6 +73,9 @@
 		9D3C90012AFC67940064DDEB /* CoordinatedSwiftLibsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C90002AFC67940064DDEB /* CoordinatedSwiftLibsTests.swift */; };
 		9D3C900B2AFC67950064DDEB /* CoordinatedSwiftLibsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C900A2AFC67950064DDEB /* CoordinatedSwiftLibsUITests.swift */; };
 		9D3C900D2AFC67950064DDEB /* CoordinatedSwiftLibsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C900C2AFC67950064DDEB /* CoordinatedSwiftLibsUITestsLaunchTests.swift */; };
+		9D3C90302AFCF1D20064DDEB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C902F2AFCF1D20064DDEB /* Coordinator.swift */; };
+		9D3C90342AFCF1FB0064DDEB /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C90332AFCF1FB0064DDEB /* MainCoordinator.swift */; };
+		9D3C90382AFCF2310064DDEB /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C90372AFCF2310064DDEB /* Storyboarded.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +202,9 @@
 		9D3C90062AFC67940064DDEB /* CoordinatedSwiftLibsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoordinatedSwiftLibsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3C900A2AFC67950064DDEB /* CoordinatedSwiftLibsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatedSwiftLibsUITests.swift; sourceTree = "<group>"; };
 		9D3C900C2AFC67950064DDEB /* CoordinatedSwiftLibsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatedSwiftLibsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9D3C902F2AFCF1D20064DDEB /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		9D3C90332AFCF1FB0064DDEB /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		9D3C90372AFCF2310064DDEB /* Storyboarded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,6 +513,9 @@
 			children = (
 				9D3C8FFF2AFC67940064DDEB /* CoordinatedSwiftLibsTests */,
 				9D3C90092AFC67950064DDEB /* CoordinatedSwiftLibsUITests */,
+				9D3C90372AFCF2310064DDEB /* Storyboarded.swift */,
+				9D3C902F2AFCF1D20064DDEB /* Coordinator.swift */,
+				9D3C90332AFCF1FB0064DDEB /* MainCoordinator.swift */,
 				9D3C8FE92AFC67930064DDEB /* AppDelegate.swift */,
 				9D3C8FEB2AFC67930064DDEB /* SceneDelegate.swift */,
 				9D3C8FED2AFC67930064DDEB /* ViewController.swift */,
@@ -1048,9 +1057,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D3C90302AFCF1D20064DDEB /* Coordinator.swift in Sources */,
 				9D3C8FEE2AFC67930064DDEB /* ViewController.swift in Sources */,
 				9D3C8FEA2AFC67930064DDEB /* AppDelegate.swift in Sources */,
+				9D3C90342AFCF1FB0064DDEB /* MainCoordinator.swift in Sources */,
 				9D3C8FEC2AFC67930064DDEB /* SceneDelegate.swift in Sources */,
+				9D3C90382AFCF2310064DDEB /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1679,10 +1691,10 @@
 				INFOPLIST_FILE = UniversalChiLibs/CoordinatedSwiftLibs/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1708,10 +1720,10 @@
 				INFOPLIST_FILE = UniversalChiLibs/CoordinatedSwiftLibs/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1734,7 +1746,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W9SQ355FV2;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.agesoftwareconslutingllc.CoordinatedSwiftLibsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1754,7 +1766,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W9SQ355FV2;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.agesoftwareconslutingllc.CoordinatedSwiftLibsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1773,7 +1785,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W9SQ355FV2;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.agesoftwareconslutingllc.CoordinatedSwiftLibsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1792,7 +1804,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W9SQ355FV2;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.agesoftwareconslutingllc.CoordinatedSwiftLibsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
