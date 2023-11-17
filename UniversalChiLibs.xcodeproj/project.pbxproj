@@ -90,6 +90,7 @@
 		9D3C90512AFD0D1D0064DDEB /* LibraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C904F2AFD0D1D0064DDEB /* LibraryDetailViewController.swift */; };
 		9D3C90522AFD0D1D0064DDEB /* LibraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C904F2AFD0D1D0064DDEB /* LibraryDetailViewController.swift */; };
 		9D3C90582AFD64020064DDEB /* LibraryTableViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C90572AFD63AB0064DDEB /* LibraryTableViewControllerDelegate.swift */; };
+		9D8831C32B0782D2003889CB /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8831C22B0782D2003889CB /* WebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -221,6 +222,7 @@
 		9D3C904B2AFD0CEF0064DDEB /* LibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableViewController.swift; sourceTree = "<group>"; };
 		9D3C904F2AFD0D1D0064DDEB /* LibraryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDetailViewController.swift; sourceTree = "<group>"; };
 		9D3C90572AFD63AB0064DDEB /* LibraryTableViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableViewControllerDelegate.swift; sourceTree = "<group>"; };
+		9D8831C22B0782D2003889CB /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -469,6 +471,7 @@
 			isa = PBXGroup;
 			children = (
 				9D3C8F0A2AF590630064DDEB /* LibraryDataSource.swift */,
+				9D8831C22B0782D2003889CB /* WebService.swift */,
 			);
 			path = "Data Source";
 			sourceTree = "<group>";
@@ -1026,6 +1029,7 @@
 				9D3C8F112AF5914B0064DDEB /* LibraryDetailView.swift in Sources */,
 				9D3C8F122AF5914B0064DDEB /* LibraryView.swift in Sources */,
 				9D3C8F032AF590060064DDEB /* String+LibraryHourFormatting.swift in Sources */,
+				9D8831C32B0782D2003889CB /* WebService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
