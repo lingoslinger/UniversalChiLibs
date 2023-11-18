@@ -17,7 +17,7 @@ class LibraryDataSource: ObservableObject {
         }
     }
 
-    @MainActor func fetchData() async {
+    func fetchData() async {
         do {
             self.libraries = try await WebService.getLibraryData()
             let firstLetters = self.libraries.map { $0.name.prefix(1) }

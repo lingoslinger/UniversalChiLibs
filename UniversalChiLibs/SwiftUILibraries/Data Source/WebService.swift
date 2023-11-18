@@ -20,8 +20,7 @@ struct WebService {
               let url = URL(string: prod_url) else {
             throw FetchError.badURL
         }
-        let request = URLRequest(url: url)
-        let (data, response) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await URLSession.shared.data(from: url)
         guard let response = response as? HTTPURLResponse, response.statusCode < 400 else {
             throw FetchError.badResponse
         }
