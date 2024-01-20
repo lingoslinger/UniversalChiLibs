@@ -27,6 +27,8 @@ class LibraryDetailViewController: UIViewController, Storyboarded {
         libraryAddressLabel.text = detailLibrary?.address ?? "Library address unavailable"
         libraryHoursLabel.text = detailLibrary?.hoursOfOperation?.formattedHours ?? "Library hours unavailable"
         annotateMap()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleMapTap))
+        libraryMapView.addGestureRecognizer(tapGesture)
     }
     
     
@@ -41,5 +43,15 @@ class LibraryDetailViewController: UIViewController, Storyboarded {
         point.title = detailLibrary?.name
         libraryMapView.addAnnotation(point)
         libraryMapView.setRegion(libraryMapView.regionThatFits(viewRegion), animated: true)
+    }
+    
+    @objc private func handleMapTap() {
+        let address = detailLibrary?.address ?? ""
+        let city = detailLibrary?.city ?? ""
+        let state = detailLibrary?.state ?? ""
+        let zip = detailLibrary?.zip ?? ""
+        
+        let searchAddress = "\(address), \(city), \(state) \(zip)"
+        openAppleMaps(with: searchAddress)
     }
 }

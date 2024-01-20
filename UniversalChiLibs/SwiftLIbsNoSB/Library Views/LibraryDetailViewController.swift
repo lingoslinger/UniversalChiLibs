@@ -35,6 +35,7 @@ class LibraryDetailViewController: UIViewController {
         view.addSubview(hoursLabel)
         setupAutoLayout()
         setupUI()
+        setupMapTap()
     }
     
     private func setupAutoLayout() {
@@ -67,5 +68,23 @@ class LibraryDetailViewController: UIViewController {
         addressLabel.text = library.address
         phoneTextView.parsePhoneNumber(library: library, controller: self)
         hoursLabel.text = library.hoursOfOperation?.formattedHours
+    }
+    
+    private func setupMapTap() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleMapTap))
+        mapView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func handleMapTap() {
+        guard let library = library else {
+            return
+        }
+        let address = library.address ?? ""
+        let city = library.city ?? ""
+        let state = library.state ?? ""
+        let zip = library.zip ?? ""
+        
+        let searchAddress = "\(address), \(city), \(state) \(zip)"
+        openAppleMaps(with: searchAddress)
     }
 }

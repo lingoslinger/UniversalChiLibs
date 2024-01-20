@@ -15,6 +15,10 @@ struct LibraryDetailView: View {
             VStack(alignment: .leading, spacing: 10) {
                 LibraryMapView(library: library)
                     .frame(height: 300, alignment: .top)
+                    .onTapGesture {
+                        let searchAddress = "\(library.address ?? ""), \(library.city ?? ""), \(library.state ?? "") \(library.zip ?? "")"
+                        openAppleMaps(with: searchAddress)
+                    }
                 Text(library.address ?? "Address not available")
                     .padding(.leading, 10)
                 LibraryPhoneNumberView(library: library)
