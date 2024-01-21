@@ -9,16 +9,26 @@ import SwiftUI
 
 struct LibraryDetailView: View {
     let library: Library
+    let mapPref = MapPreference.apple // set this somewhere else and publish 
     
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 10) {
-                LibraryMapView(library: library)
-                    .frame(height: 300, alignment: .top)
-                    .onTapGesture {
-                        let searchAddress = "\(library.address ?? ""), \(library.city ?? ""), \(library.state ?? "") \(library.zip ?? "")"
-                        openAppleMaps(with: searchAddress)
-                    }
+                switch mapPref {
+                    case .apple:
+                        LibraryMapView(library: library)
+                            .frame(height: 300, alignment: .top)
+                            .onTapGesture {
+                                let searchAddress = "\(library.address ?? ""), \(library.city ?? ""), \(library.state ?? "") \(library.zip ?? "")"
+                                openAppleMaps(with: searchAddress)
+                            }
+                            .padding(.bottom, 10)
+                    case .google:
+                        Text("Google maps not implemented yet")
+                    case .here:
+                        Text("HERE maps not implemented yet")
+                }
+                
                 Text(library.address ?? "Address not available")
                     .padding(.leading, 10)
                 LibraryPhoneNumberView(library: library)
