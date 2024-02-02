@@ -8,12 +8,11 @@
 import SwiftUI
 import MapKit
 
-struct LibraryMapView: View {
+struct LibraryAppleMapView: View {
     let library: Library
     let mapLocation: CLLocationCoordinate2D
     
     @State private var region: MKCoordinateRegion
-    
     
     init(library: Library) {
         self.library = library
@@ -36,6 +35,6 @@ struct LibraryMapView: View {
 
 struct LibraryMapView_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryMapView(library: previewLibrary)
+        LibraryAppleMapView(library: previewLibrary)
     }
 }

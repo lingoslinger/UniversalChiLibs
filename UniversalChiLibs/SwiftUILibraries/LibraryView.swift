@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LibraryView: View {
-    @ObservedObject var dataStore = LibraryDataSource()
+    @State var dataStore = LibraryDataSource()
     
     var body: some View {
         NavigationView {

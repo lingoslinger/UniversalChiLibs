@@ -8,26 +8,25 @@
 
 import UIKit
 
-enum MapPreference {
-    case apple
-    case google
-    case here
+// think about this some more before implementing...
+enum MapPreference: String {
+    case apple = "Apple"
+    case google = "Google"
+    case here = "HERE"
 }
 
-class MapSDKChooser: ObservableObject {
-    @Published var chosenMapSDK: MapPreference
-    
-    init(chosenMapSDK: MapPreference) {
-        self.chosenMapSDK = .apple //chosenMapSDK // eventually have logic to change this based on a stored preference
+var mapPreference = MapPreference.apple // TODO: ability to change preference
+
+func openMap(with address: String) {
+    let encodedAddress = address.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+    switch mapPreference {
+        case .apple:
+            let mapURLString = "http://maps.apple.com/?daddr=\(encodedAddress)&dirflg=w" // walking directions...
+            guard let mapURL = URL(string: mapURLString) else { return }
+            UIApplication.shared.open(mapURL, options: [:], completionHandler: nil)
+        case .google:
+            print("Google Maps integration not complete")
+        case .here:
+            print("HERE maps integration not complete")
     }
 }
-
-
-func openAppleMaps(with address: String) {
-    let encodedAddress = address.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-    let mapURLString = "http://maps.apple.com/?daddr=\(encodedAddress)&dirflg=w" // walking directions...
-    
-    guard let mapURL = URL(string: mapURLString) else { return }
-    UIApplication.shared.open(mapURL, options: [:], completionHandler: nil)
-}
-
