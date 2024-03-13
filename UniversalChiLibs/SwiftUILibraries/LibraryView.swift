@@ -9,13 +9,25 @@ import SwiftUI
 
 struct LibraryView: View {
     @State var dataStore = LibraryDataSource()
+    @State var searchText = ""
+    
+    var libraries: [Library] {
+        dataStore.libraries.filter {
+            searchText.count == 0 ? true : $0.name.lowercased().contains(searchText.lowercased())
+        }
+    }
+    
+    var sectionTitles: [String] {
+        let firstLetters = libraries.map { $0.name.prefix(1) }
+        return Array(Set(firstLetters)).map { String($0) }.sorted()
+    }
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(dataStore.sectionTitles, id: \.self) { sectionTitle in
+                ForEach(sectionTitles, id: \.self) { sectionTitle in
                     Section(header: Text(sectionTitle)) {
-                        let currentLibraries = dataStore.libraries.filter { $0.name.hasPrefix(sectionTitle) }.sorted { $0.name < $1.name }
+                        let currentLibraries = libraries.filter { $0.name.hasPrefix(sectionTitle) }.sorted { $0.name < $1.name }
                         ForEach(currentLibraries, id: \.self) { library in
                             NavigationLink(destination: LibraryDetailView(library: library)) {
                                 Text(library.name)
@@ -24,6 +36,10 @@ struct LibraryView: View {
                     }
                 }
             }
+            .searchable(text: $searchText,
+                        placement: .navigationBarDrawer(displayMode: .always),
+                        prompt: "Search by library name")
+            
             .navigationBarTitle("Chicago Libraries")
         }
     }

@@ -24,4 +24,5 @@ let previewLibraryData = """
 let decoder = JSONDecoder()
 let previewData = previewLibraryData.data(using: .utf8)!
 let previewLibraries = try! decoder.decode([Library].self, from: previewData)
+let previewSectionTitles = ["A"]
 let previewLibrary = previewLibraries.first!
