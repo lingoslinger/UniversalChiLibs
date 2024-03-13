@@ -22,6 +22,11 @@ struct LibraryView: View {
         return Array(Set(firstLetters)).map { String($0) }.sorted()
     }
     
+    
+    var showNoResultsMessage: Bool {
+        searchText.count > 0 && libraries.count == 0
+    }
+    
     var body: some View {
         NavigationView {
             List {
@@ -35,11 +40,16 @@ struct LibraryView: View {
                         }
                     }
                 }
+                if showNoResultsMessage {
+                    Text("No results found for \"\(searchText)\"")
+                        .padding()
+                        .foregroundColor(.secondary)
+                        .listRowBackground(Color.clear)
+                }
             }
             .searchable(text: $searchText,
                         placement: .navigationBarDrawer(displayMode: .always),
                         prompt: "Search by library name")
-            
             .navigationBarTitle("Chicago Libraries")
         }
     }
