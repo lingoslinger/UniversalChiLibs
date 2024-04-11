@@ -22,7 +22,6 @@ struct LibraryView: View {
         return Array(Set(firstLetters)).map { String($0) }.sorted()
     }
     
-    
     var showNoResultsMessage: Bool {
         searchText.count > 0 && libraries.count == 0
     }

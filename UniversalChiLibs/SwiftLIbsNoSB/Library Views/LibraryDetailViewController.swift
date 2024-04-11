@@ -85,6 +85,6 @@ class LibraryDetailViewController: UIViewController {
         let zip = library.zip ?? ""
         
         let searchAddress = "\(address), \(city), \(state) \(zip)"
-        openAppleMaps(with: searchAddress)
+        openMap(with: searchAddress)
     }
 }
