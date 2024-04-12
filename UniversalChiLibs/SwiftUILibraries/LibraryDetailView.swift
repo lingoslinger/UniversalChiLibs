@@ -16,56 +16,58 @@ struct LibraryDetailView: View {
     
     var body: some View {
         NavigationView {
-            
-            VStack(alignment: .leading, spacing: 10) {
-                switch mapPreference {
-                    case .apple:
-                        LibraryAppleMapView(library: library)
-                            .frame(height: 300, alignment: .top)
-                            .onTapGesture {
-                                let searchAddress = "\(library.address ?? ""), \(library.city ?? ""), \(library.state ?? "") \(library.zip ?? "")"
-                                openMap(with: searchAddress)
-                            }
-                            .gesture(
-                                LongPressGesture(minimumDuration: 1.0)
-                                    .onChanged { _ in
-                                        print("Long press detected, do what you will with it")
+            ScrollView {
+                VStack(alignment: .leading, spacing: 10) {
+                    if let data = libraryImageData, let image = UIImage(data: data) {
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(minHeight: 200, alignment: .center)
+                    } else {
+                        Text("Loading library image")
+                            .frame(alignment: .center)
+                            .onAppear {
+                                Task {
+                                    do {
+                                        try await loadLibraryImage()
+                                    } catch {
+                                        print("Error loading library image...")
                                     }
-                            )
-                            .padding(.bottom, 10)
-                    case .google:
-                        LibraryGoogleMapView()
-                            .frame(height: 300, alignment: .top)
-                    case .here:
-                        LibraryHereMapView()
-                            .frame(height: 300, alignment: .top)
-                }
-                Text(library.address ?? "Address not available")
-                    .padding(.leading, 10)
-                LibraryPhoneNumberView(library: library)
-                    .padding(.leading, 10)
-                Text(library.hoursOfOperation?.formattedHours ?? "Hours not available")
-                    .padding(.leading, 10)
-                Spacer()
-                //add image here....
-                if let data = libraryImageData, let image = UIImage(data: data) {
-                    Image(uiImage: image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                } else {
-                    Text("Loading Library Image")
-                        .onAppear {
-                            Task {
-                                do {
-                                    try await loadLibraryImage()
-                                } catch {
-                                    print("Error loading library image...")
                                 }
                             }
-                        }
+                    }
+                    Text(library.address ?? "Address not available")
+                        .padding(.leading, 10)
+                    LibraryPhoneNumberView(library: library)
+                        .padding(.leading, 10)
+                    Text(library.hoursOfOperation?.formattedHours ?? "Hours not available")
+                        .padding(.leading, 10)
+                    switch mapPreference {
+                        case .apple:
+                            LibraryAppleMapView(library: library)
+                                .frame(height: 200, alignment: .top)
+                                .onTapGesture {
+                                    let searchAddress = "\(library.address ?? ""), \(library.city ?? ""), \(library.state ?? "") \(library.zip ?? "")"
+                                    openMap(with: searchAddress)
+                                }
+                                .gesture(
+                                    LongPressGesture(minimumDuration: 1.0)
+                                        .onChanged { _ in
+                                            print("Long press detected, do what you will with it")
+                                        }
+                                )
+                                .padding(.bottom, 10)
+                        case .google:
+                            LibraryGoogleMapView()
+                                .frame(height: 300, alignment: .top)
+                        case .here:
+                            LibraryHereMapView()
+                                .frame(height: 300, alignment: .top)
+                    }
+                    Spacer()
                 }
+                .padding(.bottom, 10)
             }
-            .padding(.bottom, 10)
         }
         .navigationTitle(library.name)
     }
@@ -103,6 +105,11 @@ extension LibraryDetailView {
         }
         
         print(imageURLString)
-        
+        guard let imageURL = URL(string: imageURLString) else { fatalError("invalid image URL")}
+        let (imageData, imageResponse) = try await URLSession.shared.data(from: imageURL)
+        guard let imageResponse = imageResponse as? HTTPURLResponse, imageResponse.statusCode < 400 else {
+            fatalError("bad response")
+        }
+        libraryImageData = imageData
     }
 }
