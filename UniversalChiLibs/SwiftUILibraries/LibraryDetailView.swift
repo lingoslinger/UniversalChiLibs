@@ -13,28 +13,39 @@ struct LibraryDetailView: View {
     let library: Library
     @State private var mapPreference = MapPreference.apple // set this somewhere else and publish?
     @State private var libraryImageData: Data?
+
     
     var body: some View {
         NavigationView {
             ScrollView {
+                let imageHeight = UIScreen.main.bounds.width / 3.0 * 2.0
                 VStack(alignment: .leading, spacing: 10) {
                     if let data = libraryImageData, let image = UIImage(data: data) {
                         Image(uiImage: image)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(minHeight: 200, alignment: .center)
+                            .frame(minHeight: imageHeight, alignment: .center)
                     } else {
-                        Text("Loading library image")
-                            .frame(alignment: .center)
-                            .onAppear {
-                                Task {
-                                    do {
-                                        try await loadLibraryImage()
-                                    } catch {
-                                        print("Error loading library image...")
+                        ZStack {
+                            Rectangle()
+                                .fill(Color.white)
+                                .frame(height: imageHeight)
+                                .onAppear {
+                                    Task {
+                                        do {
+                                            try await loadLibraryImage()
+                                        } catch {
+                                            print("Error loading library image...")
+                                        }
                                     }
                                 }
+                            VStack {
+                                ProgressView()
+                                    .progressViewStyle(CircularProgressViewStyle())
+                                    .padding()
+                                Text("Loading library image...")
                             }
+                        }
                     }
                     Text(library.address ?? "Address not available")
                         .padding(.leading, 10)
@@ -82,6 +93,9 @@ struct LibraryDetailView_Previews: PreviewProvider {
 extension LibraryDetailView {
     func loadLibraryImage() async throws {
         var imageURLString = ""
+        
+        // TODO: add image cache check here...
+        
         
         guard let libraryURLString = library.website?.url,
               let libraryURL = URL(string: libraryURLString)
