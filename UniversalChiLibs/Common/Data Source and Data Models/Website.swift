@@ -10,8 +10,7 @@ import Foundation
 
 struct Website: Decodable {
     let url: String?
-    let imageUrl: String
-    
+   
     enum CodingKeys: String, CodingKey {
         case url = "url"
     }
@@ -19,6 +18,5 @@ struct Website: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         url = try container.decodeIfPresent(String.self, forKey: .url)
-        imageUrl = ""
     }
 }
