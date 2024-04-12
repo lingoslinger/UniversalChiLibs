@@ -98,6 +98,7 @@
 		9D8ACF4E2B5DE95B0085F2ED /* LibraryGoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8ACF4D2B5DE95B0085F2ED /* LibraryGoogleMapView.swift */; };
 		9D8ACF502B5DE96C0085F2ED /* LibraryHereMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8ACF4F2B5DE96C0085F2ED /* LibraryHereMapView.swift */; };
 		9DD5BF522BC9757B00966E2E /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 9DD5BF512BC9757B00966E2E /* SwiftSoup */; };
+		9DD5BF552BC9EC1900966E2E /* LibraryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +234,7 @@
 		9D8831C22B0782D2003889CB /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		9D8ACF4D2B5DE95B0085F2ED /* LibraryGoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryGoogleMapView.swift; sourceTree = "<group>"; };
 		9D8ACF4F2B5DE96C0085F2ED /* LibraryHereMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHereMapView.swift; sourceTree = "<group>"; };
+		9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,14 +451,13 @@
 		9D3C8EF32AF58E000064DDEB /* SwiftUILibraries */ = {
 			isa = PBXGroup;
 			children = (
+				9DD5BF532BC9EB2E00966E2E /* Views */,
 				9D3C8F692AF895680064DDEB /* SwiftUILibrariesUITests */,
 				9D3C8F5C2AF895490064DDEB /* SwiftUILibrariesTests */,
 				9D3C8F092AF5904F0064DDEB /* Data Source */,
 				9D3C8F042AF590230064DDEB /* Detail View Components */,
 				9D3C8EF82AF58E010064DDEB /* Assets.xcassets */,
 				9D3C8F102AF5914B0064DDEB /* SwiftUILibrariesApp.swift */,
-				9D3C8F0E2AF5914B0064DDEB /* LibraryDetailView.swift */,
-				9D3C8F0F2AF5914B0064DDEB /* LibraryView.swift */,
 				9D3C8EFA2AF58E010064DDEB /* Preview Content */,
 			);
 			path = SwiftUILibraries;
@@ -593,6 +594,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9DD5BF532BC9EB2E00966E2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D3C8F0F2AF5914B0064DDEB /* LibraryView.swift */,
+				9D3C8F0E2AF5914B0064DDEB /* LibraryDetailView.swift */,
+				9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1051,6 +1062,7 @@
 				9D8ACF4E2B5DE95B0085F2ED /* LibraryGoogleMapView.swift in Sources */,
 				9D3C8F0D2AF590790064DDEB /* PreviewData.swift in Sources */,
 				9D3C8F022AF58FE00064DDEB /* Website.swift in Sources */,
+				9DD5BF552BC9EC1900966E2E /* LibraryImageView.swift in Sources */,
 				9D3C8F082AF590460064DDEB /* LibraryPhoneNumberView.swift in Sources */,
 				9D8ACF502B5DE96C0085F2ED /* LibraryHereMapView.swift in Sources */,
 				9D3C8F0B2AF590630064DDEB /* LibraryDataSource.swift in Sources */,
