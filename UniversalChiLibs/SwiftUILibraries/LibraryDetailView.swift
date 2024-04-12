@@ -91,11 +91,9 @@ extension LibraryDetailView {
         guard let response = response as? HTTPURLResponse, response.statusCode < 400 else {
             fatalError("bad response")
         }
-        
         guard let siteHTML = String(data: data, encoding: .utf8) else {
             fatalError("no html data found")
         }
-        
         let doc = try SwiftSoup.parse(siteHTML)
         let elements: Elements = try! doc.select("meta")
         for element in elements {
@@ -103,9 +101,7 @@ extension LibraryDetailView {
                 imageURLString = try element.attr("content")
             }
         }
-        
-        print(imageURLString)
-        guard let imageURL = URL(string: imageURLString) else { fatalError("invalid image URL")}
+        guard let imageURL = URL(string: imageURLString) else { fatalError("invalid image URL") }
         let (imageData, imageResponse) = try await URLSession.shared.data(from: imageURL)
         guard let imageResponse = imageResponse as? HTTPURLResponse, imageResponse.statusCode < 400 else {
             fatalError("bad response")
