@@ -25,7 +25,7 @@ struct LibraryImageView: View {
             } else {
                 ZStack {
                     Rectangle()
-                        .fill(Color.white)
+                        .fill(loadingBackgroundColor())
                         .frame(height: imageHeight)
                         .onAppear {
                             Task {
@@ -41,6 +41,7 @@ struct LibraryImageView: View {
                             .progressViewStyle(CircularProgressViewStyle())
                             .padding()
                         Text("Loading library image...")
+                            .foregroundColor(loadingTextColor())
                     }
                 }
             }
@@ -79,6 +80,22 @@ extension LibraryImageView {
             fatalError("bad response")
         }
         libraryImageData = imageData
+    }
+    
+    private func loadingBackgroundColor() -> Color {
+        if UIScreen.main.traitCollection.userInterfaceStyle == .dark {
+            return Color.black
+        } else {
+            return Color.white
+        }
+    }
+    
+    private func loadingTextColor() -> Color {
+        if UIScreen.main.traitCollection.userInterfaceStyle == .dark {
+            return Color.white
+        } else {
+            return Color.black
+        }
     }
 }
 
