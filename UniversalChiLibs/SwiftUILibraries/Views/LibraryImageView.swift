@@ -83,19 +83,11 @@ extension LibraryImageView {
     }
     
     private func loadingBackgroundColor() -> Color {
-        if UIScreen.main.traitCollection.userInterfaceStyle == .dark {
-            return Color.black
-        } else {
-            return Color.white
-        }
+        return UIScreen.main.traitCollection.userInterfaceStyle == .dark ? Color.black : Color.white
     }
     
     private func loadingTextColor() -> Color {
-        if UIScreen.main.traitCollection.userInterfaceStyle == .dark {
-            return Color.white
-        } else {
-            return Color.black
-        }
+        return UIScreen.main.traitCollection.userInterfaceStyle == .dark ? Color.white : Color.black
     }
 }
 
