@@ -50,12 +50,12 @@ class LibraryDetailViewController: UIViewController {
     }
     
     private func setupAutoLayout() {
-        mapView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        mapView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
-        mapView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
-        mapView.heightAnchor.constraint(equalTo: mapView.widthAnchor, multiplier: 9.0/16.0).isActive = true
+        imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 3.0 * 2.0).isActive = true
         
-        addressLabel.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 20).isActive = true
+        addressLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20).isActive = true
         addressLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
         addressLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
         
@@ -69,11 +69,10 @@ class LibraryDetailViewController: UIViewController {
         hoursLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
         hoursLabel.heightAnchor.constraint(equalToConstant: 120).isActive = true
         
-        // UIScreen.main.bounds.width / 3.0 * 2.0 // height
-        imageView.topAnchor.constraint(equalTo: hoursLabel.bottomAnchor, constant: 20).isActive = true
-        imageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
-        imageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 3.0 * 2.0).isActive = true
+        mapView.topAnchor.constraint(equalTo: hoursLabel.bottomAnchor, constant: 20).isActive = true
+        mapView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        mapView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        mapView.heightAnchor.constraint(equalTo: mapView.widthAnchor, multiplier: 9.0/16.0).isActive = true
     }
     
     private func setupUI() {
