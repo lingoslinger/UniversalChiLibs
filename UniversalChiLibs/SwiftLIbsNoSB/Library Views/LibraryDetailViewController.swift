@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import SwiftUI
 
 class LibraryDetailViewController: UIViewController {
     
@@ -21,6 +22,7 @@ class LibraryDetailViewController: UIViewController {
     private let addressLabel = LibraryLabel()
     private let hoursLabel = LibraryLabel(numberOfLines: 0)
     private let phoneTextView = LibraryPhoneTextView()
+    private var imageView = UIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,15 @@ class LibraryDetailViewController: UIViewController {
         view.addSubview(addressLabel)
         view.addSubview(phoneTextView)
         view.addSubview(hoursLabel)
+        
+        // add SwiftUI image view...
+        let libraryImageViewController = libraryImageViewController()
+        imageView = libraryImageViewController.view
+        addChild(libraryImageViewController)
+        view.addSubview(imageView)
+        libraryImageViewController.didMove(toParent: self)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
         setupAutoLayout()
         setupUI()
         setupMapTap()
@@ -57,6 +68,12 @@ class LibraryDetailViewController: UIViewController {
         hoursLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
         hoursLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
         hoursLabel.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        
+        // UIScreen.main.bounds.width / 3.0 * 2.0 // height
+        imageView.topAnchor.constraint(equalTo: hoursLabel.bottomAnchor, constant: 20).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 3.0 * 2.0).isActive = true
     }
     
     private func setupUI() {
@@ -86,5 +103,12 @@ class LibraryDetailViewController: UIViewController {
         
         let searchAddress = "\(address), \(city), \(state) \(zip)"
         openMap(with: searchAddress)
+    }
+    
+    private func libraryImageViewController() -> UIViewController {
+        guard let library = library else { fatalError("unable to initializt library image") }
+        let libraryImageView = LibraryImageView(library: library)
+        let hostingController = UIHostingController(rootView: libraryImageView)
+        return hostingController
     }
 }

@@ -50,7 +50,7 @@ struct LibraryImageView: View {
 }
 
 extension LibraryImageView {
-    func loadLibraryImage() async throws {
+    private func loadLibraryImage() async throws {
         var imageURLString = ""
         
         // TODO: add image cache check here...

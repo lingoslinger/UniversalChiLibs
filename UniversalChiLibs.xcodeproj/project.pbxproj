@@ -99,6 +99,11 @@
 		9D8ACF502B5DE96C0085F2ED /* LibraryHereMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8ACF4F2B5DE96C0085F2ED /* LibraryHereMapView.swift */; };
 		9DD5BF522BC9757B00966E2E /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 9DD5BF512BC9757B00966E2E /* SwiftSoup */; };
 		9DD5BF552BC9EC1900966E2E /* LibraryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */; };
+		9DD5BF562BCAEBAE00966E2E /* LibraryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */; };
+		9DD5BF572BCAEC0300966E2E /* LibraryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */; };
+		9DD5BF582BCAEC0600966E2E /* LibraryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */; };
+		9DD5BF592BCAECB700966E2E /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8F0C2AF590790064DDEB /* PreviewData.swift */; };
+		9DD5BF5B2BCAECED00966E2E /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 9DD5BF5A2BCAECED00966E2E /* SwiftSoup */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -249,6 +254,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DD5BF5B2BCAECED00966E2E /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,6 +645,9 @@
 			dependencies = (
 			);
 			name = SwiftLibsNoSB;
+			packageProductDependencies = (
+				9DD5BF5A2BCAECED00966E2E /* SwiftSoup */,
+			);
 			productName = UniversalChiLibs;
 			productReference = 9D3C8ECA2AF54CB50064DDEB /* SwiftLibsNoSB.app */;
 			productType = "com.apple.product-type.application";
@@ -1029,6 +1038,7 @@
 				9D3C8E692AF3EBF10064DDEB /* String+LibraryHourFormatting.swift in Sources */,
 				9D3C8E5F2AF3E8400064DDEB /* Library.swift in Sources */,
 				9D3C8E612AF3E8760064DDEB /* Location.swift in Sources */,
+				9DD5BF562BCAEBAE00966E2E /* LibraryImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1038,8 +1048,10 @@
 			files = (
 				9D3C8EEC2AF54EED0064DDEB /* AppDelegate.swift in Sources */,
 				9D3C8EB82AF54CB50064DDEB /* ViewController+ErrorDialog.swift in Sources */,
+				9DD5BF592BCAECB700966E2E /* PreviewData.swift in Sources */,
 				9D3C8EDC2AF54E280064DDEB /* LibraryLabel.swift in Sources */,
 				9D3C8EBB2AF54CB50064DDEB /* LibraryDataSource.swift in Sources */,
+				9DD5BF572BCAEC0300966E2E /* LibraryImageView.swift in Sources */,
 				9D3C8EE12AF54E5B0064DDEB /* LibraryDetailViewController.swift in Sources */,
 				9D3C8EDA2AF54E280064DDEB /* LibraryMapView.swift in Sources */,
 				9D3C8EBD2AF54CB50064DDEB /* Website.swift in Sources */,
@@ -1137,6 +1149,7 @@
 				9D3C90582AFD64020064DDEB /* LibraryTableViewControllerDelegate.swift in Sources */,
 				9D3C90472AFCF56E0064DDEB /* Library.swift in Sources */,
 				9D3C90502AFD0D1D0064DDEB /* LibraryDetailViewController.swift in Sources */,
+				9DD5BF582BCAEC0600966E2E /* LibraryImageView.swift in Sources */,
 				9D3C90422AFCF5540064DDEB /* String+LibraryHourFormatting.swift in Sources */,
 				9D53874F2B5C78000026C31B /* MapUtilities.swift in Sources */,
 				9D3C90432AFCF5580064DDEB /* PlistParser.swift in Sources */,
@@ -1445,7 +1458,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1473,7 +1486,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2040,6 +2053,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		9DD5BF512BC9757B00966E2E /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DD5BF4F2BC969E600966E2E /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		9DD5BF5A2BCAECED00966E2E /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9DD5BF4F2BC969E600966E2E /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;
