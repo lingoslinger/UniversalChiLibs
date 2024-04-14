@@ -11,16 +11,14 @@ class LibraryDataSource: ObservableObject {
     @Published var libraries: [Library] = []
     
     init() {
-        Task {
-            await fetchData()
-        }
-    }
-
-    func fetchData() async {
-        do {
-            self.libraries = try await WebService.getLibraryData()
-        } catch {
-            fatalError("Cannot load library data")
+        DispatchQueue.main.async { // publish async network calls back to the main thread
+            Task {
+                do {
+                    self.libraries = try await WebService.getLibraryData()
+                } catch {
+                    fatalError("Cannot load library data")
+                }
+            }
         }
     }
 }

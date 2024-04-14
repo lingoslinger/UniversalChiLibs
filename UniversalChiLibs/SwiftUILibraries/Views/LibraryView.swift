@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LibraryView: View {
-    @State var dataStore = LibraryDataSource()
+    @StateObject var dataStore = LibraryDataSource()
     @State var searchText = ""
     
     var libraries: [Library] {
