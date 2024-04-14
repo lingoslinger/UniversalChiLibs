@@ -21,6 +21,8 @@ class LibraryMapView: MKMapView {
     }
     
     private func commonInit() {
+        self.isScrollEnabled = false
+        self.isZoomEnabled = false
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     

@@ -80,7 +80,7 @@ class LibraryDetailViewController: UIViewController {
         }
         title = library.name
         mapView.annotateMap(library: library)
-        addressLabel.text = "\(address) \(city),\(state) \(zip)"
+        addressLabel.text = "\(address) \(city), \(state) \(zip)"
         phoneTextView.parsePhoneNumber(library: library, controller: self)
         hoursLabel.text = library.hoursOfOperation?.formattedHours
     }
