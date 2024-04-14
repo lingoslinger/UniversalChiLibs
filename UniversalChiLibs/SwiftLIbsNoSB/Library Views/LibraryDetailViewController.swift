@@ -40,8 +40,8 @@ class LibraryDetailViewController: UIViewController {
         let libraryImageViewController = libraryImageViewController()
         imageView = libraryImageViewController.view
         addChild(libraryImageViewController)
-        view.addSubview(imageView)
         libraryImageViewController.didMove(toParent: self)
+        view.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         setupAutoLayout()
@@ -62,7 +62,6 @@ class LibraryDetailViewController: UIViewController {
         phoneTextView.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 20).isActive = true
         phoneTextView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
         phoneTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
-        phoneTextView.heightAnchor.constraint(equalToConstant: 35).isActive = true
         
         hoursLabel.topAnchor.constraint(equalTo: phoneTextView.bottomAnchor, constant: 20).isActive = true
         hoursLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
@@ -76,12 +75,12 @@ class LibraryDetailViewController: UIViewController {
     }
     
     private func setupUI() {
-        guard let library = library else {
+        guard let library = library, let address = library.address, let city = library.city, let state = library.state, let zip = library.zip else {
             return
         }
         title = library.name
         mapView.annotateMap(library: library)
-        addressLabel.text = library.address
+        addressLabel.text = "\(address) \(city),\(state) \(zip)"
         phoneTextView.parsePhoneNumber(library: library, controller: self)
         hoursLabel.text = library.hoursOfOperation?.formattedHours
     }
@@ -92,20 +91,16 @@ class LibraryDetailViewController: UIViewController {
     }
     
     @objc private func handleMapTap() {
-        guard let library = library else {
+        guard let library = library, let address = library.address, let city = library.city, let state = library.state, let zip = library.zip else {
             return
         }
-        let address = library.address ?? ""
-        let city = library.city ?? ""
-        let state = library.state ?? ""
-        let zip = library.zip ?? ""
         
         let searchAddress = "\(address), \(city), \(state) \(zip)"
         openMap(with: searchAddress)
     }
     
     private func libraryImageViewController() -> UIViewController {
-        guard let library = library else { fatalError("unable to initializt library image") }
+        guard let library = library else { fatalError("unable to initialize library image") }
         let libraryImageView = LibraryImageView(library: library)
         let hostingController = UIHostingController(rootView: libraryImageView)
         return hostingController

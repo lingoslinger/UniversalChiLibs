@@ -53,9 +53,6 @@ extension LibraryImageView {
     private func loadLibraryImage() async throws {
         var imageURLString = ""
         
-        // TODO: add image cache check here...
-        
-        
         guard let libraryURLString = library.website?.url,
               let libraryURL = URL(string: libraryURLString)
         else { fatalError("No library URL") }
@@ -75,6 +72,9 @@ extension LibraryImageView {
             }
         }
         guard let imageURL = URL(string: imageURLString) else { fatalError("invalid image URL") }
+        
+        // TODO: add image cache check here...
+        
         let (imageData, imageResponse) = try await URLSession.shared.data(from: imageURL)
         guard let imageResponse = imageResponse as? HTTPURLResponse, imageResponse.statusCode < 400 else {
             fatalError("bad response")

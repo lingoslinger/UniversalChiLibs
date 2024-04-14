@@ -23,6 +23,7 @@ class LibraryPhoneTextView: UITextView {
         font = UIFont.systemFont(ofSize: 17)
         textAlignment = .natural
         dataDetectorTypes = [.phoneNumber]
+        isScrollEnabled = false
         translatesAutoresizingMaskIntoConstraints = false
     }
     
