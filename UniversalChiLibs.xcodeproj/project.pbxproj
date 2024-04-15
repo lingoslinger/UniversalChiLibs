@@ -104,6 +104,10 @@
 		9DD5BF582BCAEC0600966E2E /* LibraryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */; };
 		9DD5BF592BCAECB700966E2E /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8F0C2AF590790064DDEB /* PreviewData.swift */; };
 		9DD5BF5B2BCAECED00966E2E /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 9DD5BF5A2BCAECED00966E2E /* SwiftSoup */; };
+		9DD5BF5F2BCD4EBD00966E2E /* LibraryImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD5BF5C2BCD4D3100966E2E /* LibraryImageViewController.swift */; };
+		9DD5BF602BCD65B700966E2E /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8F0C2AF590790064DDEB /* PreviewData.swift */; };
+		9DD5BF612BCD65B800966E2E /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8F0C2AF590790064DDEB /* PreviewData.swift */; };
+		9DD5BF632BCD65E400966E2E /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 9DD5BF622BCD65E400966E2E /* SwiftSoup */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +244,7 @@
 		9D8ACF4D2B5DE95B0085F2ED /* LibraryGoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryGoogleMapView.swift; sourceTree = "<group>"; };
 		9D8ACF4F2B5DE96C0085F2ED /* LibraryHereMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHereMapView.swift; sourceTree = "<group>"; };
 		9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryImageView.swift; sourceTree = "<group>"; };
+		9DD5BF5C2BCD4D3100966E2E /* LibraryImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +252,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DD5BF632BCD65E400966E2E /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +406,7 @@
 				9D3C8F312AF88ED70064DDEB /* SwiftLibrariesUITests */,
 				9D3C8E5A2AF3E3C60064DDEB /* LibraryDetailViewController.swift */,
 				9D3C8E582AF3E16C0064DDEB /* LibraryTableViewController.swift */,
+				9DD5BF5C2BCD4D3100966E2E /* LibraryImageViewController.swift */,
 				9D3C8E282AF3E0CC0064DDEB /* AppDelegate.swift */,
 				9D3C8E2A2AF3E0CC0064DDEB /* SceneDelegate.swift */,
 				9D3C8E2E2AF3E0CC0064DDEB /* Main.storyboard */,
@@ -628,6 +635,9 @@
 			dependencies = (
 			);
 			name = SwiftLibraries;
+			packageProductDependencies = (
+				9DD5BF622BCD65E400966E2E /* SwiftSoup */,
+			);
 			productName = UniversalChiLibs;
 			productReference = 9D3C8E252AF3E0CC0064DDEB /* SwiftLibraries.app */;
 			productType = "com.apple.product-type.application";
@@ -1031,7 +1041,9 @@
 				9D3C8E592AF3E16C0064DDEB /* LibraryTableViewController.swift in Sources */,
 				9D3C8E5B2AF3E3C60064DDEB /* LibraryDetailViewController.swift in Sources */,
 				9D3C8EB22AF4B65E0064DDEB /* LibraryDataSource.swift in Sources */,
+				9DD5BF602BCD65B700966E2E /* PreviewData.swift in Sources */,
 				9D53874C2B5C771B0026C31B /* MapUtilities.swift in Sources */,
+				9DD5BF5F2BCD4EBD00966E2E /* LibraryImageViewController.swift in Sources */,
 				9D3C8E292AF3E0CC0064DDEB /* AppDelegate.swift in Sources */,
 				9D3C8E632AF3E8A00064DDEB /* Website.swift in Sources */,
 				9D3C8E2B2AF3E0CC0064DDEB /* SceneDelegate.swift in Sources */,
@@ -1159,6 +1171,7 @@
 				9D3C90342AFCF1FB0064DDEB /* MainCoordinator.swift in Sources */,
 				9D3C8FEC2AFC67930064DDEB /* SceneDelegate.swift in Sources */,
 				9D3C90442AFCF5630064DDEB /* LibraryDataSource.swift in Sources */,
+				9DD5BF612BCD65B800966E2E /* PreviewData.swift in Sources */,
 				9D3C90462AFCF56B0064DDEB /* Location.swift in Sources */,
 				9D3C904C2AFD0CEF0064DDEB /* LibraryTableViewController.swift in Sources */,
 				9D3C90382AFCF2310064DDEB /* Storyboarded.swift in Sources */,
@@ -2058,6 +2071,11 @@
 			productName = SwiftSoup;
 		};
 		9DD5BF5A2BCAECED00966E2E /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DD5BF4F2BC969E600966E2E /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		9DD5BF622BCD65E400966E2E /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9DD5BF4F2BC969E600966E2E /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;

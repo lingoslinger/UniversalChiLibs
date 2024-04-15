@@ -11,7 +11,7 @@ import WebKit
 import SwiftSoup
 
 struct LibraryImageView: View {
-    let library: Library
+    let library: Library?
     @State private var libraryImageData: Data?
     
     var body: some View {
@@ -53,7 +53,7 @@ extension LibraryImageView {
     private func loadLibraryImage() async throws {
         var imageURLString = ""
         
-        guard let libraryURLString = library.website?.url,
+        guard let libraryURLString = library?.website?.url,
               let libraryURL = URL(string: libraryURLString)
         else { fatalError("No library URL") }
         

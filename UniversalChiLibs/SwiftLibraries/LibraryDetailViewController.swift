@@ -52,4 +52,12 @@ class LibraryDetailViewController: UIViewController {
         let searchAddress = "\(address), \(city), \(state) \(zip)"
         openMap(with: searchAddress)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let view = LibraryImageView(library: detailLibrary)
+        if let controller = segue.destination as? LibraryImageViewController {
+            controller.rootView = view
+            controller.view.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
 }

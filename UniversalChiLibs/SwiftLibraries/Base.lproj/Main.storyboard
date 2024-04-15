@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mBW-xw-lHg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mBW-xw-lHg">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -111,6 +111,15 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
                             </textView>
+                            <containerView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="361" placeholderIntrinsicHeight="197" translatesAutoresizingMaskIntoConstraints="NO" id="Q2D-Mn-1Wg">
+                                <rect key="frame" x="16" y="622" width="361" height="197"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Q2D-Mn-1Wg" secondAttribute="height" multiplier="361:197" id="sqn-St-De1"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="nyN-5Z-Wq5" kind="embed" id="ezl-cj-wS6"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ps7-fn-d9C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -118,9 +127,12 @@
                             <constraint firstItem="ps7-fn-d9C" firstAttribute="trailing" secondItem="SyO-CM-cZM" secondAttribute="trailing" constant="16" id="5MN-EK-ZEy"/>
                             <constraint firstItem="SyO-CM-cZM" firstAttribute="leading" secondItem="ps7-fn-d9C" secondAttribute="leading" constant="16" id="ADD-rg-mPd"/>
                             <constraint firstItem="ps7-fn-d9C" firstAttribute="trailing" secondItem="MmV-3T-rlG" secondAttribute="trailing" constant="21" id="D9U-kd-m3U"/>
+                            <constraint firstItem="Q2D-Mn-1Wg" firstAttribute="top" secondItem="FQn-Fs-g9J" secondAttribute="bottom" constant="15" id="MYp-f0-Scw"/>
                             <constraint firstItem="GlM-Dx-K1I" firstAttribute="leading" secondItem="ps7-fn-d9C" secondAttribute="leading" constant="16" id="UJ0-VF-da2"/>
                             <constraint firstItem="ps7-fn-d9C" firstAttribute="trailing" secondItem="GlM-Dx-K1I" secondAttribute="trailing" constant="16" id="Vd7-wv-qAp"/>
                             <constraint firstItem="ps7-fn-d9C" firstAttribute="trailing" secondItem="MmV-3T-rlG" secondAttribute="trailing" constant="21" id="Vmk-SY-b9v"/>
+                            <constraint firstItem="Q2D-Mn-1Wg" firstAttribute="leading" secondItem="ps7-fn-d9C" secondAttribute="leading" constant="16" id="WQ1-qr-4xJ"/>
+                            <constraint firstItem="ps7-fn-d9C" firstAttribute="trailing" secondItem="Q2D-Mn-1Wg" secondAttribute="trailing" constant="16" id="XeA-Uf-rKK"/>
                             <constraint firstItem="ps7-fn-d9C" firstAttribute="trailing" secondItem="FQn-Fs-g9J" secondAttribute="trailing" constant="21" id="Y1u-np-wRM"/>
                             <constraint firstItem="MmV-3T-rlG" firstAttribute="leading" secondItem="ps7-fn-d9C" secondAttribute="leading" constant="11" id="bTw-Ua-96v"/>
                             <constraint firstItem="SyO-CM-cZM" firstAttribute="top" secondItem="ps7-fn-d9C" secondAttribute="top" id="i2C-jF-4uB"/>
@@ -142,6 +154,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2C-cl-dOS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1907.6335877862596" y="4.9295774647887329"/>
+        </scene>
+        <!--Library Image View Controller-->
+        <scene sceneID="xiC-1W-phe">
+            <objects>
+                <hostingController id="nyN-5Z-Wq5" customClass="LibraryImageViewController" customModule="SwiftLibraries" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OZ3-E5-vI3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2644" y="225"/>
         </scene>
     </scenes>
     <resources>
