@@ -9,6 +9,10 @@
 import UIKit
 import Foundation
 
+protocol LibraryTableViewControllerDelegate: AnyObject {
+    func libraryTableViewControllerDidSelectLibrary(_ selectedLibrary: Library)
+}
+
 class LibraryTableViewController: UITableViewController, Storyboarded {
     weak var delegate: LibraryTableViewControllerDelegate?
     

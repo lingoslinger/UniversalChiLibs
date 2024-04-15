@@ -28,7 +28,6 @@
 		9D3C8EC12AF54CB50064DDEB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8E602AF3E8760064DDEB /* Location.swift */; };
 		9D3C8EC42AF54CB50064DDEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C8E332AF3E0CD0064DDEB /* LaunchScreen.storyboard */; };
 		9D3C8EC52AF54CB50064DDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C8E312AF3E0CD0064DDEB /* Assets.xcassets */; };
-		9D3C8EC62AF54CB50064DDEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C8E2E2AF3E0CC0064DDEB /* Main.storyboard */; };
 		9D3C8EDA2AF54E280064DDEB /* LibraryMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8ED72AF54E280064DDEB /* LibraryMapView.swift */; };
 		9D3C8EDB2AF54E280064DDEB /* LibraryPhoneTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8ED82AF54E280064DDEB /* LibraryPhoneTextView.swift */; };
 		9D3C8EDC2AF54E280064DDEB /* LibraryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8ED92AF54E280064DDEB /* LibraryLabel.swift */; };
@@ -89,11 +88,12 @@
 		9D3C90502AFD0D1D0064DDEB /* LibraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C904F2AFD0D1D0064DDEB /* LibraryDetailViewController.swift */; };
 		9D3C90512AFD0D1D0064DDEB /* LibraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C904F2AFD0D1D0064DDEB /* LibraryDetailViewController.swift */; };
 		9D3C90522AFD0D1D0064DDEB /* LibraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C904F2AFD0D1D0064DDEB /* LibraryDetailViewController.swift */; };
-		9D3C90582AFD64020064DDEB /* LibraryTableViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C90572AFD63AB0064DDEB /* LibraryTableViewControllerDelegate.swift */; };
 		9D53874C2B5C771B0026C31B /* MapUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53874B2B5C771B0026C31B /* MapUtilities.swift */; };
 		9D53874D2B5C77FE0026C31B /* MapUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53874B2B5C771B0026C31B /* MapUtilities.swift */; };
 		9D53874E2B5C77FF0026C31B /* MapUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53874B2B5C771B0026C31B /* MapUtilities.swift */; };
 		9D53874F2B5C78000026C31B /* MapUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53874B2B5C771B0026C31B /* MapUtilities.swift */; };
+		9D56F3AB2BCD8D0C0068E052 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 9D56F3AA2BCD8D0C0068E052 /* SwiftSoup */; };
+		9D56F3AD2BCDB4540068E052 /* LibraryImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56F3AC2BCDB3760068E052 /* LibraryImageViewController.swift */; };
 		9D8831C32B0782D2003889CB /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8831C22B0782D2003889CB /* WebService.swift */; };
 		9D8ACF4E2B5DE95B0085F2ED /* LibraryGoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8ACF4D2B5DE95B0085F2ED /* LibraryGoogleMapView.swift */; };
 		9D8ACF502B5DE96C0085F2ED /* LibraryHereMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8ACF4F2B5DE96C0085F2ED /* LibraryHereMapView.swift */; };
@@ -238,8 +238,8 @@
 		9D3C90372AFCF2310064DDEB /* Storyboarded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		9D3C904B2AFD0CEF0064DDEB /* LibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableViewController.swift; sourceTree = "<group>"; };
 		9D3C904F2AFD0D1D0064DDEB /* LibraryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDetailViewController.swift; sourceTree = "<group>"; };
-		9D3C90572AFD63AB0064DDEB /* LibraryTableViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableViewControllerDelegate.swift; sourceTree = "<group>"; };
 		9D53874B2B5C771B0026C31B /* MapUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtilities.swift; sourceTree = "<group>"; };
+		9D56F3AC2BCDB3760068E052 /* LibraryImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryImageViewController.swift; sourceTree = "<group>"; };
 		9D8831C22B0782D2003889CB /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		9D8ACF4D2B5DE95B0085F2ED /* LibraryGoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryGoogleMapView.swift; sourceTree = "<group>"; };
 		9D8ACF4F2B5DE96C0085F2ED /* LibraryHereMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHereMapView.swift; sourceTree = "<group>"; };
@@ -318,6 +318,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D56F3AB2BCD8D0C0068E052 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,9 +371,9 @@
 			isa = PBXGroup;
 			children = (
 				9D3C8FE82AFC67930064DDEB /* CoordinatedSwiftLibs */,
-				9D3C8EB52AF54BF10064DDEB /* SwiftLIbsNoSB */,
-				9D3C8EF32AF58E000064DDEB /* SwiftUILibraries */,
 				9D3C8E9A2AF495C80064DDEB /* SwiftLibraries */,
+				9D3C8EF32AF58E000064DDEB /* SwiftUILibraries */,
+				9D3C8EB52AF54BF10064DDEB /* SwiftLIbsNoSB */,
 				9D3C8EB42AF4C16A0064DDEB /* Common */,
 			);
 			path = UniversalChiLibs;
@@ -567,8 +568,8 @@
 				9D3C8FEB2AFC67930064DDEB /* SceneDelegate.swift */,
 				9D3C8FEF2AFC67930064DDEB /* Main.storyboard */,
 				9D3C904B2AFD0CEF0064DDEB /* LibraryTableViewController.swift */,
-				9D3C90572AFD63AB0064DDEB /* LibraryTableViewControllerDelegate.swift */,
 				9D3C904F2AFD0D1D0064DDEB /* LibraryDetailViewController.swift */,
+				9D56F3AC2BCDB3760068E052 /* LibraryImageViewController.swift */,
 				9D3C8FF22AFC67940064DDEB /* Assets.xcassets */,
 				9D3C8FF42AFC67940064DDEB /* LaunchScreen.storyboard */,
 				9D3C8FF72AFC67940064DDEB /* Info.plist */,
@@ -803,6 +804,9 @@
 			dependencies = (
 			);
 			name = CoordinatedSwiftLibs;
+			packageProductDependencies = (
+				9D56F3AA2BCD8D0C0068E052 /* SwiftSoup */,
+			);
 			productName = CoordinatedSwiftLibs;
 			productReference = 9D3C8FE72AFC67930064DDEB /* CoordinatedSwiftLibs.app */;
 			productType = "com.apple.product-type.application";
@@ -948,7 +952,6 @@
 				9D3C8EC42AF54CB50064DDEB /* LaunchScreen.storyboard in Resources */,
 				9D3C8F162AF6A85B0064DDEB /* Webservice.plist in Resources */,
 				9D3C8EC52AF54CB50064DDEB /* Assets.xcassets in Resources */,
-				9D3C8EC62AF54CB50064DDEB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1158,12 +1161,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D3C90412AFCF54E0064DDEB /* ViewController+ErrorDialog.swift in Sources */,
-				9D3C90582AFD64020064DDEB /* LibraryTableViewControllerDelegate.swift in Sources */,
 				9D3C90472AFCF56E0064DDEB /* Library.swift in Sources */,
 				9D3C90502AFD0D1D0064DDEB /* LibraryDetailViewController.swift in Sources */,
 				9DD5BF582BCAEC0600966E2E /* LibraryImageView.swift in Sources */,
 				9D3C90422AFCF5540064DDEB /* String+LibraryHourFormatting.swift in Sources */,
 				9D53874F2B5C78000026C31B /* MapUtilities.swift in Sources */,
+				9D56F3AD2BCDB4540068E052 /* LibraryImageViewController.swift in Sources */,
 				9D3C90432AFCF5580064DDEB /* PlistParser.swift in Sources */,
 				9D3C90302AFCF1D20064DDEB /* Coordinator.swift in Sources */,
 				9D3C90452AFCF5670064DDEB /* Website.swift in Sources */,
@@ -2065,6 +2068,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9D56F3AA2BCD8D0C0068E052 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DD5BF4F2BC969E600966E2E /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
 		9DD5BF512BC9757B00966E2E /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9DD5BF4F2BC969E600966E2E /* XCRemoteSwiftPackageReference "SwiftSoup" */;

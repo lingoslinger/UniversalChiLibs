@@ -24,7 +24,11 @@ class LibraryDetailViewController: UIViewController, Storyboarded {
         title = detailLibrary?.name ?? "Library name not available"
         let phone = detailLibrary?.phone ?? "Library phone unavailable"
         libraryPhoneTextView.text = "Phone: \(phone)"
-        libraryAddressLabel.text = detailLibrary?.address ?? "Library address unavailable"
+        let address = detailLibrary?.address ?? ""
+        let city = detailLibrary?.city ?? ""
+        let state = detailLibrary?.state ?? ""
+        let zip = detailLibrary?.zip ?? ""
+        libraryAddressLabel.text = "\(address) \(city), \(state) \(zip)"
         libraryHoursLabel.text = detailLibrary?.hoursOfOperation?.formattedHours ?? "Library hours unavailable"
         annotateMap()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleMapTap))
@@ -52,6 +56,14 @@ class LibraryDetailViewController: UIViewController, Storyboarded {
         let zip = detailLibrary?.zip ?? ""
         
         let searchAddress = "\(address), \(city), \(state) \(zip)"
-        openAppleMaps(with: searchAddress)
+        openMap(with: searchAddress)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let view = LibraryImageView(library: detailLibrary)
+        if let controller = segue.destination as? LibraryImageViewController {
+            controller.rootView = view
+            controller.view.translatesAutoresizingMaskIntoConstraints = false
+        }
     }
 }
