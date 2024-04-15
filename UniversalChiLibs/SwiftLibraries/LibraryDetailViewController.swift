@@ -23,7 +23,11 @@ class LibraryDetailViewController: UIViewController {
         title = detailLibrary?.name ?? "Library name not available"
         let phone = detailLibrary?.phone ?? "Library phone unavailable"
         libraryPhoneTextView.text = "Phone: \(phone)"
-        libraryAddressLabel.text = detailLibrary?.address ?? "Library address unavailable"
+        let address = detailLibrary?.address ?? ""
+        let city = detailLibrary?.city ?? ""
+        let state = detailLibrary?.state ?? ""
+        let zip = detailLibrary?.zip ?? ""
+        libraryAddressLabel.text = "\(address) \(city), \(state) \(zip)"
         libraryHoursLabel.text = detailLibrary?.hoursOfOperation?.formattedHours ?? "Library hours unavailable"
         annotateMap()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleMapTap))
