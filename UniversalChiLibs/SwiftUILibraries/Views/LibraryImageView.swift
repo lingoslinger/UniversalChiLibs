@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import WebKit
 import SwiftSoup
 
 struct LibraryImageView: View {
