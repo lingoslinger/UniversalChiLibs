@@ -15,17 +15,15 @@ struct ContentView: View {
         dataStore.libraries
     }
     
-    let config = [ GridItem(.adaptive(minimum: 400))]
+    let config = [ GridItem(.adaptive(minimum: 350))]
     
     var body: some View {
         ScrollView {
+            Text("Chicago Libraries")
+                .font(.headline)
             LazyVGrid(columns: config, spacing: 75) {
                 ForEach(libraries, id: \.self) { library in
-                    VStack {
-                        LibraryImageView(library: library)
-                            .frame(width: 300, height: 200)
-                        Text(library.name)
-                    }
+                    tvLibraryView(library: library)
                 }
             }
         }
