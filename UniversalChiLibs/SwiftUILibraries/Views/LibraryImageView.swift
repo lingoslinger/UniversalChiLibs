@@ -11,6 +11,8 @@ import SwiftSoup
 
 struct LibraryImageView: View {
     let library: Library?
+    var imageCache = NSCache<NSString, UIImage>() // temporary until I make a better, more persistent cache
+    
     @State private var libraryImageData: Data?
     
     var body: some View {
@@ -57,7 +59,11 @@ extension LibraryImageView {
         else { fatalError("No library URL") }
         
         // TODO: add image cache check here...
-        
+        if let image = imageCache.object(forKey: NSString(string:libraryURLString)) {
+            libraryImageData = image.pngData()
+            return
+        }
+
         let (data, response) = try await URLSession.shared.data(from: libraryURL)
         guard let response = response as? HTTPURLResponse, response.statusCode < 400 else {
             fatalError("bad response")
@@ -78,6 +84,8 @@ extension LibraryImageView {
         guard let imageResponse = imageResponse as? HTTPURLResponse, imageResponse.statusCode < 400 else {
             fatalError("bad response")
         }
+        let image = UIImage(data: imageData) ?? UIImage()
+        imageCache.setObject(image, forKey: libraryURLString as NSString)
         libraryImageData = imageData
     }
     
@@ -89,6 +97,7 @@ extension LibraryImageView {
         return UIScreen.main.traitCollection.userInterfaceStyle == .dark ? Color.white : Color.black
     }
 }
+
 
 #Preview {
     LibraryImageView(library: previewLibrary)
