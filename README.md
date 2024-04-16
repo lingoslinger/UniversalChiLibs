@@ -14,7 +14,7 @@ The current targets are:
 
 **• CoordinatedSwiftLibs** - yet another Swift version, using the Coordinator pattern
 
-**• tvLibraries - you guessed it, a version for tvOS (in progress)
+**• tvLibraries** - you guessed it, a version for tvOS (in progress)
 
 
 I have some tenative plans to make one of these targets iPad compatible, when I can find the time.
