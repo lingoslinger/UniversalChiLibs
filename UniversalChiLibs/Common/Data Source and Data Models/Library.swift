@@ -19,7 +19,6 @@ struct Library: Decodable, Identifiable, Hashable {
     let website : Website?
     let zip : String?
     let id: Int
-    var imageURL: String
     
     enum CodingKeys: String, CodingKey {
         case address = "address"
@@ -44,16 +43,7 @@ struct Library: Decodable, Identifiable, Hashable {
         state = try values.decodeIfPresent(String.self, forKey: .state)
         website = try values.decodeIfPresent(Website.self, forKey: .website)
         zip = try values.decodeIfPresent(String.self, forKey: .zip)
-        id = Date().hashValue
-        imageURL = ""
-    }
-    
-    private func libraryImageLink(for library: Library) -> String {
-        guard let libraryURLString = library.website?.url else { fatalError("No library URL") }
-        
-        
-        
-        return libraryURLString
+        id = UUID().hashValue
     }
 }
 

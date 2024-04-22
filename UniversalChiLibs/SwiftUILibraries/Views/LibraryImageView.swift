@@ -14,6 +14,10 @@ struct LibraryImageView: View {
     
     @State private var libraryImageData: Data?
     
+    var loadingBackgroundColor: Color {
+        UIScreen.main.traitCollection.userInterfaceStyle == .dark ? Color.gray : Color.white
+    }
+    
     var body: some View {
         let imageHeight = UIScreen.main.bounds.width / 3.0 * 2.0
         VStack(alignment: .leading, spacing: 10) {
@@ -25,12 +29,12 @@ struct LibraryImageView: View {
             } else {
                 ZStack {
                     Rectangle()
-                        .fill(loadingBackgroundColor())
+                        .fill(loadingBackgroundColor)
                         .frame(height: imageHeight)
                         .onAppear {
                             Task {
                                 do {
-                                    try await loadLibraryImage()
+                                    try await loadLibraryImageData()
                                 } catch {
                                     print("Error loading library image...")
                                 }
@@ -39,9 +43,7 @@ struct LibraryImageView: View {
                     VStack {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle())
-                            .padding()
-                        Text("Loading library image...")
-                            .foregroundColor(loadingTextColor())
+                            .frame(minHeight: imageHeight, alignment: .center)
                     }
                 }
             }
@@ -50,7 +52,7 @@ struct LibraryImageView: View {
 }
 
 extension LibraryImageView {
-    private func loadLibraryImage() async throws {
+    private func loadLibraryImageData() async throws {
         var imageURLString = ""
         
         guard let libraryURLString = library?.website?.url,
@@ -83,13 +85,6 @@ extension LibraryImageView {
         libraryImageData = imageData
     }
     
-    private func loadingBackgroundColor() -> Color {
-        return UIScreen.main.traitCollection.userInterfaceStyle == .dark ? Color.black : Color.white
-    }
-    
-    private func loadingTextColor() -> Color {
-        return UIScreen.main.traitCollection.userInterfaceStyle == .dark ? Color.white : Color.black
-    }
 }
 
 
