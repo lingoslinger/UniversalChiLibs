@@ -93,6 +93,7 @@
 		9D53874F2B5C78000026C31B /* MapUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53874B2B5C771B0026C31B /* MapUtilities.swift */; };
 		9D56F3AB2BCD8D0C0068E052 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 9D56F3AA2BCD8D0C0068E052 /* SwiftSoup */; };
 		9D56F3AD2BCDB4540068E052 /* LibraryImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56F3AC2BCDB3760068E052 /* LibraryImageViewController.swift */; };
+		9D881A4B2BD927F8009BFEE2 /* LibraryAlphaNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D881A492BD92747009BFEE2 /* LibraryAlphaNavigationView.swift */; };
 		9D8831C32B0782D2003889CB /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8831C22B0782D2003889CB /* WebService.swift */; };
 		9D8ACF4E2B5DE95B0085F2ED /* LibraryGoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8ACF4D2B5DE95B0085F2ED /* LibraryGoogleMapView.swift */; };
 		9D8ACF502B5DE96C0085F2ED /* LibraryHereMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8ACF4F2B5DE96C0085F2ED /* LibraryHereMapView.swift */; };
@@ -275,6 +276,7 @@
 		9D3C904F2AFD0D1D0064DDEB /* LibraryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDetailViewController.swift; sourceTree = "<group>"; };
 		9D53874B2B5C771B0026C31B /* MapUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtilities.swift; sourceTree = "<group>"; };
 		9D56F3AC2BCDB3760068E052 /* LibraryImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryImageViewController.swift; sourceTree = "<group>"; };
+		9D881A492BD92747009BFEE2 /* LibraryAlphaNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAlphaNavigationView.swift; sourceTree = "<group>"; };
 		9D8831C22B0782D2003889CB /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		9D8ACF4D2B5DE95B0085F2ED /* LibraryGoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryGoogleMapView.swift; sourceTree = "<group>"; };
 		9D8ACF4F2B5DE96C0085F2ED /* LibraryHereMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHereMapView.swift; sourceTree = "<group>"; };
@@ -728,6 +730,7 @@
 				9D3C8F0F2AF5914B0064DDEB /* LibraryView.swift */,
 				9D3C8F0E2AF5914B0064DDEB /* LibraryDetailView.swift */,
 				9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */,
+				9D881A492BD92747009BFEE2 /* LibraryAlphaNavigationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1298,6 +1301,7 @@
 				9D3C8F022AF58FE00064DDEB /* Website.swift in Sources */,
 				9DD5BF552BC9EC1900966E2E /* LibraryImageView.swift in Sources */,
 				9D3C8F082AF590460064DDEB /* LibraryPhoneNumberView.swift in Sources */,
+				9D881A4B2BD927F8009BFEE2 /* LibraryAlphaNavigationView.swift in Sources */,
 				9D8ACF502B5DE96C0085F2ED /* LibraryHereMapView.swift in Sources */,
 				9D3C8F0B2AF590630064DDEB /* LibraryDataSource.swift in Sources */,
 				9D53874E2B5C77FF0026C31B /* MapUtilities.swift in Sources */,
