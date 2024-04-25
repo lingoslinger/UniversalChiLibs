@@ -25,6 +25,8 @@ struct LibraryView: View {
                     searchText.count == 0 ? true : $0.name.lowercased().contains(searchText.lowercased())
                 }
             case .location:
+                // use user location to find closest libraries
+                
                 returnLibraries = dataStore.libraries // for now, do distance check here eventually
         }
         return returnLibraries
@@ -74,25 +76,29 @@ struct LibraryView: View {
                                                     Image(systemName: "location")}
                         )
                     case .location:
-                        List {
-                            ForEach(libraries, id: \.self) { library in
-                                NavigationLink(destination: LibraryDetailView(library: library)) {
-                                    Text(library.name)
+                        VStack {
+                            Text("Closest by walking distance")
+                            List {
+                                ForEach(libraries, id: \.self) { library in
+                                    NavigationLink(destination: LibraryDetailView(library: library)) {
+                                        Text(library.name)
+                                    }
+                                    
                                 }
-                               
                             }
+                            // TODO: make seachable if user has not given permission to use their location
+//                            .searchable(text: $searchText,
+//                                        placement: .navigationBarDrawer(displayMode: .always),
+//                                        prompt: "Search by address or zip code")
+                            .navigationBarTitle("Chicago Libraries")
+                            .navigationBarItems(trailing:
+                                                    Button(action: {
+                                print("list button pressed")
+                                displayType = .list
+                            }) {
+                                Image(systemName: "text.justify")}
+                            )
                         }
-                        .searchable(text: $searchText,
-                                    placement: .navigationBarDrawer(displayMode: .always),
-                                    prompt: "Search by address or zip code")
-                        .navigationBarTitle("Chicago Libraries")
-                        .navigationBarItems(trailing:
-                                                Button(action: {
-                                                    print("list button pressed")
-                            displayType = .list
-                                                }) {
-                                                    Image(systemName: "text.justify")}
-                        )
                 }
             }
         }
