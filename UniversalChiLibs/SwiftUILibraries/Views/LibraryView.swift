@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 enum DisplayType {
     case list
@@ -16,6 +17,7 @@ struct LibraryView: View {
     @StateObject var dataStore = LibraryDataSource()
     @State var searchText = ""
     @State var displayType = DisplayType.list
+    @StateObject var locationDataManager = LocationDataManager()
     
     var libraries: [Library] {
         var returnLibraries = dataStore.libraries
@@ -25,7 +27,7 @@ struct LibraryView: View {
                     searchText.count == 0 ? true : $0.name.lowercased().contains(searchText.lowercased())
                 }
             case .location:
-                // use user location to find closest libraries
+                // eventually use user location to find closest libraries
                 
                 returnLibraries = dataStore.libraries // for now, do distance check here eventually
         }
@@ -68,15 +70,11 @@ struct LibraryView: View {
                                     placement: .navigationBarDrawer(displayMode: .always),
                                     prompt: "Search by library name")
                         .navigationBarTitle("Chicago Libraries")
-                        .navigationBarItems(trailing:
-                                                Button(action: {
-                                                    print("location button pressed")
-                            displayType = .location
-                                                }) {
-                                                    Image(systemName: "location")}
-                        )
+                        .navigationBarItems(trailing: Button(action: { displayType = .location }) {
+                            Image(systemName: "location") })
                     case .location:
                         VStack {
+                            Text("User location: \(locationDataManager.userLocation.coordinate)")
                             Text("Closest by walking distance")
                             List {
                                 ForEach(libraries, id: \.self) { library in
@@ -86,18 +84,12 @@ struct LibraryView: View {
                                     
                                 }
                             }
-                            // TODO: make seachable if user has not given permission to use their location
+                            // TODO: make searchable if user has not given permission to use their location
 //                            .searchable(text: $searchText,
 //                                        placement: .navigationBarDrawer(displayMode: .always),
 //                                        prompt: "Search by address or zip code")
                             .navigationBarTitle("Chicago Libraries")
-                            .navigationBarItems(trailing:
-                                                    Button(action: {
-                                print("list button pressed")
-                                displayType = .list
-                            }) {
-                                Image(systemName: "text.justify")}
-                            )
+                            .navigationBarItems(trailing: Button(action: { displayType = .list }) { Image(systemName: "text.justify") })
                         }
                 }
             }

@@ -93,6 +93,12 @@
 		9D53874F2B5C78000026C31B /* MapUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53874B2B5C771B0026C31B /* MapUtilities.swift */; };
 		9D56F3AB2BCD8D0C0068E052 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 9D56F3AA2BCD8D0C0068E052 /* SwiftSoup */; };
 		9D56F3AD2BCDB4540068E052 /* LibraryImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56F3AC2BCDB3760068E052 /* LibraryImageViewController.swift */; };
+		9D6046A52BDC09B400D076B1 /* Old Chicago Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */; };
+		9D6046A62BDC09B500D076B1 /* Old Chicago Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */; };
+		9D6046A72BDC09B500D076B1 /* Old Chicago Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */; };
+		9D6046A82BDC09B600D076B1 /* Old Chicago Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */; };
+		9D6046A92BDC09B800D076B1 /* Old Chicago Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */; };
+		9D881A562BDB419A009BFEE2 /* LocationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D881A542BDB40F1009BFEE2 /* LocationDataManager.swift */; };
 		9D8831C32B0782D2003889CB /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8831C22B0782D2003889CB /* WebService.swift */; };
 		9D8ACF4E2B5DE95B0085F2ED /* LibraryGoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8ACF4D2B5DE95B0085F2ED /* LibraryGoogleMapView.swift */; };
 		9D8ACF502B5DE96C0085F2ED /* LibraryHereMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8ACF4F2B5DE96C0085F2ED /* LibraryHereMapView.swift */; };
@@ -275,6 +281,8 @@
 		9D3C904F2AFD0D1D0064DDEB /* LibraryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDetailViewController.swift; sourceTree = "<group>"; };
 		9D53874B2B5C771B0026C31B /* MapUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtilities.swift; sourceTree = "<group>"; };
 		9D56F3AC2BCDB3760068E052 /* LibraryImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryImageViewController.swift; sourceTree = "<group>"; };
+		9D881A542BDB40F1009BFEE2 /* LocationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataManager.swift; sourceTree = "<group>"; };
+		9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Old Chicago Apartment.gpx"; sourceTree = "<group>"; };
 		9D8831C22B0782D2003889CB /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		9D8ACF4D2B5DE95B0085F2ED /* LibraryGoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryGoogleMapView.swift; sourceTree = "<group>"; };
 		9D8ACF4F2B5DE96C0085F2ED /* LibraryHereMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHereMapView.swift; sourceTree = "<group>"; };
@@ -492,6 +500,7 @@
 		9D3C8EB42AF4C16A0064DDEB /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */,
 				9D53874B2B5C771B0026C31B /* MapUtilities.swift */,
 				9D3C8E652AF3EB580064DDEB /* Extensions */,
 				9D3C8E642AF3EB260064DDEB /* Data Source and Data Models */,
@@ -575,6 +584,7 @@
 			children = (
 				9D3C8F0A2AF590630064DDEB /* LibraryDataSource.swift */,
 				9D8831C22B0782D2003889CB /* WebService.swift */,
+				9D881A542BDB40F1009BFEE2 /* LocationDataManager.swift */,
 			);
 			path = "Data Source";
 			sourceTree = "<group>";
@@ -1124,6 +1134,7 @@
 				9D3C8F152AF6A85B0064DDEB /* Webservice.plist in Resources */,
 				9D3C8E322AF3E0CD0064DDEB /* Assets.xcassets in Resources */,
 				9D3C8E302AF3E0CC0064DDEB /* Main.storyboard in Resources */,
+				9D6046A52BDC09B400D076B1 /* Old Chicago Apartment.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1134,6 +1145,7 @@
 				9D3C8EC42AF54CB50064DDEB /* LaunchScreen.storyboard in Resources */,
 				9D3C8F162AF6A85B0064DDEB /* Webservice.plist in Resources */,
 				9D3C8EC52AF54CB50064DDEB /* Assets.xcassets in Resources */,
+				9D6046A62BDC09B500D076B1 /* Old Chicago Apartment.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1145,6 +1157,7 @@
 				9D3C8F172AF6B06A0064DDEB /* Webservice.plist in Resources */,
 				9DB29AA42BCE097900455F4F /* Assets.xcassets in Resources */,
 				9D3C8EF92AF58E010064DDEB /* Assets.xcassets in Resources */,
+				9D6046A72BDC09B500D076B1 /* Old Chicago Apartment.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1198,6 +1211,7 @@
 				9D3C90482AFCF5A20064DDEB /* Webservice.plist in Resources */,
 				9D3C8FF12AFC67930064DDEB /* Main.storyboard in Resources */,
 				9DB29AA52BCE097D00455F4F /* Assets.xcassets in Resources */,
+				9D6046A82BDC09B600D076B1 /* Old Chicago Apartment.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1222,6 +1236,7 @@
 				9DB29AB42BCE128F00455F4F /* Preview Assets.xcassets in Resources */,
 				9DB29ADC2BCEBC4D00455F4F /* Webservice.plist in Resources */,
 				9DB29AB12BCE128F00455F4F /* Assets.xcassets in Resources */,
+				9D6046A92BDC09B800D076B1 /* Old Chicago Apartment.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1297,6 +1312,7 @@
 				9D3C8F0D2AF590790064DDEB /* PreviewData.swift in Sources */,
 				9D3C8F022AF58FE00064DDEB /* Website.swift in Sources */,
 				9DD5BF552BC9EC1900966E2E /* LibraryImageView.swift in Sources */,
+				9D881A562BDB419A009BFEE2 /* LocationDataManager.swift in Sources */,
 				9D3C8F082AF590460064DDEB /* LibraryPhoneNumberView.swift in Sources */,
 				9D8ACF502B5DE96C0085F2ED /* LibraryHereMapView.swift in Sources */,
 				9D3C8F0B2AF590630064DDEB /* LibraryDataSource.swift in Sources */,
@@ -1783,10 +1799,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We use your location to find the closest libraries.";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We use your location to find the closest libraries.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We use your location to find the closest library.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "location-services";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
@@ -1815,10 +1832,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We use your location to find the closest libraries.";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We use your location to find the closest libraries.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We use your location to find the closest library.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = "location-services";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
