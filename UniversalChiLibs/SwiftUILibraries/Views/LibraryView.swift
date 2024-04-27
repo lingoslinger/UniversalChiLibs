@@ -43,6 +43,16 @@ struct LibraryView: View {
         searchText.count > 0 && libraries.count == 0
     }
     
+    var locationAuthorized: Bool {
+        let authorized = locationDataManager.locationAuthorized
+        switch (authorized) {
+            case .authorizedAlways, .authorizedWhenInUse:
+                return true
+            default:
+                return false
+        }
+    }
+    
     var body: some View {
         HStack {
             NavigationView {
@@ -73,23 +83,42 @@ struct LibraryView: View {
                         .navigationBarItems(trailing: Button(action: { displayType = .location }) {
                             Image(systemName: "location") })
                     case .location:
-                        VStack {
-                            Text("User location: \(locationDataManager.userLocation.coordinate)")
-                            Text("Closest by walking distance")
-                            List {
-                                ForEach(libraries, id: \.self) { library in
-                                    NavigationLink(destination: LibraryDetailView(library: library)) {
-                                        Text(library.name)
+                        if locationAuthorized {
+                            VStack {
+                                Text("User location: \(locationDataManager.userLocation.coordinate)")
+                                Text("Closest by walking distance")
+                                // TODO: sort libraries by walking distance from user location here
+                                List {
+                                    ForEach(libraries, id: \.self) { library in
+                                        NavigationLink(destination: LibraryDetailView(library: library)) {
+                                            Text(library.name)
+                                        }
+                                        
                                     }
-                                    
                                 }
+                                .navigationBarTitle("Chicago Libraries")
+                                .navigationBarItems(trailing: Button(action: { displayType = .list }) { Image(systemName: "text.justify") })
                             }
-                            // TODO: make searchable if user has not given permission to use their location
-//                            .searchable(text: $searchText,
-//                                        placement: .navigationBarDrawer(displayMode: .always),
-//                                        prompt: "Search by address or zip code")
-                            .navigationBarTitle("Chicago Libraries")
-                            .navigationBarItems(trailing: Button(action: { displayType = .list }) { Image(systemName: "text.justify") })
+                        } else {
+                            VStack {
+                                Text("Use of user location not authorized")
+                                Text("Closest by walking distance")
+                                // TODO: use entered data to get location to sort libraries here
+                                List {
+                                    ForEach(libraries, id: \.self) { library in
+                                        NavigationLink(destination: LibraryDetailView(library: library)) {
+                                            Text(library.name)
+                                        }
+                                        
+                                    }
+                                }
+                                // TODO: make searchable if user has not given permission to use their location
+                                .searchable(text: $searchText,
+                                            placement: .navigationBarDrawer(displayMode: .always),
+                                            prompt: "Enter an address or zip code")
+                                .navigationBarTitle("Chicago Libraries")
+                                .navigationBarItems(trailing: Button(action: { displayType = .list }) { Image(systemName: "text.justify") })
+                            }
                         }
                 }
             }

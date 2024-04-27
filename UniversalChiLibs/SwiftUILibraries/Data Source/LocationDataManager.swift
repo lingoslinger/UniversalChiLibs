@@ -12,6 +12,7 @@ import CoreLocation
 class LocationDataManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private var locationManager = CLLocationManager()
     @Published var userLocation: CLLocation = CLLocation()
+    @Published var locationAuthorized: CLAuthorizationStatus = .notDetermined
     
     override init() {
         super.init()
@@ -27,5 +28,9 @@ class LocationDataManager: NSObject, ObservableObject, CLLocationManagerDelegate
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
         print("Failed to find user's location: \(error.localizedDescription)")
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        locationAuthorized = manager.authorizationStatus
     }
 }
