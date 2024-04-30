@@ -11,8 +11,6 @@ final class LibraryDataSource: ObservableObject {
     @Published var libraries: [Library] = []
     
     init() {
-        // publish async network calls back to the main thread
-        // eventually use @MainActor here?
         DispatchQueue.main.async {
             Task {
                 do {

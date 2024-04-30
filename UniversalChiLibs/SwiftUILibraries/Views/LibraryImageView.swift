@@ -11,7 +11,6 @@ import SwiftSoup
 
 struct LibraryImageView: View {
     let library: Library?
-    
     @State private var libraryImageData: Data?
     
     var loadingBackgroundColor: Color {
@@ -40,11 +39,10 @@ struct LibraryImageView: View {
                                 }
                             }
                         }
-                    VStack {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle())
-                            .frame(minHeight: imageHeight, alignment: .center)
-                    }
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .frame(minHeight: imageHeight, alignment: .center)
+                        .tint(UIScreen.main.traitCollection.userInterfaceStyle == .dark ? Color.black : Color.white)
                 }
             }
         }

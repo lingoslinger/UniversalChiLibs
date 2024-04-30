@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-class LocationDataManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+final class LocationDataManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private var locationManager = CLLocationManager()
     @Published var userLocation: CLLocation = CLLocation()
     @Published var locationAuthorized: CLAuthorizationStatus = .notDetermined
