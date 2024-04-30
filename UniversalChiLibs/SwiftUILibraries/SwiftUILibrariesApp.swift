@@ -7,15 +7,6 @@
 
 import SwiftUI
 
-final class DisplayType: ObservableObject {
-    enum MainScreenType {
-        case list
-        case location
-    }
-    
-    @Published var mainScreenType: MainScreenType = .list
-}
-
 @main
 struct SwiftUILibrariesApp: App {
     @StateObject var displayType = DisplayType()

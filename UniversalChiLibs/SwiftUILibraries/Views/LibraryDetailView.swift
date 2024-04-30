@@ -10,9 +10,7 @@ import SwiftUI
 struct LibraryDetailView: View {
     let library: Library
     @State private var mapPreference = MapPreference.apple // set this somewhere else and publish?
-    @State private var libraryImageData: Data?
 
-    
     var body: some View {
         NavigationView {
             ScrollView {
