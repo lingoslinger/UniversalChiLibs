@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class LibraryDataSource: ObservableObject {
+final class LibraryDataSource: ObservableObject {
     @Published var libraries: [Library] = []
     
     init() {

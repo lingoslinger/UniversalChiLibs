@@ -8,28 +8,23 @@
 import SwiftUI
 import CoreLocation
 
-enum DisplayType {
-    case list
-    case location
-}
-
 struct LibraryView: View {
-    @StateObject var dataStore = LibraryDataSource()
+    @EnvironmentObject var dataSource: LibraryDataSource
     @State var searchText = ""
-    @State var displayType = DisplayType.list
+    @EnvironmentObject var displayType: DisplayType
     @StateObject var locationDataManager = LocationDataManager()
     
     var libraries: [Library] {
-        var returnLibraries = dataStore.libraries
-        switch displayType {
+        var returnLibraries = dataSource.libraries
+        switch displayType.mainScreenType {
             case .list:
-                returnLibraries = dataStore.libraries.filter {
+                returnLibraries = dataSource.libraries.filter {
                     searchText.count == 0 ? true : $0.name.lowercased().contains(searchText.lowercased())
                 }
             case .location:
                 // eventually use user location to find closest libraries
                 
-                returnLibraries = dataStore.libraries // for now, do distance check here eventually
+                returnLibraries = dataSource.libraries // for now, do distance check here eventually
         }
         return returnLibraries
     }
@@ -56,34 +51,12 @@ struct LibraryView: View {
     var body: some View {
         HStack {
             NavigationView {
-                switch displayType {
+                switch displayType.mainScreenType {
                     case .list:
-                        List {
-                            ForEach(sectionTitles, id: \.self) { sectionTitle in
-                                Section(header: Text(sectionTitle)) {
-                                    let currentLibraries = libraries.filter { $0.name.hasPrefix(sectionTitle) }.sorted { $0.name < $1.name }
-                                    ForEach(currentLibraries, id: \.self) { library in
-                                        NavigationLink(destination: LibraryDetailView(library: library)) {
-                                            Text(library.name)
-                                        }
-                                    }
-                                }
-                            }
-                            if showNoResultsMessage {
-                                Text("No results found for \"\(searchText)\"")
-                                    .padding()
-                                    .foregroundColor(.secondary)
-                                    .listRowBackground(Color.clear)
-                            }
-                        }
-                        .searchable(text: $searchText,
-                                    placement: .navigationBarDrawer(displayMode: .always),
-                                    prompt: "Search by library name")
-                        .navigationBarTitle("Chicago Libraries")
-                        .navigationBarItems(trailing: Button(action: { displayType = .location }) {
-                            Image(systemName: "location") })
+                        LibraryAlphaView()
                     case .location:
                         if locationAuthorized {
+                            // LibraryClosestLocationView
                             VStack {
                                 Text("User location: \(locationDataManager.userLocation.coordinate)")
                                 Text("Closest by walking distance")
@@ -97,9 +70,10 @@ struct LibraryView: View {
                                     }
                                 }
                                 .navigationBarTitle("Chicago Libraries")
-                                .navigationBarItems(trailing: Button(action: { displayType = .list }) { Image(systemName: "text.justify") })
+                                .navigationBarItems(trailing: Button(action: { displayType.mainScreenType = .list }) { Image(systemName: "text.justify") })
                             }
                         } else {
+                            // LibrarySearchLocationView
                             VStack {
                                 Text("Use of user location not authorized")
                                 Text("Closest by walking distance")
@@ -117,7 +91,7 @@ struct LibraryView: View {
                                             placement: .navigationBarDrawer(displayMode: .always),
                                             prompt: "Enter an address or zip code")
                                 .navigationBarTitle("Chicago Libraries")
-                                .navigationBarItems(trailing: Button(action: { displayType = .list }) { Image(systemName: "text.justify") })
+                                .navigationBarItems(trailing: Button(action: { displayType.mainScreenType = .list }) { Image(systemName: "text.justify") })
                             }
                         }
                 }

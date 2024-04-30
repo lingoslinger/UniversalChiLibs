@@ -98,6 +98,9 @@
 		9D6046A72BDC09B500D076B1 /* Old Chicago Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */; };
 		9D6046A82BDC09B600D076B1 /* Old Chicago Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */; };
 		9D6046A92BDC09B800D076B1 /* Old Chicago Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */; };
+		9D6046AD2BE0841F00D076B1 /* LibraryClosestLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6046AC2BE0841F00D076B1 /* LibraryClosestLocationView.swift */; };
+		9D6046AF2BE084B400D076B1 /* LibrarySearchLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6046AE2BE084B400D076B1 /* LibrarySearchLocationView.swift */; };
+		9D6046B02BE085C800D076B1 /* LibraryAlphaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6046AA2BE0840800D076B1 /* LibraryAlphaView.swift */; };
 		9D881A562BDB419A009BFEE2 /* LocationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D881A542BDB40F1009BFEE2 /* LocationDataManager.swift */; };
 		9D8831C32B0782D2003889CB /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8831C22B0782D2003889CB /* WebService.swift */; };
 		9D8ACF4E2B5DE95B0085F2ED /* LibraryGoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8ACF4D2B5DE95B0085F2ED /* LibraryGoogleMapView.swift */; };
@@ -281,6 +284,9 @@
 		9D3C904F2AFD0D1D0064DDEB /* LibraryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDetailViewController.swift; sourceTree = "<group>"; };
 		9D53874B2B5C771B0026C31B /* MapUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtilities.swift; sourceTree = "<group>"; };
 		9D56F3AC2BCDB3760068E052 /* LibraryImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryImageViewController.swift; sourceTree = "<group>"; };
+		9D6046AA2BE0840800D076B1 /* LibraryAlphaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAlphaView.swift; sourceTree = "<group>"; };
+		9D6046AC2BE0841F00D076B1 /* LibraryClosestLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryClosestLocationView.swift; sourceTree = "<group>"; };
+		9D6046AE2BE084B400D076B1 /* LibrarySearchLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySearchLocationView.swift; sourceTree = "<group>"; };
 		9D881A542BDB40F1009BFEE2 /* LocationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataManager.swift; sourceTree = "<group>"; };
 		9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Old Chicago Apartment.gpx"; sourceTree = "<group>"; };
 		9D8831C22B0782D2003889CB /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
@@ -738,6 +744,9 @@
 				9D3C8F0F2AF5914B0064DDEB /* LibraryView.swift */,
 				9D3C8F0E2AF5914B0064DDEB /* LibraryDetailView.swift */,
 				9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */,
+				9D6046AA2BE0840800D076B1 /* LibraryAlphaView.swift */,
+				9D6046AC2BE0841F00D076B1 /* LibraryClosestLocationView.swift */,
+				9D6046AE2BE084B400D076B1 /* LibrarySearchLocationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1262,6 +1271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D3C8F192AF6B2120064DDEB /* PlistParser.swift in Sources */,
+				9D6046AD2BE0841F00D076B1 /* LibraryClosestLocationView.swift in Sources */,
 				9D3C8E672AF3EB8C0064DDEB /* ViewController+ErrorDialog.swift in Sources */,
 				9D3C8E592AF3E16C0064DDEB /* LibraryTableViewController.swift in Sources */,
 				9D3C8E5B2AF3E3C60064DDEB /* LibraryDetailViewController.swift in Sources */,
@@ -1276,6 +1286,7 @@
 				9D3C8E5F2AF3E8400064DDEB /* Library.swift in Sources */,
 				9D3C8E612AF3E8760064DDEB /* Location.swift in Sources */,
 				9DD5BF562BCAEBAE00966E2E /* LibraryImageView.swift in Sources */,
+				9D6046AF2BE084B400D076B1 /* LibrarySearchLocationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1312,6 +1323,7 @@
 				9D3C8F0D2AF590790064DDEB /* PreviewData.swift in Sources */,
 				9D3C8F022AF58FE00064DDEB /* Website.swift in Sources */,
 				9DD5BF552BC9EC1900966E2E /* LibraryImageView.swift in Sources */,
+				9D6046B02BE085C800D076B1 /* LibraryAlphaView.swift in Sources */,
 				9D881A562BDB419A009BFEE2 /* LocationDataManager.swift in Sources */,
 				9D3C8F082AF590460064DDEB /* LibraryPhoneNumberView.swift in Sources */,
 				9D8ACF502B5DE96C0085F2ED /* LibraryHereMapView.swift in Sources */,
