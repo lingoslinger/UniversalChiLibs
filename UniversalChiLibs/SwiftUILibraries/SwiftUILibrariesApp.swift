@@ -20,12 +20,14 @@ final class DisplayType: ObservableObject {
 struct SwiftUILibrariesApp: App {
     @StateObject var displayType = DisplayType()
     @StateObject var dataSource = LibraryDataSource()
+    @StateObject var locationDataManager = LocationDataManager()
     
     var body: some Scene {
         WindowGroup {
             LibraryView()
                 .environmentObject(displayType)
                 .environmentObject(dataSource)
+                .environmentObject(locationDataManager)
         }
     }
 }

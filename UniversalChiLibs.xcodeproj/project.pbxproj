@@ -98,9 +98,9 @@
 		9D6046A72BDC09B500D076B1 /* Old Chicago Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */; };
 		9D6046A82BDC09B600D076B1 /* Old Chicago Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */; };
 		9D6046A92BDC09B800D076B1 /* Old Chicago Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */; };
-		9D6046AD2BE0841F00D076B1 /* LibraryClosestLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6046AC2BE0841F00D076B1 /* LibraryClosestLocationView.swift */; };
-		9D6046AF2BE084B400D076B1 /* LibrarySearchLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6046AE2BE084B400D076B1 /* LibrarySearchLocationView.swift */; };
 		9D6046B02BE085C800D076B1 /* LibraryAlphaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6046AA2BE0840800D076B1 /* LibraryAlphaView.swift */; };
+		9D6046B12BE1192500D076B1 /* LibraryClosestLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6046AC2BE0841F00D076B1 /* LibraryClosestLocationView.swift */; };
+		9D6046B22BE11CDC00D076B1 /* LibrarySearchLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6046AE2BE084B400D076B1 /* LibrarySearchLocationView.swift */; };
 		9D881A562BDB419A009BFEE2 /* LocationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D881A542BDB40F1009BFEE2 /* LocationDataManager.swift */; };
 		9D8831C32B0782D2003889CB /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8831C22B0782D2003889CB /* WebService.swift */; };
 		9D8ACF4E2B5DE95B0085F2ED /* LibraryGoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8ACF4D2B5DE95B0085F2ED /* LibraryGoogleMapView.swift */; };
@@ -1271,7 +1271,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D3C8F192AF6B2120064DDEB /* PlistParser.swift in Sources */,
-				9D6046AD2BE0841F00D076B1 /* LibraryClosestLocationView.swift in Sources */,
 				9D3C8E672AF3EB8C0064DDEB /* ViewController+ErrorDialog.swift in Sources */,
 				9D3C8E592AF3E16C0064DDEB /* LibraryTableViewController.swift in Sources */,
 				9D3C8E5B2AF3E3C60064DDEB /* LibraryDetailViewController.swift in Sources */,
@@ -1286,7 +1285,6 @@
 				9D3C8E5F2AF3E8400064DDEB /* Library.swift in Sources */,
 				9D3C8E612AF3E8760064DDEB /* Location.swift in Sources */,
 				9DD5BF562BCAEBAE00966E2E /* LibraryImageView.swift in Sources */,
-				9D6046AF2BE084B400D076B1 /* LibrarySearchLocationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1320,6 +1318,7 @@
 			files = (
 				9D3C8F132AF5914B0064DDEB /* SwiftUILibrariesApp.swift in Sources */,
 				9D8ACF4E2B5DE95B0085F2ED /* LibraryGoogleMapView.swift in Sources */,
+				9D6046B12BE1192500D076B1 /* LibraryClosestLocationView.swift in Sources */,
 				9D3C8F0D2AF590790064DDEB /* PreviewData.swift in Sources */,
 				9D3C8F022AF58FE00064DDEB /* Website.swift in Sources */,
 				9DD5BF552BC9EC1900966E2E /* LibraryImageView.swift in Sources */,
@@ -1331,6 +1330,7 @@
 				9D53874E2B5C77FF0026C31B /* MapUtilities.swift in Sources */,
 				9D3C8F1B2AF6B33C0064DDEB /* PlistParser.swift in Sources */,
 				9D3C8F062AF5903F0064DDEB /* LibraryAppleMapView.swift in Sources */,
+				9D6046B22BE11CDC00D076B1 /* LibrarySearchLocationView.swift in Sources */,
 				9D3C8F012AF58FDD0064DDEB /* Location.swift in Sources */,
 				9D3C8F002AF58FD90064DDEB /* Library.swift in Sources */,
 				9D3C8F112AF5914B0064DDEB /* LibraryDetailView.swift in Sources */,

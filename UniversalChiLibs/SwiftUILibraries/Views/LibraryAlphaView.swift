@@ -10,8 +10,8 @@ import SwiftUI
 
 struct LibraryAlphaView: View {
     @EnvironmentObject var dataSource: LibraryDataSource
-    @State var searchText = ""
     @EnvironmentObject var displayType: DisplayType
+    @State var searchText = ""
     
     var libraries: [Library] {
         dataSource.libraries.filter {
