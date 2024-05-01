@@ -23,18 +23,16 @@ struct LibraryView: View {
     }
     
     var body: some View {
-        HStack {
-            NavigationView {
-                switch displayType.mainScreenType {
-                    case .list:
-                        LibraryAlphaView()
-                    case .location:
-                        if locationAuthorized {
-                            LibraryClosestLocationView()
-                        } else {
-                            LibrarySearchLocationView()
-                        }
-                }
+        NavigationView {
+            switch displayType.mainScreenType {
+                case .list:
+                    LibraryAlphaView()
+                case .location:
+                    if locationAuthorized {
+                        LibraryClosestLocationView()
+                    } else {
+                        LibrarySearchLocationView()
+                    }
             }
         }
     }

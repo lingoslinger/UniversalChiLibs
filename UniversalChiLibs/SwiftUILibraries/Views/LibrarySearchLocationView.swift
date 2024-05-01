@@ -15,7 +15,7 @@ struct LibrarySearchLocationView: View {
     @State var searchText = ""
     
     var libraries: [Library] {
-        dataSource.libraries // eventually use user location to find closest libraries
+        dataSource.libraries // eventually use searched location to find closest libraries
     }
     var body: some View {
         VStack {
@@ -30,7 +30,6 @@ struct LibrarySearchLocationView: View {
                     
                 }
             }
-            // TODO: make searchable if user has not given permission to use their location
             .searchable(text: $searchText,
                         placement: .navigationBarDrawer(displayMode: .always),
                         prompt: "Enter an address or zip code")
