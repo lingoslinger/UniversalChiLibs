@@ -12,6 +12,8 @@ struct Location: Decodable {
     let latitude: String?
     let longitude: String?
     let needsRecoding: Bool?
+    let lat: Double?
+    let lon: Double?
     
     enum CodingKeys: String, CodingKey {
         case latitude = "latitude"
@@ -24,5 +26,7 @@ struct Location: Decodable {
         latitude = try values.decodeIfPresent(String.self, forKey: .latitude)
         longitude = try values.decodeIfPresent(String.self, forKey: .longitude)
         needsRecoding = try values.decodeIfPresent(Bool.self, forKey: .needsRecoding)
+        lat = Double(latitude ?? "0.0")
+        lon = Double(longitude ?? "0.0")
     }
 }
