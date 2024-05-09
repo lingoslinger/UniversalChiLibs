@@ -9,11 +9,10 @@
 import Foundation
 
 struct Location: Decodable {
-    let latitude: String?
-    let longitude: String?
-    let needsRecoding: Bool?
     let lat: Double?
     let lon: Double?
+    let needsRecoding: Bool?
+    
     
     enum CodingKeys: String, CodingKey {
         case latitude = "latitude"
@@ -23,10 +22,10 @@ struct Location: Decodable {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        latitude = try values.decodeIfPresent(String.self, forKey: .latitude)
-        longitude = try values.decodeIfPresent(String.self, forKey: .longitude)
+        let latitudeString = try values.decodeIfPresent(String.self, forKey: .latitude)
+        let longitudeString = try values.decodeIfPresent(String.self, forKey: .longitude)
         needsRecoding = try values.decodeIfPresent(Bool.self, forKey: .needsRecoding)
-        lat = Double(latitude ?? "0.0")
-        lon = Double(longitude ?? "0.0")
+        lat = Double(latitudeString ?? "0.0")
+        lon = Double(longitudeString ?? "0.0")
     }
 }

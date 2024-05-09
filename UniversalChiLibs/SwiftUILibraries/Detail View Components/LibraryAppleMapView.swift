@@ -16,10 +16,10 @@ struct LibraryAppleMapView: View {
     
     init(library: Library) {
         self.library = library
-        let latString = library.location?.latitude ?? ""
-        let lonString = library.location?.longitude ?? ""
-        let latitude = Double(latString) ?? 0
-        let longitude = Double(lonString) ?? 0
+        let latString = library.location?.lat ?? 0.0
+        let lonString = library.location?.lon ?? 0.0
+        let latitude = Double(latString)
+        let longitude = Double(lonString)
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
         _region = State(initialValue: MKCoordinateRegion(center: coordinate, span: span))
