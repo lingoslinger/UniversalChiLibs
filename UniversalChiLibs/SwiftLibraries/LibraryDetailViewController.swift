@@ -35,9 +35,9 @@ class LibraryDetailViewController: UIViewController {
     }
     
     private func annotateMap() {
-        let latitudeString = detailLibrary?.location?.latitude ?? ""
-        let longitudeString = detailLibrary?.location?.longitude ?? ""
-        let zoomLocation = CLLocationCoordinate2D.init(latitude: Double(latitudeString) ?? 0.0, longitude: Double(longitudeString) ?? 0.0)
+        let lat = detailLibrary?.location?.lat ?? 0.0
+        let lon = detailLibrary?.location?.lon ?? 0.0
+        let zoomLocation = CLLocationCoordinate2D.init(latitude: lat, longitude: lon)
         let span = MKCoordinateSpan.init(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let viewRegion = MKCoordinateRegion.init(center: zoomLocation, span: span)
         let point = MKPointAnnotation.init()

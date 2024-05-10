@@ -27,10 +27,8 @@ class LibraryMapView: MKMapView {
     }
     
     func annotateMap(library: Library) {
-        guard let latitudeString = library.location?.latitude,
-              let longitudeString = library.location?.longitude,
-              let lat = Double(latitudeString),
-              let lon = Double(longitudeString) else { return }
+        guard let lat = library.location?.lat,
+              let lon = library.location?.lon else { return }
         let zoomLocation = CLLocationCoordinate2D.init(latitude: lat,
                                                        longitude: lon)
         let span = MKCoordinateSpan.init(latitudeDelta: 0.005, longitudeDelta: 0.005)
