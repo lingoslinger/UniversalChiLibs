@@ -8,9 +8,11 @@
 import UIKit
 
 class LibraryLabel: UILabel {
+    @available(*, unavailable,
+                message: "LibraryMapView is not designed to be initialized from a storyboard."
+    )
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        self.commonInit()
+        fatalError("init(coder:) has not been implemented")
     }
     
     override init(frame: CGRect) {
