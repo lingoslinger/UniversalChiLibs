@@ -18,6 +18,7 @@ struct Library: Decodable, Identifiable, Hashable {
     let state : String?
     let website : Website?
     let zip : String?
+    var photoURL: String = ""
     let id: Int
     
     enum CodingKeys: String, CodingKey {
