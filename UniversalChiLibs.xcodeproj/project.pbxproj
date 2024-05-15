@@ -93,11 +93,11 @@
 		9D53874F2B5C78000026C31B /* MapUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53874B2B5C771B0026C31B /* MapUtilities.swift */; };
 		9D56F3AB2BCD8D0C0068E052 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 9D56F3AA2BCD8D0C0068E052 /* SwiftSoup */; };
 		9D56F3AD2BCDB4540068E052 /* LibraryImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56F3AC2BCDB3760068E052 /* LibraryImageViewController.swift */; };
-		9D6046A52BDC09B400D076B1 /* Old Chicago Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */; };
-		9D6046A62BDC09B500D076B1 /* Old Chicago Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */; };
-		9D6046A72BDC09B500D076B1 /* Old Chicago Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */; };
-		9D6046A82BDC09B600D076B1 /* Old Chicago Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */; };
-		9D6046A92BDC09B800D076B1 /* Old Chicago Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */; };
+		9D6046A52BDC09B400D076B1 /* Downtown Chicago.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Downtown Chicago.gpx */; };
+		9D6046A62BDC09B500D076B1 /* Downtown Chicago.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Downtown Chicago.gpx */; };
+		9D6046A72BDC09B500D076B1 /* Downtown Chicago.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Downtown Chicago.gpx */; };
+		9D6046A82BDC09B600D076B1 /* Downtown Chicago.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Downtown Chicago.gpx */; };
+		9D6046A92BDC09B800D076B1 /* Downtown Chicago.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Downtown Chicago.gpx */; };
 		9D6046B02BE085C800D076B1 /* LibraryAlphaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6046AA2BE0840800D076B1 /* LibraryAlphaView.swift */; };
 		9D6046B12BE1192500D076B1 /* LibraryClosestLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6046AC2BE0841F00D076B1 /* LibraryClosestLocationView.swift */; };
 		9D6046B22BE11CDC00D076B1 /* LibrarySearchLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6046AE2BE084B400D076B1 /* LibrarySearchLocationView.swift */; };
@@ -290,7 +290,7 @@
 		9D6046AE2BE084B400D076B1 /* LibrarySearchLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySearchLocationView.swift; sourceTree = "<group>"; };
 		9D6046B32BE11EB100D076B1 /* DisplayType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayType.swift; sourceTree = "<group>"; };
 		9D881A542BDB40F1009BFEE2 /* LocationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataManager.swift; sourceTree = "<group>"; };
-		9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Old Chicago Apartment.gpx"; sourceTree = "<group>"; };
+		9D881A582BDB4B7F009BFEE2 /* Downtown Chicago.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Downtown Chicago.gpx"; sourceTree = "<group>"; };
 		9D8831C22B0782D2003889CB /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		9D8ACF4D2B5DE95B0085F2ED /* LibraryGoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryGoogleMapView.swift; sourceTree = "<group>"; };
 		9D8ACF4F2B5DE96C0085F2ED /* LibraryHereMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryHereMapView.swift; sourceTree = "<group>"; };
@@ -508,7 +508,7 @@
 		9D3C8EB42AF4C16A0064DDEB /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				9D881A582BDB4B7F009BFEE2 /* Old Chicago Apartment.gpx */,
+				9D881A582BDB4B7F009BFEE2 /* Downtown Chicago.gpx */,
 				9D53874B2B5C771B0026C31B /* MapUtilities.swift */,
 				9D3C8E652AF3EB580064DDEB /* Extensions */,
 				9D3C8E642AF3EB260064DDEB /* Data Source and Data Models */,
@@ -1146,7 +1146,7 @@
 				9D3C8F152AF6A85B0064DDEB /* Webservice.plist in Resources */,
 				9D3C8E322AF3E0CD0064DDEB /* Assets.xcassets in Resources */,
 				9D3C8E302AF3E0CC0064DDEB /* Main.storyboard in Resources */,
-				9D6046A52BDC09B400D076B1 /* Old Chicago Apartment.gpx in Resources */,
+				9D6046A52BDC09B400D076B1 /* Downtown Chicago.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1157,7 +1157,7 @@
 				9D3C8EC42AF54CB50064DDEB /* LaunchScreen.storyboard in Resources */,
 				9D3C8F162AF6A85B0064DDEB /* Webservice.plist in Resources */,
 				9D3C8EC52AF54CB50064DDEB /* Assets.xcassets in Resources */,
-				9D6046A62BDC09B500D076B1 /* Old Chicago Apartment.gpx in Resources */,
+				9D6046A62BDC09B500D076B1 /* Downtown Chicago.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1169,7 +1169,7 @@
 				9D3C8F172AF6B06A0064DDEB /* Webservice.plist in Resources */,
 				9DB29AA42BCE097900455F4F /* Assets.xcassets in Resources */,
 				9D3C8EF92AF58E010064DDEB /* Assets.xcassets in Resources */,
-				9D6046A72BDC09B500D076B1 /* Old Chicago Apartment.gpx in Resources */,
+				9D6046A72BDC09B500D076B1 /* Downtown Chicago.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1223,7 +1223,7 @@
 				9D3C90482AFCF5A20064DDEB /* Webservice.plist in Resources */,
 				9D3C8FF12AFC67930064DDEB /* Main.storyboard in Resources */,
 				9DB29AA52BCE097D00455F4F /* Assets.xcassets in Resources */,
-				9D6046A82BDC09B600D076B1 /* Old Chicago Apartment.gpx in Resources */,
+				9D6046A82BDC09B600D076B1 /* Downtown Chicago.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1248,7 +1248,7 @@
 				9DB29AB42BCE128F00455F4F /* Preview Assets.xcassets in Resources */,
 				9DB29ADC2BCEBC4D00455F4F /* Webservice.plist in Resources */,
 				9DB29AB12BCE128F00455F4F /* Assets.xcassets in Resources */,
-				9D6046A92BDC09B800D076B1 /* Old Chicago Apartment.gpx in Resources */,
+				9D6046A92BDC09B800D076B1 /* Downtown Chicago.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
