@@ -49,6 +49,25 @@ struct Library: Decodable, Identifiable, Hashable {
 }
 
 extension Library {
+    struct Location: Codable {
+        let latitude: String?
+        let longitude: String?
+        let needsRecoding: Bool?
+        
+        var lat: Double {
+            Double(latitude ?? "0.0") ?? 0.0
+        }
+        var lon: Double {
+            Double(longitude ?? "0.0") ?? 0.0
+        }
+    }
+
+    struct Website: Codable {
+        let url: String?
+    }
+}
+
+extension Library {
     static func == (lhs: Library, rhs: Library) -> Bool {
         lhs.id == rhs.id
     }
