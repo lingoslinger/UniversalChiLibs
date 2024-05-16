@@ -19,8 +19,9 @@ struct Library: Decodable, Identifiable, Hashable {
     let website : Website?
     let zip : String?
     var photoURL: String = ""
-    let id: Int
+    let id: Int = UUID().hashValue
     
+    // using Decodable and coding keys here because of some naming issues in the data source, most notably "name_" (who does that anyway?)
     enum CodingKeys: String, CodingKey {
         case address = "address"
         case city = "city"
@@ -44,7 +45,6 @@ struct Library: Decodable, Identifiable, Hashable {
         state = try values.decodeIfPresent(String.self, forKey: .state)
         website = try values.decodeIfPresent(Website.self, forKey: .website)
         zip = try values.decodeIfPresent(String.self, forKey: .zip)
-        id = UUID().hashValue
     }
 }
 
