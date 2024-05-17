@@ -28,9 +28,14 @@ final class LibraryDataSource: ObservableObject {
         do {
             let cachedLibraries = try loadCachedLibraries()
             if !cachedLibraries.isEmpty {
+                let cacheInterval: Double = UserDefaults.standard.double(forKey: "CacheDate")
+                let cacheDate = Date(timeIntervalSince1970: cacheInterval)
+                print("Cache date is \(String(describing: cacheDate))")
                 return cachedLibraries.map { mapEntityToModel($0)}
             } else {
                 let libraries = try await WebService.getLibraryData()
+                let timeInterval: Double = Date().timeIntervalSince1970
+                UserDefaults.standard.set(timeInterval, forKey: "CacheDate")
                 await saveToCoreData(libraries)
                 return libraries
             }
@@ -61,7 +66,6 @@ final class LibraryDataSource: ObservableObject {
     }
     
     // TODO:
-    // - add entity for last saved date for eventual cache time limits
     // - method to completely wipe core data store (for reloading cache)
     
     private func saveImageData(_ imageData: Data, to libraryEntity: LibraryEntity) {
