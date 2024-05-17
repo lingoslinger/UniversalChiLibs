@@ -19,9 +19,11 @@ struct Library: Decodable, Identifiable, Hashable {
     let website : Website?
     let zip : String?
     var photoURL: String = ""
+    var photoData: Data = Data()
     let id: Int = UUID().hashValue
     
-    // using Decodable and coding keys here because of some naming issues in the data source, most notably "name_" (who does that anyway?)
+    // using Decodable and coding keys here because of some naming issues in the data source
+    // I'm looking at you, "name_" 🤦‍♂️
     enum CodingKeys: String, CodingKey {
         case address = "address"
         case city = "city"
@@ -46,15 +48,36 @@ struct Library: Decodable, Identifiable, Hashable {
         website = try values.decodeIfPresent(Website.self, forKey: .website)
         zip = try values.decodeIfPresent(String.self, forKey: .zip)
     }
+    
+    init(address: String, city: String, hoursOfOperation: String, location: Location, name: String, phone: String, state: String, website: Website, zip: String, photoURL: String, photoData: Data) {
+        self.address = address
+        self.city = city
+        self.hoursOfOperation = hoursOfOperation
+        self.location = location
+        self.name = name
+        self.phone = phone
+        self.state = state
+        self.website = website
+        self.zip = zip
+        self.photoURL = photoURL
+        self.photoData = photoData
+    }
 }
 
-extension Library {
+//extension Library {
     struct Location: Codable {
         let latitude: String?
         let longitude: String?
         let needsRecoding: Bool?
         
+        init(latitude: String?, longitude: String?, needsRecoding: Bool?) {
+            self.latitude = latitude
+            self.longitude = longitude
+            self.needsRecoding = needsRecoding
+        }
+        
         var lat: Double {
+            // both the string and the Double we create from it are optional so 🤷‍♂️
             Double(latitude ?? "0.0") ?? 0.0
         }
         var lon: Double {
@@ -64,8 +87,12 @@ extension Library {
 
     struct Website: Codable {
         let url: String?
+        
+        init(url: String?) {
+            self.url = url
+        }
     }
-}
+//}
 
 extension Library {
     static func == (lhs: Library, rhs: Library) -> Bool {

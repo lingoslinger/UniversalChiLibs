@@ -85,6 +85,8 @@
 		9D53874F2B5C78000026C31B /* MapUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D53874B2B5C771B0026C31B /* MapUtilities.swift */; };
 		9D56F3AB2BCD8D0C0068E052 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 9D56F3AA2BCD8D0C0068E052 /* SwiftSoup */; };
 		9D56F3AD2BCDB4540068E052 /* LibraryImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56F3AC2BCDB3760068E052 /* LibraryImageViewController.swift */; };
+		9D5C83C12BF7081A0019E43D /* ChiLibsDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D5C83BF2BF7081A0019E43D /* ChiLibsDataModel.xcdatamodeld */; };
+		9D5C83C22BF708240019E43D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5C83BC2BF707D40019E43D /* CoreDataStack.swift */; };
 		9D6046A52BDC09B400D076B1 /* Downtown Chicago.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Downtown Chicago.gpx */; };
 		9D6046A62BDC09B500D076B1 /* Downtown Chicago.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Downtown Chicago.gpx */; };
 		9D6046A72BDC09B500D076B1 /* Downtown Chicago.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9D881A582BDB4B7F009BFEE2 /* Downtown Chicago.gpx */; };
@@ -273,6 +275,8 @@
 		9D3C904F2AFD0D1D0064DDEB /* LibraryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDetailViewController.swift; sourceTree = "<group>"; };
 		9D53874B2B5C771B0026C31B /* MapUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtilities.swift; sourceTree = "<group>"; };
 		9D56F3AC2BCDB3760068E052 /* LibraryImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryImageViewController.swift; sourceTree = "<group>"; };
+		9D5C83BC2BF707D40019E43D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		9D5C83C02BF7081A0019E43D /* ChiLibsDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChiLibsDataModel.xcdatamodel; sourceTree = "<group>"; };
 		9D6046AA2BE0840800D076B1 /* LibraryAlphaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAlphaView.swift; sourceTree = "<group>"; };
 		9D6046AC2BE0841F00D076B1 /* LibraryClosestLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryClosestLocationView.swift; sourceTree = "<group>"; };
 		9D6046AE2BE084B400D076B1 /* LibrarySearchLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySearchLocationView.swift; sourceTree = "<group>"; };
@@ -501,6 +505,7 @@
 				9D3C8E332AF3E0CD0064DDEB /* LaunchScreen.storyboard */,
 				9D3C8E312AF3E0CD0064DDEB /* Assets.xcassets */,
 				9D3C8F142AF6A85B0064DDEB /* Webservice.plist */,
+				9D5C83BE2BF707E80019E43D /* Persistence */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -678,6 +683,15 @@
 				9D3C90332AFCF1FB0064DDEB /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		9D5C83BE2BF707E80019E43D /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				9D5C83BC2BF707D40019E43D /* CoreDataStack.swift */,
+				9D5C83BF2BF7081A0019E43D /* ChiLibsDataModel.xcdatamodeld */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		9DB29AAB2BCE128F00455F4F /* tvLibraries */ = {
@@ -1301,6 +1315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D5C83C12BF7081A0019E43D /* ChiLibsDataModel.xcdatamodeld in Sources */,
 				9D3C8F132AF5914B0064DDEB /* SwiftUILibrariesApp.swift in Sources */,
 				9D8ACF4E2B5DE95B0085F2ED /* LibraryGoogleMapView.swift in Sources */,
 				9D6046B12BE1192500D076B1 /* LibraryClosestLocationView.swift in Sources */,
@@ -1317,6 +1332,7 @@
 				9D3C8F062AF5903F0064DDEB /* LibraryAppleMapView.swift in Sources */,
 				9D6046B22BE11CDC00D076B1 /* LibrarySearchLocationView.swift in Sources */,
 				9D3C8F002AF58FD90064DDEB /* Library.swift in Sources */,
+				9D5C83C22BF708240019E43D /* CoreDataStack.swift in Sources */,
 				9D3C8F112AF5914B0064DDEB /* LibraryDetailView.swift in Sources */,
 				9D3C8F122AF5914B0064DDEB /* LibraryView.swift in Sources */,
 				9D3C8F032AF590060064DDEB /* String+LibraryHourFormatting.swift in Sources */,
@@ -2528,6 +2544,20 @@
 			productName = SwiftSoup;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		9D5C83BF2BF7081A0019E43D /* ChiLibsDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9D5C83C02BF7081A0019E43D /* ChiLibsDataModel.xcdatamodel */,
+			);
+			currentVersion = 9D5C83C02BF7081A0019E43D /* ChiLibsDataModel.xcdatamodel */;
+			name = ChiLibsDataModel.xcdatamodeld;
+			path = /Users/allan/repos/UniversalChiLibs/UniversalChiLibs/Common/Persistence/ChiLibsDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9D3C8E1D2AF3E0CB0064DDEB /* Project object */;
 }
