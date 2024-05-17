@@ -25,11 +25,18 @@ final class LibraryDataSource: ObservableObject {
     }
     
     func fetchLibraries() async throws -> [Library] {
-        let cachedLibraries = try loadCachedLibraries()
-        if !cachedLibraries.isEmpty {
-            return try await WebService.getLibraryData() // change this to loading the cached libraries
-        } else {
-            return try await WebService.getLibraryData()
+        do {
+            let cachedLibraries = try loadCachedLibraries()
+            if !cachedLibraries.isEmpty {
+                return cachedLibraries.map { mapEntityToModel($0)}
+            } else {
+                let libraries = try await WebService.getLibraryData()
+                await saveToCoreData(libraries)
+                return libraries
+            }
+        } catch {
+            print("Error getting libraries: \(error.localizedDescription)")
+            throw error
         }
     }
     
@@ -43,7 +50,7 @@ final class LibraryDataSource: ObservableObject {
         await context.perform {
             for library in libraries {
                 let libraryEntity = LibraryEntity(context: context)
-                // self.mapModelToEntity(library, libraryEntity)
+                self.mapModelToEntity(from: library, to:libraryEntity)
             }
             do {
                 try context.save()
