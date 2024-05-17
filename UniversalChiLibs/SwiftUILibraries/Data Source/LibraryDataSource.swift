@@ -10,6 +10,11 @@ import SwiftUI
 final class LibraryDataSource: ObservableObject {
     @Published var libraries: [Library] = []
     private let stack: CoreDataStack
+    private var cacheExpired: Bool {
+        let cacheInterval: Double = UserDefaults.standard.double(forKey: "CacheDate")
+        print("Cache date is \(Date(timeIntervalSince1970: cacheInterval))")
+        return true // doesnt matter right now
+    }
     
     init() {
         stack = CoreDataStack.shared
@@ -26,16 +31,15 @@ final class LibraryDataSource: ObservableObject {
     
     func fetchLibraries() async throws -> [Library] {
         do {
+            if cacheExpired { print("cache expired") }
             let cachedLibraries = try loadCachedLibraries()
             if !cachedLibraries.isEmpty {
-                let cacheInterval: Double = UserDefaults.standard.double(forKey: "CacheDate")
-                let cacheDate = Date(timeIntervalSince1970: cacheInterval)
-                print("Cache date is \(String(describing: cacheDate))")
                 return cachedLibraries.map { mapEntityToModel($0)}
             } else {
                 let libraries = try await WebService.getLibraryData()
                 let timeInterval: Double = Date().timeIntervalSince1970
                 UserDefaults.standard.set(timeInterval, forKey: "CacheDate")
+                print("new cache date is \(Date(timeIntervalSince1970: timeInterval))")
                 await saveToCoreData(libraries)
                 return libraries
             }
@@ -66,7 +70,7 @@ final class LibraryDataSource: ObservableObject {
             }
         }
     }
-    
+
     // TODO:
     // - method to completely wipe core data store (for reloading cache)
     
