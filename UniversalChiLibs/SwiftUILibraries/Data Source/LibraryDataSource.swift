@@ -55,7 +55,9 @@ final class LibraryDataSource: ObservableObject {
         await context.perform {
             for library in libraries {
                 let libraryEntity = LibraryEntity(context: context)
-                self.mapModelToEntity(from: library, to:libraryEntity)
+                let locationEntity = LocationEntity(context: context)
+                let websiteEntity = WebsiteEntity(context: context)
+                self.mapModelToEntity(from: library, to:libraryEntity, to: locationEntity, to: websiteEntity)
             }
             do {
                 try context.save()
@@ -72,25 +74,34 @@ final class LibraryDataSource: ObservableObject {
         libraryEntity.photoData = imageData
     }
     
-    private func mapModelToEntity(from library: Library, to libraryEntity: LibraryEntity) {
+    private func mapModelToEntity(from library: Library,
+                                  to libraryEntity: LibraryEntity,
+                                  to locationEntity: LocationEntity,
+                                  to websiteEntity: WebsiteEntity) {
         libraryEntity.address = library.address
         libraryEntity.city = library.city
         libraryEntity.hoursOfOperation = library.hoursOfOperation
-        locationToEntity(library, libraryEntity: libraryEntity)
+        libraryEntity.location = locationToEntity(library, locationEntity: locationEntity)
         libraryEntity.name = library.name
         libraryEntity.phone = library.phone
         libraryEntity.state = library.state
-        libraryEntity.website?.url = library.website?.url
+        libraryEntity.website = websiteToEntity(library, websiteEntity: websiteEntity)
         libraryEntity.zip = library.zip
         libraryEntity.photoURL = library.photoURL
         libraryEntity.photoData = library.photoData
     }
     
-    private func locationToEntity(_ library: Library, libraryEntity: LibraryEntity) {
+    private func locationToEntity(_ library: Library, locationEntity: LocationEntity) -> LocationEntity {
         let libloc = library.location ?? Location(latitude: "0.0", longitude: "0.0", needsRecoding: false)
-        libraryEntity.location?.lat = Double(libloc.latitude ?? "0.0") ?? 0.0
-        libraryEntity.location?.lon = Double(libloc.longitude ?? "0.0") ?? 0.0
-        libraryEntity.location?.needsRecoding = libloc.needsRecoding ?? false
+        locationEntity.lat = libloc.lat
+        locationEntity.lon = libloc.lon
+        locationEntity.needsRecoding = libloc.needsRecoding ?? false
+        return locationEntity
+    }
+    
+    private func websiteToEntity(_ library: Library, websiteEntity: WebsiteEntity) -> WebsiteEntity {
+        websiteEntity.url = library.website?.url
+        return websiteEntity
     }
     
     private func mapEntityToModel(_ libraryEntity: LibraryEntity) -> Library {
