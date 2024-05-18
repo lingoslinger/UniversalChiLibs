@@ -37,13 +37,14 @@ final class LibraryDataSource: ObservableObject {
             if cacheExpired { deleteAllLibraries() }
             let cachedLibraries = try loadCachedLibraries()
             if !cachedLibraries.isEmpty {
-                return cachedLibraries.map { mapEntityToModel($0)}
+                let libraries =  cachedLibraries.map { mapEntityToModel($0) }
+                return libraries.sorted(by: { $0.name < $1.name })
             } else {
                 let libraries = try await WebService.getLibraryData()
                 let timeInterval: Double = Date().timeIntervalSince1970
                 UserDefaults.standard.set(timeInterval, forKey: "CacheDate")
                 await saveToCoreData(libraries)
-                return libraries
+                return libraries.sorted(by: {$0.name < $1.name})
             }
         } catch {
             print("Error getting libraries: \(error.localizedDescription)")

@@ -54,14 +54,12 @@ extension LibraryImageView {
     private func loadLibraryImageData() async throws {
         guard let library else { return }
         
-        // tvOS does not have persistent storage, at lease for plebs like me.
-        if #available(iOS 15, macOS 12, *) {
-            let storedImageData = getImageData(for: library)
-            if storedImageData.count > 0 {
-                libraryImageData = storedImageData
-                return
-            }
+        let storedImageData = getImageData(for: library)
+        if storedImageData.count > 0 {
+            libraryImageData = storedImageData
+            return
         }
+
         var imageURLString = ""
         
         guard let libraryURLString = library.website?.url,
@@ -89,10 +87,7 @@ extension LibraryImageView {
             fatalError("bad response")
         }
         
-        if #available(iOS 15, macOS 12, *) {
-            saveImageData(imageData, for: library)
-        }
-        
+        saveImageData(imageData, for: library)
         libraryImageData = imageData
     }
     
