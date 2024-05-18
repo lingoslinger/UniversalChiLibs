@@ -5,7 +5,7 @@
 //  Created by Allan Evans on 7/14/23.
 //
 import CoreData
-import SwiftUI
+import Foundation
 
 final class LibraryDataSource: ObservableObject {
     @Published var libraries: [Library] = []
@@ -14,9 +14,8 @@ final class LibraryDataSource: ObservableObject {
     private var cacheExpired: Bool {
         let cacheLastSaved = UserDefaults.standard.double(forKey: "CacheDate")
         if cacheLastSaved == 0 { return true } // for case when cache has not been saved yet
-        print("Cache date is \(Date(timeIntervalSince1970: cacheLastSaved))")
         let today = Date().timeIntervalSince1970
-        let cacheTimeInterval = 60.0 * 2 // two minutes for testing, this will be a preference eventually
+        let cacheTimeInterval = 7.0 * 24.0 * 60.0 // one week for now, eventually a settable preference
         return (today - cacheLastSaved > cacheTimeInterval)
     }
     
@@ -35,7 +34,6 @@ final class LibraryDataSource: ObservableObject {
     
     func fetchLibraries() async throws -> [Library] {
         do {
-            cacheExpired ? print("cache expired") : print ("cache valid")
             if cacheExpired { deleteAllLibraries() }
             let cachedLibraries = try loadCachedLibraries()
             if !cachedLibraries.isEmpty {
@@ -44,7 +42,6 @@ final class LibraryDataSource: ObservableObject {
                 let libraries = try await WebService.getLibraryData()
                 let timeInterval: Double = Date().timeIntervalSince1970
                 UserDefaults.standard.set(timeInterval, forKey: "CacheDate")
-                print("new cache date is \(Date(timeIntervalSince1970: timeInterval))")
                 await saveToCoreData(libraries)
                 return libraries
             }
@@ -84,7 +81,7 @@ final class LibraryDataSource: ObservableObject {
                 try context.execute(batchDeleteRequest)
                 context.reset()
             } catch {
-                print("Error deleting LibraryEntity, \(error.localizedDescription)")
+                print("Error deleting \(String(describing: entity.name)), \(error.localizedDescription)")
             }
         }
         do {
@@ -92,10 +89,6 @@ final class LibraryDataSource: ObservableObject {
         } catch {
             print("Error saving context after deletion, \(error.localizedDescription)")
         }
-    }
-    
-    private func saveImageData(_ imageData: Data, to libraryEntity: LibraryEntity) {
-        libraryEntity.photoData = imageData
     }
     
     private func mapModelToEntity(from library: Library, to libraryEntity: LibraryEntity) {

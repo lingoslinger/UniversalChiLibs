@@ -43,7 +43,7 @@ struct LibraryImageView: View {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle())
                         .frame(minHeight: imageHeight, alignment: .center)
-                        .tint(UIScreen.main.traitCollection.userInterfaceStyle == .dark ? Color.black : Color.white)
+                        .tint(UIScreen.main.traitCollection.userInterfaceStyle == .dark ? Color.white : Color.black)
                 }
             }
         }
@@ -53,12 +53,15 @@ struct LibraryImageView: View {
 extension LibraryImageView {
     private func loadLibraryImageData() async throws {
         guard let library else { return }
-        let storedImageData = getImageData(for: library)
-        if storedImageData.count > 0 {
-            libraryImageData = storedImageData
-            return
-        }
         
+        // tvOS does not have persistent storage, at lease for plebs like me.
+        if #available(iOS 15, macOS 12, *) {
+            let storedImageData = getImageData(for: library)
+            if storedImageData.count > 0 {
+                libraryImageData = storedImageData
+                return
+            }
+        }
         var imageURLString = ""
         
         guard let libraryURLString = library.website?.url,
@@ -85,7 +88,11 @@ extension LibraryImageView {
         guard let imageResponse = imageResponse as? HTTPURLResponse, imageResponse.statusCode < 400 else {
             fatalError("bad response")
         }
-        saveImageData(imageData, for: library)
+        
+        if #available(iOS 15, macOS 12, *) {
+            saveImageData(imageData, for: library)
+        }
+        
         libraryImageData = imageData
     }
     
@@ -98,8 +105,8 @@ extension LibraryImageView {
     }
     
     func saveImageData(_ imageData: Data, for library: Library) {
-        let context = CoreDataStack.shared.viewContext
         guard let libEntity = libraryEntity(for: library) else { return }
+        let context = CoreDataStack.shared.viewContext
         libEntity.photoData = imageData
         do {
             try context.save()
