@@ -54,7 +54,6 @@ extension LibraryImageView {
     private func loadLibraryImageData() async throws {
         guard let library else { return }
         let storedImageData = getImageData(for: library)
-        print("stored image data length: \(storedImageData.count) bytes")
         if storedImageData.count > 0 {
             libraryImageData = storedImageData
             return
@@ -65,8 +64,6 @@ extension LibraryImageView {
         guard let libraryURLString = library.website?.url,
               let libraryURL = URL(string: libraryURLString)
         else { fatalError("No library URL") }
-        
-        // TODO: add image cache check here...
 
         let (data, response) = try await URLSession.shared.data(from: libraryURL)
         guard let response = response as? HTTPURLResponse, response.statusCode < 400 else {

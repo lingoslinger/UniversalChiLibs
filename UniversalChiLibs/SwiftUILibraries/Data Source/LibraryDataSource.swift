@@ -12,9 +12,12 @@ final class LibraryDataSource: ObservableObject {
     private let stack: CoreDataStack
     
     private var cacheExpired: Bool {
-        let cacheInterval: Double = UserDefaults.standard.double(forKey: "CacheDate")
-        print("Cache date is \(Date(timeIntervalSince1970: cacheInterval))")
-        return true // doesnt matter right now
+        let cacheLastSaved = UserDefaults.standard.double(forKey: "CacheDate")
+        if cacheLastSaved == 0 { return true } // for case when cache has not been saved yet
+        print("Cache date is \(Date(timeIntervalSince1970: cacheLastSaved))")
+        let today = Date().timeIntervalSince1970
+        let cacheTimeInterval = 60.0 * 2 // two minutes for testing, this will be a preference eventually
+        return (today - cacheLastSaved > cacheTimeInterval)
     }
     
     init() {
@@ -32,7 +35,8 @@ final class LibraryDataSource: ObservableObject {
     
     func fetchLibraries() async throws -> [Library] {
         do {
-            if cacheExpired { print("cache expired") }
+            cacheExpired ? print("cache expired") : print ("cache valid")
+            if cacheExpired { deleteAllLibraries() }
             let cachedLibraries = try loadCachedLibraries()
             if !cachedLibraries.isEmpty {
                 return cachedLibraries.map { mapEntityToModel($0)}
@@ -69,9 +73,26 @@ final class LibraryDataSource: ObservableObject {
             }
         }
     }
-
-    // TODO:
-    // - method to completely wipe core data store (for reloading cache)
+    
+    private func deleteAllLibraries() {
+        let context = stack.viewContext
+        guard let entities = context.persistentStoreCoordinator?.managedObjectModel.entities else { return }
+        for entity in entities {
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity.name!)
+            do {
+                let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: request)
+                try context.execute(batchDeleteRequest)
+                context.reset()
+            } catch {
+                print("Error deleting LibraryEntity, \(error.localizedDescription)")
+            }
+        }
+        do {
+            try context.save()
+        } catch {
+            print("Error saving context after deletion, \(error.localizedDescription)")
+        }
+    }
     
     private func saveImageData(_ imageData: Data, to libraryEntity: LibraryEntity) {
         libraryEntity.photoData = imageData
