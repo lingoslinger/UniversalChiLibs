@@ -10,6 +10,7 @@ import SwiftUI
 final class LibraryDataSource: ObservableObject {
     @Published var libraries: [Library] = []
     private let stack: CoreDataStack
+    
     private var cacheExpired: Bool {
         let cacheInterval: Double = UserDefaults.standard.double(forKey: "CacheDate")
         print("Cache date is \(Date(timeIntervalSince1970: cacheInterval))")
@@ -59,8 +60,6 @@ final class LibraryDataSource: ObservableObject {
         await context.perform {
             for library in libraries {
                 let libraryEntity = LibraryEntity(context: context)
-                let locationEntity = LocationEntity(context: context)
-                let websiteEntity = WebsiteEntity(context: context)
                 self.mapModelToEntity(from: library, to:libraryEntity)
             }
             do {

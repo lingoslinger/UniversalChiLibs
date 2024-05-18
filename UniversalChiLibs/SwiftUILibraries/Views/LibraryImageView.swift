@@ -8,6 +8,7 @@
 
 import SwiftUI
 import SwiftSoup
+import CoreData
 
 struct LibraryImageView: View {
     let library: Library?
@@ -51,9 +52,17 @@ struct LibraryImageView: View {
 
 extension LibraryImageView {
     private func loadLibraryImageData() async throws {
+        guard let library else { return }
+        let storedImageData = getImageData(for: library)
+        print("stored image data length: \(storedImageData.count) bytes")
+        if storedImageData.count > 0 {
+            libraryImageData = storedImageData
+            return
+        }
+        
         var imageURLString = ""
         
-        guard let libraryURLString = library?.website?.url,
+        guard let libraryURLString = library.website?.url,
               let libraryURL = URL(string: libraryURLString)
         else { fatalError("No library URL") }
         
@@ -79,11 +88,39 @@ extension LibraryImageView {
         guard let imageResponse = imageResponse as? HTTPURLResponse, imageResponse.statusCode < 400 else {
             fatalError("bad response")
         }
-        
+        saveImageData(imageData, for: library)
         libraryImageData = imageData
     }
     
 }
+
+extension LibraryImageView {
+    func getImageData(for library: Library) -> Data {
+        guard let libEntity = libraryEntity(for: library) else { return Data() }
+        return libEntity.photoData ?? Data()
+    }
+    
+    func saveImageData(_ imageData: Data, for library: Library) {
+        let context = CoreDataStack.shared.viewContext
+        guard let libEntity = libraryEntity(for: library) else { return }
+        libEntity.photoData = imageData
+        do {
+            try context.save()
+        } catch {
+            print("Error saving to Core Data: \(error.localizedDescription)")
+        }
+    }
+    
+    func libraryEntity(for library: Library) -> LibraryEntity? {
+        let context = CoreDataStack.shared.viewContext
+        let request: NSFetchRequest<LibraryEntity> = LibraryEntity.fetchRequest()
+        request.predicate = NSPredicate(format: "name == %@", library.name)
+        let results = try? context.fetch(request)
+        return results?.first
+    }
+}
+
+
 
 
 #Preview {
