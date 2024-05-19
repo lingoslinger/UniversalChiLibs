@@ -5,18 +5,18 @@ Note that I push code to this project from both this account and my LLC account 
 
 The current targets are:
 
-
 **• SwiftLibraries** - the OG, painstakingly translated from the original Objective-C version
 
 **• SwiftLibsNoSB** - another Swift version, this time using no storyboards
 
-**• SwiftUILibrarie**s - a SwiftUI version
+**• SwiftUILibraries** - a SwiftUI version
 
 **• CoordinatedSwiftLibs** - yet another Swift version, using the Coordinator pattern
 
 **• tvLibraries** - you guessed it, a version for tvOS (in progress)
 
-
 I have some tenative plans to make one of these targets iPad compatible, when I can find the time.
 
 I would also like to include the Objective-C version here to demostrate Swift/ObjC interoperability, but that seems less necessary as most codebases have migrated to Swift as of this writing (20 Jan 2024.)
+
+**Update 19 May 2024** - I have added a Core Data-based cache to the SwiftUILibraries and tvLibraries targets. I'll add this to the UIKit-based targets in the near future.
