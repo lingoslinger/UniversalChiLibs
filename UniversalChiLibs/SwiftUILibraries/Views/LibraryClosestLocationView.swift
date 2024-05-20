@@ -26,7 +26,7 @@ struct LibraryClosestLocationView: View {
                     ForEach(libraries) { library in
                         let formattedDistance = library.walkingDistance.formatted(
                             .number
-                            .rounded(rule: .up, increment: 0.1)
+                                .rounded(rule: .up, increment: 0.1)
                         )
                         NavigationLink(destination: LibraryDetailView(library: library)) {
                             Text("\(library.name)\n\(formattedDistance) mi.")
