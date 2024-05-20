@@ -18,7 +18,7 @@ struct Library: Decodable, Identifiable, Hashable {
     let state : String?
     let website : Website?
     let zip : String?
-    var photoURL: String = ""
+    var walkingDistance: Double = 0.0
     var photoData: Data = Data()
     let id: Int = UUID().hashValue
     
@@ -49,7 +49,7 @@ struct Library: Decodable, Identifiable, Hashable {
         zip = try values.decodeIfPresent(String.self, forKey: .zip)
     }
     
-    init(address: String, city: String, hoursOfOperation: String, location: Location, name: String, phone: String, state: String, website: Website, zip: String, photoURL: String, photoData: Data) {
+    init(address: String, city: String, hoursOfOperation: String, location: Location, name: String, phone: String, state: String, website: Website, zip: String, walkingDistance: Double, photoData: Data) {
         self.address = address
         self.city = city
         self.hoursOfOperation = hoursOfOperation
@@ -59,7 +59,7 @@ struct Library: Decodable, Identifiable, Hashable {
         self.state = state
         self.website = website
         self.zip = zip
-        self.photoURL = photoURL
+        self.walkingDistance = walkingDistance
         self.photoData = photoData
     }
 }

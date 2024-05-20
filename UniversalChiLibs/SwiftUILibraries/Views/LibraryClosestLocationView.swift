@@ -12,28 +12,32 @@ import CoreLocation
 struct LibraryClosestLocationView: View {
     @EnvironmentObject var dataSource: LibraryDataSource
     @EnvironmentObject var displayType: DisplayType
-    @EnvironmentObject var locationDataManager: LocationDataManager
     
     var libraries: [Library] {
-        dataSource.libraries // eventually use user location to find closest libraries
+        dataSource.sortedLibraries // eventually use user location to find closest libraries
     }
     
     var body: some View {
         VStack {
-            Text("User location: \(locationDataManager.userLocation.coordinate)")
-            Text("Closest by walking distance")
-            // TODO: sort libraries by walking distance from user location here
-            List {
-                ForEach(libraries, id: \.self) { library in
-                    NavigationLink(destination: LibraryDetailView(library: library)) {
-                        Text(library.name)
+            if libraries.count > 0 {
+                Text("Closest by walking distance")
+                List {
+                    ForEach(libraries, id: \.self) { library in
+                        NavigationLink(destination: LibraryDetailView(library: library)) {
+                            HStack {
+                                Text(library.name)
+                                Text("\(library.walkingDistance) mi.")
+                            }
+                        }
+                        
                     }
-                    
                 }
+            } else {
+                Text("Finding walking distances - this can take up to two minutes because of API throttling limitations")
             }
-            .navigationBarTitle("Chicago Libraries")
-            .navigationBarItems(trailing: Button(action: { displayType.mainScreenType = .list }) { Image(systemName: "text.justify") })
         }
+        .navigationBarTitle("Chicago Libraries")
+        .navigationBarItems(trailing: Button(action: { displayType.mainScreenType = .list }) { Image(systemName: "text.justify") })
     }
 }
 

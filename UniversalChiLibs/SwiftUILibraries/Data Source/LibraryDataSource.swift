@@ -5,10 +5,15 @@
 //  Created by Allan Evans on 7/14/23.
 //
 import CoreData
+import CoreLocation
+import MapKit
 import Foundation
+import SwiftUI
 
 final class LibraryDataSource: ObservableObject {
     @Published var libraries: [Library] = []
+    @Published var sortedLibraries: [Library] = []
+    var locationDataManager = LocationDataManager()
     private let stack: CoreDataStack
     
     private var cacheExpired: Bool {
@@ -24,7 +29,9 @@ final class LibraryDataSource: ObservableObject {
         DispatchQueue.main.async {
             Task {
                 do {
+                    let userLocation = self.locationDataManager.userLocation
                     self.libraries = try await self.fetchLibraries()
+                    self.sortedLibraries = await self.fetchLibrariesSortedByDistance(from: userLocation)
                 } catch {
                     fatalError("Cannot load library data")
                 }
@@ -102,7 +109,7 @@ final class LibraryDataSource: ObservableObject {
         libraryEntity.state = library.state
         libraryEntity.website = websiteToEntity(library.website ?? Website(url: ""))
         libraryEntity.zip = library.zip
-        libraryEntity.photoURL = library.photoURL
+        libraryEntity.walkingDistance = library.walkingDistance
         libraryEntity.photoData = library.photoData
     }
     
@@ -130,7 +137,7 @@ final class LibraryDataSource: ObservableObject {
                        state: libraryEntity.state ?? "",
                        website: websiteFromEntity(libraryEntity),
                        zip: libraryEntity.zip ?? "",
-                       photoURL: libraryEntity.photoURL ?? "",
+                       walkingDistance: libraryEntity.walkingDistance,
                        photoData: libraryEntity.photoData ?? Data())
     }
     
@@ -143,5 +150,63 @@ final class LibraryDataSource: ObservableObject {
     
     private func websiteFromEntity(_ libraryEntity: LibraryEntity) -> Website {
         return Website(url: libraryEntity.website?.url)
+    }
+}
+
+extension LibraryDataSource {
+    func fetchLibrariesSortedByDistance(from userLoc: CLLocation, maxConcurrentRequests: Int = 41) async -> [Library] {
+        var newLibs: [Library] = []
+        let libraryChunks = libraries.chunked(into: maxConcurrentRequests)
+        for chunk in libraryChunks {
+            // MapKit API throttles apps that make more than 50 directions requests in 60 seconds 
+            // and we have 81 libraries, so we have 41 reuests every 60 seconds now
+            let chunkResults = try? await withThrowingTaskGroup(of: Library.self) { group in
+                for library in chunk {
+                    let libLat = library.location?.lat ?? 0.0
+                    let libLon = library.location?.lon ?? 0.0
+                    let libLoc = CLLocation(latitude: libLat, longitude: libLon)
+                    group.addTask {
+                        var newLib = library
+                        let route = await self.walkingDistance(from: userLoc, to: libLoc)
+                        let distance = route?.distance ?? 0.0
+                        newLib.walkingDistance = distance / 1609.344
+                        print("library \(newLib.name), walking distance is \(newLib.walkingDistance)")
+                        return newLib
+                    }
+                }
+                
+                var results: [Library] = []
+                for try await result in group {
+                    results.append(result)
+                }
+                
+                return results
+                
+            }
+            newLibs.append(contentsOf: chunkResults ?? [])
+            // avoid MapKit API throttling - no more that 50 requests/minute
+            // so 41 max concurrent requests (above) and wait a minute here, unless this is the last chunk
+            if chunk != libraryChunks.last {
+                try? await Task.sleep(nanoseconds: 60 * 1_000_000_000)
+            }
+        }
+        newLibs.sort{ $0.walkingDistance < $1.walkingDistance }
+        return newLibs
+    }
+        
+    func walkingDistance(from: CLLocation, to: CLLocation) async -> MKRoute? {
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: from.coordinate))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: to.coordinate))
+        request.transportType = .walking
+        
+        let directions = MKDirections(request: request)
+        do {
+            let response = try await directions.calculate()
+            return response.routes.first
+        } catch {
+            print("Error calculating route: \(error.localizedDescription)")
+            return nil
+        }
     }
 }

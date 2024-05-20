@@ -123,6 +123,11 @@
 		9DB29AE02BCEBD6E00455F4F /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8F0C2AF590790064DDEB /* PreviewData.swift */; };
 		9DB29AE22BCECBD100455F4F /* tvLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB29AE12BCECBD100455F4F /* tvLibraryView.swift */; };
 		9DB29AF22BD1F9F900455F4F /* tvLibraryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB29AF12BD1F9F900455F4F /* tvLibraryDetailView.swift */; };
+		9DC8F40C2BFAC97700EFC52D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC8F40B2BFAC97700EFC52D /* ArrayExtensions.swift */; };
+		9DC8F40D2BFAC97700EFC52D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC8F40B2BFAC97700EFC52D /* ArrayExtensions.swift */; };
+		9DC8F40E2BFAC97700EFC52D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC8F40B2BFAC97700EFC52D /* ArrayExtensions.swift */; };
+		9DC8F40F2BFAC97700EFC52D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC8F40B2BFAC97700EFC52D /* ArrayExtensions.swift */; };
+		9DC8F4102BFAC97700EFC52D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC8F40B2BFAC97700EFC52D /* ArrayExtensions.swift */; };
 		9DD5BF522BC9757B00966E2E /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 9DD5BF512BC9757B00966E2E /* SwiftSoup */; };
 		9DD5BF552BC9EC1900966E2E /* LibraryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */; };
 		9DD5BF562BCAEBAE00966E2E /* LibraryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */; };
@@ -300,6 +305,7 @@
 		9DB29AC92BCE129000455F4F /* tvLibrariesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvLibrariesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9DB29AE12BCECBD100455F4F /* tvLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvLibraryView.swift; sourceTree = "<group>"; };
 		9DB29AF12BD1F9F900455F4F /* tvLibraryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvLibraryDetailView.swift; sourceTree = "<group>"; };
+		9DC8F40B2BFAC97700EFC52D /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryImageView.swift; sourceTree = "<group>"; };
 		9DD5BF5C2BCD4D3100966E2E /* LibraryImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -477,6 +483,7 @@
 				9D3C8E662AF3EB8C0064DDEB /* ViewController+ErrorDialog.swift */,
 				9D3C8E682AF3EBF10064DDEB /* String+LibraryHourFormatting.swift */,
 				9D3C8F182AF6B2120064DDEB /* PlistParser.swift */,
+				9DC8F40B2BFAC97700EFC52D /* ArrayExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1284,6 +1291,7 @@
 				9D53874C2B5C771B0026C31B /* MapUtilities.swift in Sources */,
 				9DD5BF5F2BCD4EBD00966E2E /* LibraryImageViewController.swift in Sources */,
 				9D3C8E292AF3E0CC0064DDEB /* AppDelegate.swift in Sources */,
+				9DC8F40C2BFAC97700EFC52D /* ArrayExtensions.swift in Sources */,
 				9D3C8E2B2AF3E0CC0064DDEB /* SceneDelegate.swift in Sources */,
 				9D3C8E692AF3EBF10064DDEB /* String+LibraryHourFormatting.swift in Sources */,
 				9D3C8E5F2AF3E8400064DDEB /* Library.swift in Sources */,
@@ -1310,6 +1318,7 @@
 				9D3C8EC02AF54CB50064DDEB /* Library.swift in Sources */,
 				9D3C8F1A2AF6B33B0064DDEB /* PlistParser.swift in Sources */,
 				9D53874D2B5C77FE0026C31B /* MapUtilities.swift in Sources */,
+				9DC8F40D2BFAC97700EFC52D /* ArrayExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1321,6 +1330,7 @@
 				9D3C8F132AF5914B0064DDEB /* SwiftUILibrariesApp.swift in Sources */,
 				9D8ACF4E2B5DE95B0085F2ED /* LibraryGoogleMapView.swift in Sources */,
 				9D6046B12BE1192500D076B1 /* LibraryClosestLocationView.swift in Sources */,
+				9DC8F40E2BFAC97700EFC52D /* ArrayExtensions.swift in Sources */,
 				9D3C8F0D2AF590790064DDEB /* PreviewData.swift in Sources */,
 				9DD5BF552BC9EC1900966E2E /* LibraryImageView.swift in Sources */,
 				9D6046B02BE085C800D076B1 /* LibraryAlphaView.swift in Sources */,
@@ -1408,6 +1418,7 @@
 				9D3C90302AFCF1D20064DDEB /* Coordinator.swift in Sources */,
 				9D3C8FEA2AFC67930064DDEB /* AppDelegate.swift in Sources */,
 				9D3C90342AFCF1FB0064DDEB /* MainCoordinator.swift in Sources */,
+				9DC8F40F2BFAC97700EFC52D /* ArrayExtensions.swift in Sources */,
 				9D3C8FEC2AFC67930064DDEB /* SceneDelegate.swift in Sources */,
 				9D3C90442AFCF5630064DDEB /* LibraryDataSource.swift in Sources */,
 				9DD5BF612BCD65B800966E2E /* PreviewData.swift in Sources */,
@@ -1442,6 +1453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D3DE7452BF7871A00EABBC7 /* ChiLibsDataModel.xcdatamodeld in Sources */,
+				9DC8F4102BFAC97700EFC52D /* ArrayExtensions.swift in Sources */,
 				9DB29ADB2BCEBBF500455F4F /* ViewController+ErrorDialog.swift in Sources */,
 				9DB29AD42BCEB98C00455F4F /* LibraryDataSource.swift in Sources */,
 				9DB29AD52BCEBA1E00455F4F /* Library.swift in Sources */,

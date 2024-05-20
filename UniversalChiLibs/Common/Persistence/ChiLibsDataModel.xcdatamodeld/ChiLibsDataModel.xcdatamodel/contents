@@ -8,8 +8,8 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="phone" optional="YES" attributeType="String"/>
         <attribute name="photoData" optional="YES" attributeType="Binary"/>
-        <attribute name="photoURL" optional="YES" attributeType="String"/>
         <attribute name="state" optional="YES" attributeType="String"/>
+        <attribute name="walkingDistance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="zip" optional="YES" attributeType="String"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LocationEntity" inverseName="library" inverseEntity="LocationEntity"/>
         <relationship name="website" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WebsiteEntity" inverseName="website" inverseEntity="WebsiteEntity"/>
