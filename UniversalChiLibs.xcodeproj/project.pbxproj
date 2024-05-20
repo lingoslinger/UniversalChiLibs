@@ -128,6 +128,11 @@
 		9DC8F40E2BFAC97700EFC52D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC8F40B2BFAC97700EFC52D /* ArrayExtensions.swift */; };
 		9DC8F40F2BFAC97700EFC52D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC8F40B2BFAC97700EFC52D /* ArrayExtensions.swift */; };
 		9DC8F4102BFAC97700EFC52D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC8F40B2BFAC97700EFC52D /* ArrayExtensions.swift */; };
+		9DC8F4122BFB786E00EFC52D /* NumericExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC8F4112BFB786E00EFC52D /* NumericExtensions.swift */; };
+		9DC8F4132BFB786E00EFC52D /* NumericExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC8F4112BFB786E00EFC52D /* NumericExtensions.swift */; };
+		9DC8F4142BFB786E00EFC52D /* NumericExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC8F4112BFB786E00EFC52D /* NumericExtensions.swift */; };
+		9DC8F4152BFB786E00EFC52D /* NumericExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC8F4112BFB786E00EFC52D /* NumericExtensions.swift */; };
+		9DC8F4162BFB786E00EFC52D /* NumericExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC8F4112BFB786E00EFC52D /* NumericExtensions.swift */; };
 		9DD5BF522BC9757B00966E2E /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 9DD5BF512BC9757B00966E2E /* SwiftSoup */; };
 		9DD5BF552BC9EC1900966E2E /* LibraryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */; };
 		9DD5BF562BCAEBAE00966E2E /* LibraryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */; };
@@ -306,6 +311,7 @@
 		9DB29AE12BCECBD100455F4F /* tvLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvLibraryView.swift; sourceTree = "<group>"; };
 		9DB29AF12BD1F9F900455F4F /* tvLibraryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvLibraryDetailView.swift; sourceTree = "<group>"; };
 		9DC8F40B2BFAC97700EFC52D /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		9DC8F4112BFB786E00EFC52D /* NumericExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericExtensions.swift; sourceTree = "<group>"; };
 		9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryImageView.swift; sourceTree = "<group>"; };
 		9DD5BF5C2BCD4D3100966E2E /* LibraryImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -484,6 +490,7 @@
 				9D3C8E682AF3EBF10064DDEB /* String+LibraryHourFormatting.swift */,
 				9D3C8F182AF6B2120064DDEB /* PlistParser.swift */,
 				9DC8F40B2BFAC97700EFC52D /* ArrayExtensions.swift */,
+				9DC8F4112BFB786E00EFC52D /* NumericExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1287,6 +1294,7 @@
 				9D3C8E592AF3E16C0064DDEB /* LibraryTableViewController.swift in Sources */,
 				9D3C8E5B2AF3E3C60064DDEB /* LibraryDetailViewController.swift in Sources */,
 				9D3C8EB22AF4B65E0064DDEB /* LibraryDataSource.swift in Sources */,
+				9DC8F4122BFB786E00EFC52D /* NumericExtensions.swift in Sources */,
 				9DD5BF602BCD65B700966E2E /* PreviewData.swift in Sources */,
 				9D53874C2B5C771B0026C31B /* MapUtilities.swift in Sources */,
 				9DD5BF5F2BCD4EBD00966E2E /* LibraryImageViewController.swift in Sources */,
@@ -1314,6 +1322,7 @@
 				9D3C8EDB2AF54E280064DDEB /* LibraryPhoneTextView.swift in Sources */,
 				9D3C8EED2AF54EF10064DDEB /* SceneDelegate.swift in Sources */,
 				9D3C8EE02AF54E5B0064DDEB /* LibraryViewController.swift in Sources */,
+				9DC8F4132BFB786E00EFC52D /* NumericExtensions.swift in Sources */,
 				9D3C8EBF2AF54CB50064DDEB /* String+LibraryHourFormatting.swift in Sources */,
 				9D3C8EC02AF54CB50064DDEB /* Library.swift in Sources */,
 				9D3C8F1A2AF6B33B0064DDEB /* PlistParser.swift in Sources */,
@@ -1343,6 +1352,7 @@
 				9D3C8F1B2AF6B33C0064DDEB /* PlistParser.swift in Sources */,
 				9D3C8F062AF5903F0064DDEB /* LibraryAppleMapView.swift in Sources */,
 				9D6046B22BE11CDC00D076B1 /* LibrarySearchLocationView.swift in Sources */,
+				9DC8F4142BFB786E00EFC52D /* NumericExtensions.swift in Sources */,
 				9D3C8F002AF58FD90064DDEB /* Library.swift in Sources */,
 				9D5C83C22BF708240019E43D /* CoreDataStack.swift in Sources */,
 				9D3C8F112AF5914B0064DDEB /* LibraryDetailView.swift in Sources */,
@@ -1418,6 +1428,7 @@
 				9D3C90302AFCF1D20064DDEB /* Coordinator.swift in Sources */,
 				9D3C8FEA2AFC67930064DDEB /* AppDelegate.swift in Sources */,
 				9D3C90342AFCF1FB0064DDEB /* MainCoordinator.swift in Sources */,
+				9DC8F4152BFB786E00EFC52D /* NumericExtensions.swift in Sources */,
 				9DC8F40F2BFAC97700EFC52D /* ArrayExtensions.swift in Sources */,
 				9D3C8FEC2AFC67930064DDEB /* SceneDelegate.swift in Sources */,
 				9D3C90442AFCF5630064DDEB /* LibraryDataSource.swift in Sources */,
@@ -1453,6 +1464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D3DE7452BF7871A00EABBC7 /* ChiLibsDataModel.xcdatamodeld in Sources */,
+				9DC8F4162BFB786E00EFC52D /* NumericExtensions.swift in Sources */,
 				9DC8F4102BFAC97700EFC52D /* ArrayExtensions.swift in Sources */,
 				9DB29ADB2BCEBBF500455F4F /* ViewController+ErrorDialog.swift in Sources */,
 				9DB29AD42BCEB98C00455F4F /* LibraryDataSource.swift in Sources */,

@@ -12,28 +12,25 @@ import CoreLocation
 struct LibraryClosestLocationView: View {
     @EnvironmentObject var dataSource: LibraryDataSource
     @EnvironmentObject var displayType: DisplayType
+    @EnvironmentObject var locationDataManager: LocationDataManager
     
     var libraries: [Library] {
-        dataSource.sortedLibraries // eventually use user location to find closest libraries
+        dataSource.sortedLibraries
     }
     
     var body: some View {
         VStack {
             if libraries.count > 0 {
-                Text("Closest by walking distance")
                 List {
-                    ForEach(libraries, id: \.self) { library in
+                    Text("Closest by walking distance")
+                    ForEach(libraries) { library in
                         NavigationLink(destination: LibraryDetailView(library: library)) {
-                            HStack {
-                                Text(library.name)
-                                Text("\(library.walkingDistance) mi.")
-                            }
+                            Text("\(library.name)\n\(library.walkingDistance.roundedUp(toPlaces: 1)) mi.")
                         }
-                        
                     }
                 }
             } else {
-                Text("Finding walking distances - this can take up to two minutes because of API throttling limitations")
+                Text("Finding walking distances - this can take up to two minutes because of MapKit API throttling limitations. Thanks Apple...🤦‍♂️")
             }
         }
         .navigationBarTitle("Chicago Libraries")
