@@ -6,7 +6,7 @@
 //  Copyright © 2024 AGE Software Consulting, LLC. All rights reserved.
 //
 
-import SwiftUI
+import Foundation
 
 final class DisplayType: ObservableObject {
     enum MainScreenType {

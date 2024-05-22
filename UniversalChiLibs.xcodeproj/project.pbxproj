@@ -139,6 +139,8 @@
 		9DD5BF602BCD65B700966E2E /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8F0C2AF590790064DDEB /* PreviewData.swift */; };
 		9DD5BF612BCD65B800966E2E /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C8F0C2AF590790064DDEB /* PreviewData.swift */; };
 		9DD5BF632BCD65E400966E2E /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 9DD5BF622BCD65E400966E2E /* SwiftSoup */; };
+		9DEE23C92BFE39C5008E6DE3 /* LibraryItemAlpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEE23C82BFE39C5008E6DE3 /* LibraryItemAlpha.swift */; };
+		9DEE23CB2BFE3BF2008E6DE3 /* LibraryItemDistanceSorted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEE23CA2BFE3BF2008E6DE3 /* LibraryItemDistanceSorted.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -308,6 +310,8 @@
 		9DC8F40B2BFAC97700EFC52D /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryImageView.swift; sourceTree = "<group>"; };
 		9DD5BF5C2BCD4D3100966E2E /* LibraryImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryImageViewController.swift; sourceTree = "<group>"; };
+		9DEE23C82BFE39C5008E6DE3 /* LibraryItemAlpha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryItemAlpha.swift; sourceTree = "<group>"; };
+		9DEE23CA2BFE3BF2008E6DE3 /* LibraryItemDistanceSorted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryItemDistanceSorted.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -753,6 +757,8 @@
 		9DD5BF532BC9EB2E00966E2E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9DEE23C82BFE39C5008E6DE3 /* LibraryItemAlpha.swift */,
+				9DEE23CA2BFE3BF2008E6DE3 /* LibraryItemDistanceSorted.swift */,
 				9D3C8F0F2AF5914B0064DDEB /* LibraryView.swift */,
 				9D3C8F0E2AF5914B0064DDEB /* LibraryDetailView.swift */,
 				9DD5BF542BC9EC1900966E2E /* LibraryImageView.swift */,
@@ -1343,8 +1349,10 @@
 				9D3C8F1B2AF6B33C0064DDEB /* PlistParser.swift in Sources */,
 				9D3C8F062AF5903F0064DDEB /* LibraryAppleMapView.swift in Sources */,
 				9D6046B22BE11CDC00D076B1 /* LibrarySearchLocationView.swift in Sources */,
+				9DEE23CB2BFE3BF2008E6DE3 /* LibraryItemDistanceSorted.swift in Sources */,
 				9D3C8F002AF58FD90064DDEB /* Library.swift in Sources */,
 				9D5C83C22BF708240019E43D /* CoreDataStack.swift in Sources */,
+				9DEE23C92BFE39C5008E6DE3 /* LibraryItemAlpha.swift in Sources */,
 				9D3C8F112AF5914B0064DDEB /* LibraryDetailView.swift in Sources */,
 				9D3C8F122AF5914B0064DDEB /* LibraryView.swift in Sources */,
 				9D3C8F032AF590060064DDEB /* String+LibraryHourFormatting.swift in Sources */,
@@ -1822,6 +1830,7 @@
 				DEVELOPMENT_TEAM = W9SQ355FV2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftUILibraries-Info.plist";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We use your location to find the closest libraries.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We use your location to find the closest library.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1855,6 +1864,7 @@
 				DEVELOPMENT_TEAM = W9SQ355FV2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftUILibraries-Info.plist";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We use your location to find the closest libraries.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We use your location to find the closest library.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

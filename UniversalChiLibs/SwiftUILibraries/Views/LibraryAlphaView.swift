@@ -33,9 +33,7 @@ struct LibraryAlphaView: View {
                 Section(header: Text(sectionTitle)) {
                     let currentLibraries = libraries.filter { $0.name.hasPrefix(sectionTitle) }.sorted { $0.name < $1.name }
                     ForEach(currentLibraries, id: \.self) { library in
-                        NavigationLink(destination: LibraryDetailView(library: library)) {
-                            Text(library.name)
-                        }
+                        LibraryItemAlpha(library: library)
                     }
                 }
             }

@@ -45,13 +45,13 @@ final class LibraryDataSource: ObservableObject {
             let cachedLibraries = try loadCachedLibraries()
             if !cachedLibraries.isEmpty {
                 let libraries =  cachedLibraries.map { mapEntityToModel($0) }
-                return libraries.sorted(by: { $0.name < $1.name })
+                return libraries// .sorted(by: { $0.name < $1.name })
             } else {
                 let libraries = try await WebService.getLibraryData()
                 let timeInterval: Double = Date().timeIntervalSince1970
                 UserDefaults.standard.set(timeInterval, forKey: "CacheDate")
                 await saveToCoreData(libraries)
-                return libraries.sorted(by: {$0.name < $1.name})
+                return libraries
             }
         } catch {
             print("Error getting libraries: \(error.localizedDescription)")
@@ -168,9 +168,8 @@ extension LibraryDataSource {
                     group.addTask {
                         var newLib = library
                         let route = await self.walkingDistance(from: userLoc, to: libLoc)
-                        let distance = route?.distance ?? 0.0
-                        newLib.walkingDistance = distance / 1609.344
-                        print("library \(newLib.name), walking distance is \(newLib.walkingDistance)")
+                        newLib.walkingDistance = route?.distance ?? 0.0
+                        print("library \(newLib.name), walking distance is \(newLib.walkingDistance) meters")
                         return newLib
                     }
                 }

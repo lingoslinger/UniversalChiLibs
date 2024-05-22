@@ -22,18 +22,14 @@ struct LibraryClosestLocationView: View {
         VStack {
             if libraries.count > 0 {
                 List {
-                    Text("Closest by walking distance")
-                    ForEach(libraries) { library in
-                        let formattedDistance = library.walkingDistance.formatted(
-                            .number
-                                .rounded(rule: .up, increment: 0.1)
-                        )
-                        NavigationLink(destination: LibraryDetailView(library: library)) {
-                            Text("\(library.name)\n\(formattedDistance) mi.")
+                    Section("Closest by walking distance") {
+                        ForEach(libraries) { library in
+                            LibraryItemDistanceSorted(library: library)
                         }
                     }
                 }
             } else {
+                // TODO: loading indicator here also...
                 Text("Finding walking distances - this can take up to two minutes because of MapKit API throttling limitations. Thanks Apple...🤦‍♂️")
             }
         }
