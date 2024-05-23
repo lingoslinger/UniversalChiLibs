@@ -24,17 +24,15 @@ final class LibraryDataSource: ObservableObject {
         return (today - cacheLastSaved > cacheTimeInterval)
     }
     
-    init() {
+    @MainActor init() {
         stack = CoreDataStack.shared
-        DispatchQueue.main.async {
-            Task {
-                do {
-                    let userLocation = self.locationDataManager.userLocation
-                    self.libraries = try await self.fetchLibraries()
-                    self.sortedLibraries = await self.fetchLibrariesSortedByDistance(from: userLocation)
-                } catch {
-                    fatalError("Cannot load library data")
-                }
+        Task {
+            do {
+                let userLocation = self.locationDataManager.userLocation
+                self.libraries = try await self.fetchLibraries()
+                self.sortedLibraries = await self.fetchLibrariesSortedByDistance(from: userLocation)
+            } catch {
+                fatalError("Cannot load library data")
             }
         }
     }
@@ -184,7 +182,7 @@ extension LibraryDataSource {
             }
             newLibs.append(contentsOf: chunkResults ?? [])
             // avoid MapKit API throttling - no more that 50 requests/minute
-            // so 41 max concurrent requests (above) and wait a minute here, unless this is the last chunk
+            // so 49 max concurrent requests (above) and wait a minute here, unless this is the last chunk
             if chunk != libraryChunks.last {
                 try? await Task.sleep(nanoseconds: 60 * 1_000_000_000)
             }
