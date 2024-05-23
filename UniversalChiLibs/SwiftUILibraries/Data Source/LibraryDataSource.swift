@@ -13,7 +13,6 @@ import SwiftUI
 final class LibraryDataSource: ObservableObject {
     @Published var libraries: [Library] = []
     @Published var sortedLibraries: [Library] = []
-    var locationDataManager = LocationDataManager()
     private let stack: CoreDataStack
     
     private var cacheExpired: Bool {
@@ -28,9 +27,7 @@ final class LibraryDataSource: ObservableObject {
         stack = CoreDataStack.shared
         Task {
             do {
-                let userLocation = self.locationDataManager.userLocation
                 self.libraries = try await self.fetchLibraries()
-                self.sortedLibraries = await self.fetchLibrariesSortedByDistance(from: userLocation)
             } catch {
                 fatalError("Cannot load library data")
             }
@@ -43,7 +40,7 @@ final class LibraryDataSource: ObservableObject {
             let cachedLibraries = try loadCachedLibraries()
             if !cachedLibraries.isEmpty {
                 let libraries =  cachedLibraries.map { mapEntityToModel($0) }
-                return libraries// .sorted(by: { $0.name < $1.name })
+                return libraries
             } else {
                 let libraries = try await WebService.getLibraryData()
                 let timeInterval: Double = Date().timeIntervalSince1970
@@ -152,12 +149,13 @@ final class LibraryDataSource: ObservableObject {
 }
 
 extension LibraryDataSource {
-    func fetchLibrariesSortedByDistance(from userLoc: CLLocation, maxConcurrentRequests: Int = 41) async -> [Library] {
+    @MainActor func fetchLibrariesSortedByDistance(from userLoc: CLLocation, maxConcurrentRequests: Int = 50) async { //} -> [Library] {
         var newLibs: [Library] = []
         let libraryChunks = libraries.chunked(into: maxConcurrentRequests)
         for chunk in libraryChunks {
             // MapKit API throttles apps that make more than 50 directions requests in 60 seconds 
-            // and we have 81 libraries, so we have 41 reuests every 60 seconds now
+            // and we have 81 libraries, so we have 49 reuests every 60 seconds now
+            // (1 request to get current loc in the view and 49 per chunk here)
             let chunkResults = try? await withThrowingTaskGroup(of: Library.self) { group in
                 for library in chunk {
                     let libLat = library.location?.lat ?? 0.0
@@ -182,13 +180,12 @@ extension LibraryDataSource {
             }
             newLibs.append(contentsOf: chunkResults ?? [])
             // avoid MapKit API throttling - no more that 50 requests/minute
-            // so 49 max concurrent requests (above) and wait a minute here, unless this is the last chunk
             if chunk != libraryChunks.last {
                 try? await Task.sleep(nanoseconds: 60 * 1_000_000_000)
             }
         }
         newLibs.sort{ $0.walkingDistance < $1.walkingDistance }
-        return newLibs
+        sortedLibraries = newLibs
     }
         
     func walkingDistance(from: CLLocation, to: CLLocation) async -> MKRoute? {
