@@ -149,7 +149,7 @@ final class LibraryDataSource: ObservableObject {
 }
 
 extension LibraryDataSource {
-    @MainActor func fetchLibrariesSortedByDistance(from userLoc: CLLocation, maxConcurrentRequests: Int = 50) async { //} -> [Library] {
+    @MainActor func fetchLibrariesSortedByDistance(from userLoc: CLLocation, maxConcurrentRequests: Int = 50) async {
         var newLibs: [Library] = []
         let libraryChunks = libraries.chunked(into: maxConcurrentRequests)
         for chunk in libraryChunks {
