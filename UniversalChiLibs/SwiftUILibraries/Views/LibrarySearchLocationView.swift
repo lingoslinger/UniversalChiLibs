@@ -7,38 +7,60 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct LibrarySearchLocationView: View {
     @EnvironmentObject var dataSource: LibraryDataSource
     @EnvironmentObject var displayType: DisplayType
-    @EnvironmentObject var locationDataManager: LocationDataManager
-    @State var searchText = ""
+    @ObservedObject var locationDataManager: LocationDataManager
+    @State private var searchText: String = ""
+    @State private var searchQuery: String = ""
     
     var libraries: [Library] {
-        dataSource.libraries // eventually use searched location to find closest libraries
+        if searchQuery.isEmpty {
+            return []
+        } else {
+            return dataSource.sortedLibraries
+        }
     }
     var body: some View {
         VStack {
-            Text("Use of user location not authorized")
-            Text("Closest by walking distance")
-            // TODO: use entered data to get location to sort libraries here
-            List {
-                ForEach(libraries, id: \.self) { library in
-                    NavigationLink(destination: LibraryDetailView(library: library)) {
-                        Text(library.name)
+            if libraries.count > 0 {
+                List {
+                    Section("Closest by walking distance from search location") {
+                        ForEach(libraries) { library in
+                            LibraryItemDistanceSorted(library: library)
+                        }
                     }
-                    
+                }
+            } else {
+                if !searchQuery.isEmpty {
+                    Text("Finding walking distances - this can take up to two minutes because of MapKit API throttling limitations. Thanks Apple...🤦‍♂️")
+                    // get location from search query here...
+                        .task {
+                            guard let searchLoc = try? await locationDataManager.searchForLocation(searchLocation: searchQuery) else {
+                                print("No location found")
+                                return
+                            }
+                            await dataSource.fetchLibrariesSortedByDistance(from: searchLoc, maxConcurrentRequests: 49)
+                        }
                 }
             }
-            .searchable(text: $searchText,
-                        placement: .navigationBarDrawer(displayMode: .always),
-                        prompt: "Enter an address or zip code")
-            .navigationBarTitle("Chicago Libraries")
-            .navigationBarItems(trailing: Button(action: { displayType.mainScreenType = .list }) { Image(systemName: "text.justify") })
         }
+        .searchable(text: $searchText,
+                    placement: .navigationBarDrawer(displayMode: .always),
+                    prompt: "Enter an address or zip code")
+        .onChange(of: searchText) { newValue in
+            // do nothing until search button is tapped
+        }
+        .onSubmit(of: .search, {
+            searchQuery = searchText
+        })
+        .navigationBarTitle("Chicago Libraries")
+        .navigationBarItems(trailing: Button(action: { displayType.mainScreenType = .list }) { Image(systemName: "text.justify") })
     }
 }
 
 #Preview {
-    LibrarySearchLocationView()
+    LibrarySearchLocationView(locationDataManager: LocationDataManager())
 }

@@ -12,7 +12,7 @@ import CoreLocation
 struct LibraryClosestLocationView: View {
     @EnvironmentObject var dataSource: LibraryDataSource
     @EnvironmentObject var displayType: DisplayType
-    @EnvironmentObject var locationDataManager: LocationDataManager
+    @ObservedObject var locationDataManager: LocationDataManager
     
     var libraries: [Library] {
         dataSource.sortedLibraries
@@ -42,5 +42,5 @@ struct LibraryClosestLocationView: View {
 }
 
 #Preview {
-    LibraryClosestLocationView()
+    LibraryClosestLocationView(locationDataManager: LocationDataManager())
 }
