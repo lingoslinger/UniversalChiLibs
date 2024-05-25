@@ -52,8 +52,13 @@ struct LibrarySearchLocationView: View {
                     prompt: "Enter an address or zip code")
         .onChange(of: searchText) { newValue in
             // do nothing until search button is tapped
+            // well, actually...
+            if searchText.isEmpty {
+                searchQuery = ""
+            }
         }
         .onSubmit(of: .search, {
+            dataSource.clearSortedLibraries()
             searchQuery = searchText
         })
         .navigationBarTitle("Chicago Libraries")

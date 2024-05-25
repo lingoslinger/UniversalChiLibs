@@ -187,6 +187,10 @@ extension LibraryDataSource {
         newLibs.sort{ $0.walkingDistance < $1.walkingDistance }
         sortedLibraries = newLibs
     }
+    
+    func clearSortedLibraries() {
+        sortedLibraries = []
+    }
         
     func walkingDistance(from: CLLocation, to: CLLocation) async -> MKRoute? {
         let request = MKDirections.Request()
