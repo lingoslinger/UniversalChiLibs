@@ -36,7 +36,6 @@ struct LibrarySearchLocationView: View {
             } else {
                 if !searchQuery.isEmpty {
                     Text("Finding walking distances - this can take up to two minutes because of MapKit API throttling limitations. Thanks Apple...🤦‍♂️")
-                    // get location from search query here...
                         .task {
                             guard let searchLoc = try? await locationDataManager.searchForLocation(searchLocation: searchQuery) else {
                                 print("No location found")
@@ -51,8 +50,6 @@ struct LibrarySearchLocationView: View {
                     placement: .navigationBarDrawer(displayMode: .always),
                     prompt: "Enter an address or zip code")
         .onChange(of: searchText) { newValue in
-            // do nothing until search button is tapped
-            // well, actually...
             if searchText.isEmpty {
                 searchQuery = ""
             }

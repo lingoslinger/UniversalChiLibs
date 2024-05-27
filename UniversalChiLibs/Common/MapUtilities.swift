@@ -8,18 +8,9 @@
 
 import UIKit
 
-// think about this some more before implementing...
-enum MapPreference: String {
-    case apple = "Apple"
-    case google = "Google"
-    case here = "HERE"
-}
-
-var mapPreference = MapPreference.apple // TODO: ability to change preference
-
-func openMap(with address: String) {
+func openMap(with address: String, mapPreference: MapPreference = MapPreference()) {
     let encodedAddress = address.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-    switch mapPreference {
+    switch mapPreference.mapProvider {
         case .apple:
             let mapURLString = "http://maps.apple.com/?daddr=\(encodedAddress)&dirflg=w" // walking directions...
             guard let mapURL = URL(string: mapURLString) else { return }
@@ -29,4 +20,19 @@ func openMap(with address: String) {
         case .here:
             print("HERE maps integration not complete")
     }
+}
+
+func openAppleMaps(with address: String) {
+    let encodedAddress = address.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+    let mapURLString = "http://maps.apple.com/?daddr=\(encodedAddress)&dirflg=w" // walking directions...
+    guard let mapURL = URL(string: mapURLString) else { return }
+    UIApplication.shared.open(mapURL, options: [:], completionHandler: nil)
+}
+
+func openGoogleMaps() {
+    print("Google Maps integration not complete")
+}
+
+func openHereMap() {
+    print("HERE maps integration not complete")
 }

@@ -11,12 +11,14 @@ import SwiftUI
 struct SwiftUILibrariesApp: App {
     @StateObject var displayType = DisplayType()
     @StateObject var dataSource = LibraryDataSource()
+    @StateObject var mapPreference = MapPreference()
     
     var body: some Scene {
         WindowGroup {
             LibraryView()
                 .environmentObject(displayType)
                 .environmentObject(dataSource)
+                .environmentObject(mapPreference)
         }
     }
 }

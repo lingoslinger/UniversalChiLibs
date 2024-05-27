@@ -141,6 +141,7 @@
 		9DD5BF632BCD65E400966E2E /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 9DD5BF622BCD65E400966E2E /* SwiftSoup */; };
 		9DEE23C92BFE39C5008E6DE3 /* LibraryItemAlpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEE23C82BFE39C5008E6DE3 /* LibraryItemAlpha.swift */; };
 		9DEE23CB2BFE3BF2008E6DE3 /* LibraryItemDistanceSorted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEE23CA2BFE3BF2008E6DE3 /* LibraryItemDistanceSorted.swift */; };
+		9DEE23F92C0414A8008E6DE3 /* MapPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEE23F82C0414A8008E6DE3 /* MapPreference.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -312,6 +313,7 @@
 		9DD5BF5C2BCD4D3100966E2E /* LibraryImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryImageViewController.swift; sourceTree = "<group>"; };
 		9DEE23C82BFE39C5008E6DE3 /* LibraryItemAlpha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryItemAlpha.swift; sourceTree = "<group>"; };
 		9DEE23CA2BFE3BF2008E6DE3 /* LibraryItemDistanceSorted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryItemDistanceSorted.swift; sourceTree = "<group>"; };
+		9DEE23F82C0414A8008E6DE3 /* MapPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPreference.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -598,6 +600,7 @@
 				9D8831C22B0782D2003889CB /* WebService.swift */,
 				9D881A542BDB40F1009BFEE2 /* LocationDataManager.swift */,
 				9D6046B32BE11EB100D076B1 /* DisplayType.swift */,
+				9DEE23F82C0414A8008E6DE3 /* MapPreference.swift */,
 			);
 			path = "Data Source";
 			sourceTree = "<group>";
@@ -1357,6 +1360,7 @@
 				9D3C8F122AF5914B0064DDEB /* LibraryView.swift in Sources */,
 				9D3C8F032AF590060064DDEB /* String+LibraryHourFormatting.swift in Sources */,
 				9D8831C32B0782D2003889CB /* WebService.swift in Sources */,
+				9DEE23F92C0414A8008E6DE3 /* MapPreference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

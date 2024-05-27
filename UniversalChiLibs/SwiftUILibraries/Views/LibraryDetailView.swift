@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LibraryDetailView: View {
     let library: Library
-    @State private var mapPreference = MapPreference.apple // set this somewhere else and publish?
+    @EnvironmentObject private var mapPreference: MapPreference
 
     var body: some View {
         NavigationView {
@@ -22,13 +22,13 @@ struct LibraryDetailView: View {
                         .padding(.leading, 10)
                     Text(library.hoursOfOperation?.formattedHours ?? "Hours not available")
                         .padding(.leading, 10)
-                    switch mapPreference {
+                    switch mapPreference.mapProvider {
                         case .apple:
                             LibraryAppleMapView(library: library)
                                 .frame(height: 200, alignment: .top)
                                 .onTapGesture {
                                     let searchAddress = "\(library.address ?? ""), \(library.city ?? ""), \(library.state ?? "") \(library.zip ?? "")"
-                                    openMap(with: searchAddress)
+                                    openAppleMaps(with: searchAddress)
                                 }
                                 .gesture(
                                     LongPressGesture(minimumDuration: 1.0)
@@ -39,10 +39,10 @@ struct LibraryDetailView: View {
                                 .padding(.bottom, 10)
                         case .google:
                             LibraryGoogleMapView()
-                                .frame(height: 300, alignment: .top)
+                                .frame(height: 200, alignment: .top)
                         case .here:
                             LibraryHereMapView()
-                                .frame(height: 300, alignment: .top)
+                                .frame(height: 200, alignment: .top)
                     }
                     Spacer()
                 }
