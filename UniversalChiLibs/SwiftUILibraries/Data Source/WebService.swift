@@ -11,7 +11,7 @@ enum FetchError: Error {
     case badURL
     case badResponse
     case badJSON
-    case badHTML
+    case badString
     case badImage
 }
 
@@ -28,7 +28,7 @@ struct WebService {
     static func getStringForData(at urlString: String) async throws -> String {
             let data = try await getData(for: urlString)
             guard let returnString = String(data: data, encoding: .utf8) else {
-                throw FetchError.badHTML
+                throw FetchError.badString
             }
             return returnString
         }

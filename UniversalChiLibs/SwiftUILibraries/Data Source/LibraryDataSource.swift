@@ -208,3 +208,13 @@ extension LibraryDataSource {
         }
     }
 }
+
+extension LibraryDataSource {
+    func libraryEntity(for library: Library) -> LibraryEntity? {
+        let context = CoreDataStack.shared.viewContext
+        let request: NSFetchRequest<LibraryEntity> = LibraryEntity.fetchRequest()
+        request.predicate = NSPredicate(format: "name == %@", library.name)
+        let results = try? context.fetch(request)
+        return results?.first
+    }
+}

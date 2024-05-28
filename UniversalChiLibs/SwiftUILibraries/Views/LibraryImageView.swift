@@ -8,9 +8,9 @@
 
 import SwiftUI
 import SwiftSoup
-import CoreData
 
 struct LibraryImageView: View {
+    @EnvironmentObject var libraryDataSource: LibraryDataSource
     let library: Library?
     @State private var libraryImageData: Data?
     
@@ -54,7 +54,7 @@ extension LibraryImageView {
     private func loadLibraryImageData() async throws {
         guard let library else { return }
         
-        let storedImageData = getImageData(for: library)
+        let storedImageData = getStoredImageData(for: library)
         if storedImageData.count > 0 {
             libraryImageData = storedImageData
             return
@@ -70,22 +70,22 @@ extension LibraryImageView {
                 imageURLString = try element.attr("content")
             }
         }
-        guard let imageURL = URL(string: imageURLString) else { fatalError("invalid image URL") }
+        
         let imageData = try await WebService.getData(for: imageURLString)
-        saveImageData(imageData, for: library)
+        saveStoredImageData(imageData, for: library)
         libraryImageData = imageData
     }
     
 }
 
 extension LibraryImageView {
-    func getImageData(for library: Library) -> Data {
-        guard let libEntity = libraryEntity(for: library) else { return Data() }
+    func getStoredImageData(for library: Library) -> Data {
+        guard let libEntity = libraryDataSource.libraryEntity(for: library) else { return Data() }
         return libEntity.photoData ?? Data()
     }
     
-    func saveImageData(_ imageData: Data, for library: Library) {
-        guard let libEntity = libraryEntity(for: library) else { return }
+    func saveStoredImageData(_ imageData: Data, for library: Library) {
+        guard let libEntity = libraryDataSource.libraryEntity(for: library) else { return }
         let context = CoreDataStack.shared.viewContext
         libEntity.photoData = imageData
         do {
@@ -93,14 +93,6 @@ extension LibraryImageView {
         } catch {
             print("Error saving to Core Data: \(error.localizedDescription)")
         }
-    }
-    
-    func libraryEntity(for library: Library) -> LibraryEntity? {
-        let context = CoreDataStack.shared.viewContext
-        let request: NSFetchRequest<LibraryEntity> = LibraryEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "name == %@", library.name)
-        let results = try? context.fetch(request)
-        return results?.first
     }
 }
 
