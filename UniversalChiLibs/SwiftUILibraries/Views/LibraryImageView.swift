@@ -64,7 +64,6 @@ extension LibraryImageView {
         
         guard let libraryURLString = library.website?.url else { fatalError("No library URL")}
         let siteHTML = try await WebService.getStringData(for: libraryURLString)
-        
         let doc = try SwiftSoup.parse(siteHTML)
         let elements: Elements = try! doc.select("meta")
         for element in elements {
@@ -73,12 +72,7 @@ extension LibraryImageView {
             }
         }
         guard let imageURL = URL(string: imageURLString) else { fatalError("invalid image URL") }
-        
-        let (imageData, imageResponse) = try await URLSession.shared.data(from: imageURL)
-        guard let imageResponse = imageResponse as? HTTPURLResponse, imageResponse.statusCode < 400 else {
-            fatalError("bad response")
-        }
-        
+        let imageData = try await WebService.getData(for: imageURLString)
         saveImageData(imageData, for: library)
         libraryImageData = imageData
     }

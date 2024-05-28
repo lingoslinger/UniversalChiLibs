@@ -31,7 +31,7 @@ struct WebService {
         return libraries
     }
     
-    static private func getData(for urlString: String) async throws -> Data {
+    static func getData(for urlString: String) async throws -> Data {
         guard let url = URL(string: urlString) else { throw FetchError.badURL }
         let (data, response) = try await URLSession.shared.data(from: url)
         guard let response = response as? HTTPURLResponse, response.statusCode < 400 else {
@@ -40,30 +40,19 @@ struct WebService {
         return data
     }
     
+    static func getStringData(for urlString: String) async throws -> String {
+            let data = try await getData(for: urlString)
+            guard let returnString = String(data: data, encoding: .utf8) else {
+                throw FetchError.badHTML
+            }
+            return returnString
+        }
+    
     static func getCodableData<T: Codable>(for urlString: String) async throws -> T? {
         let data = try await getData(for: urlString)
         guard let decodedData = try? JSONDecoder().decode(T.self, from: data) else {
             throw FetchError.badJSON
         }
         return decodedData
-    }
-    
-    static func getStringData(for urlString: String) async throws -> String {
-        let data = try await getData(for: urlString)
-        guard let returnString = String(data: data, encoding: .utf8) else {
-            throw FetchError.badHTML
-        }
-        return returnString
-    }
-    
-    
-    static func getImageData(for imageURLString: String) async throws -> Data? {
-        
-        return nil
-    }
-    
-    static func getLibraryHTML(for libraryURLString: String) async throws -> String? {
-        
-        return nil
-    }
+    } 
 }
