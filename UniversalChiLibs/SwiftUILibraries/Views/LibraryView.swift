@@ -21,7 +21,7 @@ struct LibraryView: View {
                 case .location:
                     // TODO: maybe make this one view again?
                     if locationDataManager.isAuthorized {
-                        LibraryClosestLocationView(locationDataManager: locationDataManager)
+                        LibraryLocationView(locationDataManager: locationDataManager)
                     } else {
                         LibrarySearchLocationView(locationDataManager: locationDataManager)
                     }

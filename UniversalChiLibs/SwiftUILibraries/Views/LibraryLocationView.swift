@@ -9,7 +9,7 @@
 import SwiftUI
 import CoreLocation
 
-struct LibraryClosestLocationView: View {
+struct LibraryLocationView: View {
     @EnvironmentObject var dataSource: LibraryDataSource
     @EnvironmentObject var displayType: DisplayType
     @ObservedObject var locationDataManager: LocationDataManager
@@ -42,5 +42,5 @@ struct LibraryClosestLocationView: View {
 }
 
 #Preview {
-    LibraryClosestLocationView(locationDataManager: LocationDataManager())
+    LibraryLocationView(locationDataManager: LocationDataManager())
 }
