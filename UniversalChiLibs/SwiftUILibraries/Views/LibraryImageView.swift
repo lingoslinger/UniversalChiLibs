@@ -61,9 +61,8 @@ extension LibraryImageView {
         }
 
         var imageURLString = ""
-        
         guard let libraryURLString = library.website?.url else { fatalError("No library URL")}
-        let siteHTML = try await WebService.getStringData(for: libraryURLString)
+        let siteHTML = try await WebService.getStringForData(at: libraryURLString)
         let doc = try SwiftSoup.parse(siteHTML)
         let elements: Elements = try! doc.select("meta")
         for element in elements {
