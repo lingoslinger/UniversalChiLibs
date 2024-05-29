@@ -22,7 +22,7 @@ struct Library: Decodable, Identifiable, Hashable {
     var photoData: Data = Data()
     let id: Int = UUID().hashValue
     
-    // using Decodable and coding keys here because of some naming issues in the data source
+    // using coding keys here because of some naming issues in the data source
     // I'm looking at you, "name_" 🤦‍♂️
     enum CodingKeys: String, CodingKey {
         case address = "address"
@@ -64,8 +64,7 @@ struct Library: Decodable, Identifiable, Hashable {
     }
 }
 
-//extension Library {
-    struct Location: Codable {
+    struct Location: Decodable {
         let latitude: String?
         let longitude: String?
         let needsRecoding: Bool?
@@ -85,14 +84,13 @@ struct Library: Decodable, Identifiable, Hashable {
         }
     }
 
-    struct Website: Codable {
+    struct Website: Decodable {
         let url: String?
         
         init(url: String?) {
             self.url = url
         }
     }
-//}
 
 extension Library {
     static func == (lhs: Library, rhs: Library) -> Bool {

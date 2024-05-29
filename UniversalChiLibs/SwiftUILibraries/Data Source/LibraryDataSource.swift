@@ -4,6 +4,7 @@
 //
 //  Created by Allan Evans on 7/14/23.
 //
+
 import CoreData
 import CoreLocation
 import MapKit
@@ -19,7 +20,7 @@ final class LibraryDataSource: ObservableObject {
         let cacheLastSaved = UserDefaults.standard.double(forKey: "CacheDate")
         if cacheLastSaved == 0 { return true } // for case when cache has not been saved yet
         let today = Date().timeIntervalSince1970
-        let cacheTimeInterval = 7.0 * 24.0 * 60.0 // one week for now, eventually a settable preference
+        let cacheTimeInterval =  24.0 * 60.0 * 60.0 // one day for now, eventually a settable preference
         return (today - cacheLastSaved > cacheTimeInterval)
     }
     
@@ -192,7 +193,7 @@ extension LibraryDataSource {
         sortedLibraries = []
     }
         
-    func walkingDistance(from: CLLocation, to: CLLocation) async -> MKRoute? {
+    private  afarifunc walkingDistance(from: CLLocation, to: CLLocation) async -> MKRoute? {
         let request = MKDirections.Request()
         request.source = MKMapItem(placemark: MKPlacemark(coordinate: from.coordinate))
         request.destination = MKMapItem(placemark: MKPlacemark(coordinate: to.coordinate))

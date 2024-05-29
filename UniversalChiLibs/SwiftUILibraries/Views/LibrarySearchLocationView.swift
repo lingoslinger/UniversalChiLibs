@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import CoreLocation
 
 struct LibrarySearchLocationView: View {
     @EnvironmentObject var dataSource: LibraryDataSource
@@ -23,6 +22,7 @@ struct LibrarySearchLocationView: View {
             return dataSource.sortedLibraries
         }
     }
+    
     var body: some View {
         VStack {
             if libraries.count > 0 {
