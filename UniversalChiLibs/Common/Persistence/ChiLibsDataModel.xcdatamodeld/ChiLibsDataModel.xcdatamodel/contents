@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
-    <entity name="LastDistanceCallEntity" representedClassName="LastDistanceCallEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-    </entity>
-    <entity name="LastSearchLocEntity" representedClassName="LastSearchLocEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-    </entity>
-    <entity name="LastUserLocEntity" representedClassName="LastUserLocEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-    </entity>
     <entity name="LibraryEntity" representedClassName="LibraryEntity" syncable="YES" codeGenerationType="class">
         <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="city" optional="YES" attributeType="String"/>

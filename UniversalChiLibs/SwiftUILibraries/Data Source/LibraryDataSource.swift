@@ -14,7 +14,7 @@ import SwiftUI
 final class LibraryDataSource: ObservableObject {
     @Published var libraries: [Library] = []
     @Published var sortedLibraries: [Library] = []
-    private let stack: CoreDataStack
+    private let coreDataStack: CoreDataStack
     
     private var cacheExpired: Bool {
         let cacheLastSaved = UserDefaults.standard.double(forKey: "CacheDate")
@@ -25,7 +25,7 @@ final class LibraryDataSource: ObservableObject {
     }
     
     @MainActor init() {
-        stack = CoreDataStack.shared
+        coreDataStack = CoreDataStack.shared
         Task {
             do {
                 self.libraries = try await self.fetchLibraries()
@@ -57,11 +57,11 @@ final class LibraryDataSource: ObservableObject {
     
     private func loadCachedLibraries() throws -> [LibraryEntity] {
         let request: NSFetchRequest<LibraryEntity> = LibraryEntity.fetchRequest()
-        return try stack.viewContext.fetch(request)
+        return try coreDataStack.viewContext.fetch(request)
     }
     
     private func saveToCoreData(_ libraries: [Library]) async {
-        let context = stack.viewContext
+        let context = coreDataStack.viewContext
         await context.perform {
             for library in libraries {
                 let libraryEntity = LibraryEntity(context: context)
@@ -76,7 +76,7 @@ final class LibraryDataSource: ObservableObject {
     }
     
     private func deleteAllLibraries() {
-        let context = stack.viewContext
+        let context = coreDataStack.viewContext
         guard let entities = context.persistentStoreCoordinator?.managedObjectModel.entities else { return }
         for entity in entities {
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity.name!)
@@ -110,7 +110,7 @@ final class LibraryDataSource: ObservableObject {
     }
     
     private func locationToEntity(_ location: Location) -> LocationEntity {
-        let locationEntity = LocationEntity(context: stack.viewContext)
+        let locationEntity = LocationEntity(context: coreDataStack.viewContext)
         locationEntity.lat = location.lat
         locationEntity.lon = location.lon
         locationEntity.needsRecoding = location.needsRecoding ?? false
@@ -118,7 +118,7 @@ final class LibraryDataSource: ObservableObject {
     }
     
     private func websiteToEntity(_ website: Website) -> WebsiteEntity {
-        let websiteEntity = WebsiteEntity(context: stack.viewContext)
+        let websiteEntity = WebsiteEntity(context: coreDataStack.viewContext)
         websiteEntity.url = website.url
         return websiteEntity
     }
@@ -151,6 +151,12 @@ final class LibraryDataSource: ObservableObject {
 
 extension LibraryDataSource {
     @MainActor func fetchLibrariesSortedByDistance(from userLoc: CLLocation, maxConcurrentRequests: Int = 50) async {
+        let distanceLastCalled = UserDefaults.standard.double(forKey: "DistanceLastCalled")
+        let lastCalledSeconds = Date().timeIntervalSince1970 - distanceLastCalled
+        if lastCalledSeconds < 60.0 {
+            let waitSeconds = 60.0 - lastCalledSeconds
+            try? await Task.sleep(nanoseconds: UInt64(waitSeconds) * 1_000_000_000)
+        }
         var newLibs: [Library] = []
         let libraryChunks = libraries.chunked(into: maxConcurrentRequests)
         for chunk in libraryChunks {
@@ -183,6 +189,9 @@ extension LibraryDataSource {
             // avoid MapKit API throttling - no more that 50 requests/minute
             if chunk != libraryChunks.last {
                 try? await Task.sleep(nanoseconds: 60 * 1_000_000_000)
+            } else {
+                let timeInterval: Double = Date().timeIntervalSince1970
+                UserDefaults.standard.set(timeInterval, forKey: "DistanceLastCalled")
             }
         }
         newLibs.sort{ $0.walkingDistance < $1.walkingDistance }
@@ -193,7 +202,7 @@ extension LibraryDataSource {
         sortedLibraries = []
     }
         
-    private  afarifunc walkingDistance(from: CLLocation, to: CLLocation) async -> MKRoute? {
+    private func walkingDistance(from: CLLocation, to: CLLocation) async -> MKRoute? {
         let request = MKDirections.Request()
         request.source = MKMapItem(placemark: MKPlacemark(coordinate: from.coordinate))
         request.destination = MKMapItem(placemark: MKPlacemark(coordinate: to.coordinate))
