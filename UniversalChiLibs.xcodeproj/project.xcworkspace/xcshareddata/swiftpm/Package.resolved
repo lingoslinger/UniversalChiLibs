@@ -1,5 +1,5 @@
 {
-  "originHash" : "2b6d335272326468abc2114223e2ce9f2cf9645d68fa4e525733ecbf43f90359",
+  "originHash" : "45362a9af94be38dc5dc9555af78ffbe248dc128d769a9d6a1cd8fec79798d4f",
   "pins" : [
     {
       "identity" : "swiftsoup",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "028487d4a8a291b2fe1b4392b5425b6172056148",
         "version" : "2.7.2"
+      }
+    },
+    {
+      "identity" : "webservice",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lingoslinger/WebService",
+      "state" : {
+        "revision" : "ee8f52da5385840ca71f2a8ded562ee7a12081fb",
+        "version" : "1.0.2"
       }
     }
   ],

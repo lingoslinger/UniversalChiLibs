@@ -102,6 +102,7 @@
 		9D8831C32B0782D2003889CB /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8831C22B0782D2003889CB /* WebService.swift */; };
 		9D8ACF4E2B5DE95B0085F2ED /* LibraryGoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8ACF4D2B5DE95B0085F2ED /* LibraryGoogleMapView.swift */; };
 		9D8ACF502B5DE96C0085F2ED /* LibraryHereMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8ACF4F2B5DE96C0085F2ED /* LibraryHereMapView.swift */; };
+		9D9B190E2C0D33980010AABB /* WebService in Frameworks */ = {isa = PBXBuildFile; productRef = 9D9B190D2C0D33980010AABB /* WebService */; };
 		9DB29AA42BCE097900455F4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C8E312AF3E0CD0064DDEB /* Assets.xcassets */; };
 		9DB29AA52BCE097D00455F4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C8E312AF3E0CD0064DDEB /* Assets.xcassets */; };
 		9DB29AAD2BCE128F00455F4F /* tvLibrariesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB29AAC2BCE128F00455F4F /* tvLibrariesApp.swift */; };
@@ -338,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD5BF522BC9757B00966E2E /* SwiftSoup in Frameworks */,
+				9D9B190E2C0D33980010AABB /* WebService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,6 +832,7 @@
 			name = SwiftUILibraries;
 			packageProductDependencies = (
 				9DD5BF512BC9757B00966E2E /* SwiftSoup */,
+				9D9B190D2C0D33980010AABB /* WebService */,
 			);
 			productName = SwiftUILibraries;
 			productReference = 9D3C8EF22AF58E000064DDEB /* SwiftUILibraries.app */;
@@ -1131,6 +1134,7 @@
 			mainGroup = 9D3C8E1C2AF3E0CB0064DDEB;
 			packageReferences = (
 				9DD5BF4F2BC969E600966E2E /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				9D9B190C2C0D33980010AABB /* XCRemoteSwiftPackageReference "WebService" */,
 			);
 			productRefGroup = 9D3C8E262AF3E0CC0064DDEB /* Products */;
 			projectDirPath = "";
@@ -2539,6 +2543,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9D9B190C2C0D33980010AABB /* XCRemoteSwiftPackageReference "WebService" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lingoslinger/WebService";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		9DD5BF4F2BC969E600966E2E /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
@@ -2554,6 +2566,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9DD5BF4F2BC969E600966E2E /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;
+		};
+		9D9B190D2C0D33980010AABB /* WebService */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D9B190C2C0D33980010AABB /* XCRemoteSwiftPackageReference "WebService" */;
+			productName = WebService;
 		};
 		9DB29ADE2BCEBD5600455F4F /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;

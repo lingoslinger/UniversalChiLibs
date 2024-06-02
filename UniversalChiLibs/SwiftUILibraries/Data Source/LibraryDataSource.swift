@@ -10,6 +10,7 @@ import CoreLocation
 import MapKit
 import Foundation
 import SwiftUI
+import WebService
 
 final class LibraryDataSource: ObservableObject {
     @Published var libraries: [Library] = []
