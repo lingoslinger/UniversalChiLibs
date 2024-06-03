@@ -30,7 +30,7 @@ struct LibraryLocationView: View {
                 }
             } else {
                 // TODO: loading indicator here also...
-                Text("Finding walking distances - this can take up to two minutes because of MapKit API throttling limitations. Thanks Apple...🤦‍♂️")
+                Text("Finding walking distances from current location - this can take up to two minutes because of MapKit API throttling limitations. Thanks Apple...🤦‍♂️")
                     .task {
                         await dataSource.fetchLibrariesSortedByDistance(from: locationDataManager.userLocation, maxConcurrentRequests: 49)
                     }
