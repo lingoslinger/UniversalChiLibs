@@ -11,19 +11,12 @@ import MapKit
 import Foundation
 import SwiftUI
 import WebService
+import Algorithms
 
 final class LibraryDataSource: ObservableObject {
     @Published var libraries: [Library] = []
     @Published var sortedLibraries: [Library] = []
     private let coreDataStack: CoreDataStack
-    
-    private var cacheExpired: Bool {
-        let cacheLastSaved = UserDefaults.standard.double(forKey: "CacheDate")
-        if cacheLastSaved == 0 { return true } // for case when cache has not been saved yet
-        let today = Date().timeIntervalSince1970
-        let cacheTimeInterval =  24.0 * 60.0 * 60.0 // one day for now, eventually a settable preference
-        return (today - cacheLastSaved > cacheTimeInterval)
-    }
     
     @MainActor init() {
         coreDataStack = CoreDataStack.shared
@@ -59,6 +52,14 @@ final class LibraryDataSource: ObservableObject {
     private func loadCachedLibraries() throws -> [LibraryEntity] {
         let request: NSFetchRequest<LibraryEntity> = LibraryEntity.fetchRequest()
         return try coreDataStack.viewContext.fetch(request)
+    }
+    
+    private var cacheExpired: Bool {
+        let cacheLastSaved = UserDefaults.standard.double(forKey: "CacheDate")
+        if cacheLastSaved == 0 { return true } // for case when cache has not been saved yet
+        let today = Date().timeIntervalSince1970
+        let cacheTimeInterval =  24.0 * 60.0 * 60.0 // one day for now, eventually a settable preference
+        return (today - cacheLastSaved > cacheTimeInterval)
     }
     
     private func saveToCoreData(_ libraries: [Library]) async {
@@ -159,7 +160,7 @@ extension LibraryDataSource {
             try? await Task.sleep(nanoseconds: UInt64(waitSeconds) * 1_000_000_000)
         }
         var newLibs: [Library] = []
-        let libraryChunks = libraries.chunked(into: maxConcurrentRequests)
+        let libraryChunks = libraries.chunks(ofCount: maxConcurrentRequests)
         for chunk in libraryChunks {
             // MapKit API throttles apps that make more than 50 directions requests in 60 seconds 
             // and we have 81 libraries, so we have 49 reuests every 60 seconds now
