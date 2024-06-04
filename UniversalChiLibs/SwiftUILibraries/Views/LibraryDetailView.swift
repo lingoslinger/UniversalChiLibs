@@ -27,8 +27,7 @@ struct LibraryDetailView: View {
                             LibraryAppleMapView(library: library)
                                 .frame(height: 200, alignment: .top)
                                 .onTapGesture {
-                                    let searchAddress = "\(library.address ?? ""), \(library.city ?? ""), \(library.state ?? "") \(library.zip ?? "")"
-                                    openAppleMaps(with: searchAddress)
+                                    openAppleMaps(for: library)
                                 }
                                 .gesture(
                                     LongPressGesture(minimumDuration: 1.0)

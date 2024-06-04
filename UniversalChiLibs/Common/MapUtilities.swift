@@ -7,7 +7,11 @@
 //
 
 import UIKit
+import SwiftUI
+import MapKit
+import CoreLocation
 
+// TODO: replace this legacy code for the UIKit apps,
 func openMap(with address: String, mapPreference: MapPreference = MapPreference()) {
     let encodedAddress = address.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
     switch mapPreference.mapProvider {
@@ -22,11 +26,23 @@ func openMap(with address: String, mapPreference: MapPreference = MapPreference(
     }
 }
 
-func openAppleMaps(with address: String) {
-    let encodedAddress = address.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-    let mapURLString = "http://maps.apple.com/?daddr=\(encodedAddress)&dirflg=w" // walking directions...
-    guard let mapURL = URL(string: mapURLString) else { return }
-    UIApplication.shared.open(mapURL, options: [:], completionHandler: nil)
+func openAppleMaps(for library: Library) {
+    // TODO: starting location
+    // location permission given: use user location
+    // no location permission: store search location as a StateObject in the search screen and use that
+    var startLoc: CLLocation?
+    
+    let libLat = library.location?.lat ?? 0.0
+    let libLon = library.location?.lon ?? 0.0
+    let libLoc = CLLocation(latitude: libLat, longitude: libLon)
+    
+    var mapItems: [MKMapItem] = []
+    if let startLoc {
+        mapItems.append(MKMapItem(placemark: MKPlacemark(coordinate: startLoc.coordinate)))
+    }
+    mapItems.append(MKMapItem(placemark: MKPlacemark(coordinate: libLoc.coordinate)))
+    let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
+    MKMapItem.openMaps(with: mapItems, launchOptions: launchOptions)
 }
 
 func openGoogleMaps() {
