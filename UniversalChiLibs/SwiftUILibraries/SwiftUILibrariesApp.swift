@@ -12,6 +12,7 @@ struct SwiftUILibrariesApp: App {
     @StateObject var displayType = DisplayType()
     @StateObject var dataSource = LibraryDataSource()
     @StateObject var mapPreference = MapPreference()
+    @StateObject var locationDataManager = LocationDataManager()
     
     var body: some Scene {
         WindowGroup {
@@ -19,6 +20,7 @@ struct SwiftUILibrariesApp: App {
                 .environmentObject(displayType)
                 .environmentObject(dataSource)
                 .environmentObject(mapPreference)
+                .environmentObject(locationDataManager)
         }
     }
 }

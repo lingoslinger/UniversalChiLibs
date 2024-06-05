@@ -26,17 +26,17 @@ func openMap(with address: String, mapPreference: MapPreference = MapPreference(
     }
 }
 
-func openAppleMaps(for library: Library) {
+func openAppleMaps(for library: Library, startLoc: CLLocation?) {
     // TODO: starting location
     // location permission given: use user location
     // no location permission: store search location as a StateObject in the search screen and use that
-    var startLoc: CLLocation?
     
     let libLat = library.location?.lat ?? 0.0
     let libLon = library.location?.lon ?? 0.0
     let libLoc = CLLocation(latitude: libLat, longitude: libLon)
     
     var mapItems: [MKMapItem] = []
+    
     if let startLoc {
         mapItems.append(MKMapItem(placemark: MKPlacemark(coordinate: startLoc.coordinate)))
     }

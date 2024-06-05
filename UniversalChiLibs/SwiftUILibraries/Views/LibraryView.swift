@@ -10,8 +10,7 @@ import CoreLocation
 
 struct LibraryView: View {
     @EnvironmentObject var displayType: DisplayType
-    @StateObject var locationDataManager = LocationDataManager()
-    
+    @EnvironmentObject var locationDataManager: LocationDataManager
     
     var body: some View {
         NavigationView {
@@ -19,11 +18,10 @@ struct LibraryView: View {
                 case .list:
                     LibraryAlphaView()
                 case .location:
-                    // TODO: maybe make this one view again?
                     if locationDataManager.isAuthorized {
-                        LibraryLocationView(locationDataManager: locationDataManager)
+                        LibraryLocationView()
                     } else {
-                        LibrarySearchLocationView(locationDataManager: locationDataManager)
+                        LibrarySearchLocationView()
                     }
             }
         }

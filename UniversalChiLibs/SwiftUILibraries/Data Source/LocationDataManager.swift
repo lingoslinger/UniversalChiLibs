@@ -11,8 +11,8 @@ import CoreLocation
 
 final class LocationDataManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private var locationManager = CLLocationManager()
-    @Published var userLocation: CLLocation = CLLocation()
     private var geocoder = CLGeocoder()
+    @Published var userLocation: CLLocation? // = CLLocation()
     
     override init() {
         super.init()

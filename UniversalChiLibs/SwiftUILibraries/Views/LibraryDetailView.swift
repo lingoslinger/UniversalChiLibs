@@ -10,6 +10,7 @@ import SwiftUI
 struct LibraryDetailView: View {
     let library: Library
     @EnvironmentObject private var mapPreference: MapPreference
+    @EnvironmentObject private var locationDataManager: LocationDataManager
 
     var body: some View {
         NavigationView {
@@ -27,7 +28,8 @@ struct LibraryDetailView: View {
                             LibraryAppleMapView(library: library)
                                 .frame(height: 200, alignment: .top)
                                 .onTapGesture {
-                                    openAppleMaps(for: library)
+                                    
+                                    openAppleMaps(for: library, startLoc: locationDataManager.userLocation)
                                 }
                                 .gesture(
                                     LongPressGesture(minimumDuration: 1.0)

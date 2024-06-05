@@ -11,7 +11,7 @@ import SwiftUI
 struct LibrarySearchLocationView: View {
     @EnvironmentObject var dataSource: LibraryDataSource
     @EnvironmentObject var displayType: DisplayType
-    @ObservedObject var locationDataManager: LocationDataManager
+    @EnvironmentObject var locationDataManager: LocationDataManager
     @State private var searchText: String = ""
     @State private var searchQuery: String = ""
     
@@ -41,6 +41,9 @@ struct LibrarySearchLocationView: View {
                                 print("No location found")
                                 return
                             }
+                            // save this for walking directions
+                            // TODO: figure out how to save this in locationDataManager without a main thread warning
+                            locationDataManager.userLocation = searchLoc
                             await dataSource.fetchLibrariesSortedByDistance(from: searchLoc, maxConcurrentRequests: 49)
                         }
                 }
@@ -64,5 +67,5 @@ struct LibrarySearchLocationView: View {
 }
 
 #Preview {
-    LibrarySearchLocationView(locationDataManager: LocationDataManager())
+    LibrarySearchLocationView()
 }

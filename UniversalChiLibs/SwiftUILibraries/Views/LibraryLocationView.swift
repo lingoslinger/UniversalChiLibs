@@ -12,7 +12,7 @@ import CoreLocation
 struct LibraryLocationView: View {
     @EnvironmentObject var dataSource: LibraryDataSource
     @EnvironmentObject var displayType: DisplayType
-    @ObservedObject var locationDataManager: LocationDataManager
+    @EnvironmentObject var locationDataManager: LocationDataManager
     
     var libraries: [Library] {
         dataSource.sortedLibraries
@@ -32,7 +32,10 @@ struct LibraryLocationView: View {
                 // TODO: loading indicator here also...
                 Text("Finding walking distances from current location - this can take up to two minutes because of MapKit API throttling limitations. Thanks Apple...🤦‍♂️")
                     .task {
-                        await dataSource.fetchLibrariesSortedByDistance(from: locationDataManager.userLocation, maxConcurrentRequests: 49)
+                        guard let userLocation = locationDataManager.userLocation else {
+                            return
+                        }
+                        await dataSource.fetchLibrariesSortedByDistance(from: userLocation, maxConcurrentRequests: 49)
                     }
             }
         }
@@ -42,5 +45,5 @@ struct LibraryLocationView: View {
 }
 
 #Preview {
-    LibraryLocationView(locationDataManager: LocationDataManager())
+    LibraryLocationView()
 }
