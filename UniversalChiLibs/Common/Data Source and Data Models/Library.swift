@@ -84,12 +84,8 @@ struct Library: Decodable, Identifiable, Hashable {
         }
     }
 
-    struct Website: Decodable {
+    struct Website: Decodable { // the only one of these that uses the default intializer...🤦‍♂️
         let url: String?
-        
-        init(url: String?) {
-            self.url = url
-        }
     }
 
 extension Library {

@@ -17,7 +17,7 @@ struct LibraryView: View {
             switch displayType.mainScreenType {
                 case .list:
                     LibraryAlphaView()
-                case .location:
+                case .location: 
                     if locationDataManager.isAuthorized {
                         LibraryLocationView()
                     } else {
